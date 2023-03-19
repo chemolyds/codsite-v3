@@ -16,7 +16,7 @@ export default function Home() {
       </Head>
       <main className={styles.main}>
         <div className={styles.description}>
-          <p>
+          <p className="text-sky-400">
             Get started by editing&nbsp;
             <code className={styles.code}>src/pages/index.tsx</code>
           </p>
