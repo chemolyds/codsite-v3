@@ -1,4 +1,5 @@
-import Head from 'next/head';
+import Head from 'next/head'
+import { Container } from '@chakra-ui/react'
 
 export default function Layout({ children, title, description } : { children: React.ReactNode, title: string, description: string }) {
 	return (
@@ -9,7 +10,13 @@ export default function Layout({ children, title, description } : { children: Re
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 				<link rel="icon" href="/favicon.ico" />
 			</Head>
-			<main>{children}</main>
+			{(title === "Home") ?
+				<main>{children}</main>
+			:
+				<Container maxW='container.xl'>
+					<main>{children}</main>	
+				</Container>
+			}
 		</div>
 	)
 }
