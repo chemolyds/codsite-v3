@@ -1,72 +1,65 @@
 import Layout from '@/components/layout';
 import Image from 'next/image';
-import Link from 'next/link';
+import { Text, Heading, Center, Container, Card, CardHeader, CardBody, Box, Grid, List, UnorderedList, ListItem } from '@chakra-ui/react'
+import { Link } from '@chakra-ui/next-js'
 
 export default function Home() {
 	return (
 		<Layout title="Home" description="CODSite Homepage">
-			<div style={{ margin: '0 auto', paddingTop: 0 }}>
-
-				<center>
+				<Center>
 					<Image priority src="/images/banners/welcome.png" alt="Welcome banner" width={700} height={300}/>
-				</center>
+				</Center>
 
 				{/* CODS Community */}
-				<div className="px-5 md:px-20 pt-10 pb-5">
-					<h2 className="text-center font-normal">
-						CODS is a global community made for Chemistry Olympiad participants
-					</h2>
-					<h3 className="text-center font-light">
-						Haven&apos;t joined the community yet?
-						You can join <a className="text-blue-400" href="https://discord.gg/chemistryolympiad">here</a>.
-					</h3>
-				</div>
-
-				{/* Mission Statement */}
-				<div className="bg-blue-100 px-5 md:px-20 py-10">
-					<h3 className="font-light">Our mission is to make Competitive Chemistry more...</h3>
-					<dl className="md:grid md:grid-cols-3">
+				<Heading textAlign='center' as="h2" fontSize="3xl">
+					CODS is a global community made for Chemistry Olympiad participants
+				</Heading>
+				<Heading fontSize="2xl" textAlign='center' as="h3" fontWeight={400}>
+					Haven&apos;t joined the community yet?
+					You can join <Link href="https://discord.gg/chemistryolympiad" color='blue.400'>here</Link>.
+				</Heading>
+				
+				<Container px='20' maxW='full'>
+					{/* Mission Statement */}
+					<Heading fontSize='3xl' mt='10' as="h3" fontWeight={400}>Our mission is to make Competitive Chemistry more...</Heading>
+					<Grid templateColumns='repeat(3, 1fr)' gap='8'>
 						{mission.map(card => (
-							<div key={card.header} className="transition duration-300 ease-in-out max-w-md py-4 px-5 bg-white hover:shadow-2xl rounded-md mx-5 my-4 transform hover:-translate-y-1 hover:scale-110">
-								<h2 className="text-gray-800 text-3xl font-medium mb-3">{card.header}</h2>
-								<p className="mt-2 text-gray-700 text-lg">{card.description}</p>
-							</div>
+							<Card key={card.header}>
+								<CardBody>
+									<Heading fontSize='4xl' as="h2">{card.header}</Heading>
+									<Text>{card.description}</Text>
+								</CardBody>
+							</Card>
 						))}
-					</dl>
-				</div>
+					</Grid>
 
-				{/* Website Purpose */}
-				<div style={{ padding: '1.45rem 1.0875rem 1.45rem' }}>
-					<h2 className="font-mediummt-10 text-center">What is CODSite for?</h2>
-					<p className="md:px-20">
+					{/* Website Purpose */}
+					<Heading fontSize='3xl' textAlign='center' mt='10' as="h2">What is CODSite for?</Heading>
+					<Text align='center'>
 						CODSite is an all-purpose website made for your community (competitive chemistry enthusiasts).
 						Everything on CODSite is free to use for anybody, no sign-ups or membership required.
 						We provide custom <b>open educational resources</b> such as lectures, detailed notes, useful websites, problem sets, guides, tools, and all of our past competition papers.
 						Anything a chemistry freak could dream of lies within this website.
-					</p>
-				</div>
+					</Text>
 
-				{/* Resources QuickLinks */}
-				<div className="text-center md:px-20">
-					<h2 className="font-medium trackign-wide mt-20 mb-16">Open Educational Resources at CODSite</h2>
-					<dl className="md:grid md:grid-cols-3 md:gap-x-8 md:gap-y-10">
+					{/* Resources QuickLinks */}
+					<Heading fontSize='3xl' textAlign='center' mt='10' as="h2">Open Educational Resources at CODSite</Heading>
+					<Grid templateColumns='repeat(3, 1fr)' gap='8'>
 						{resources.map(resource => (
-							<div key={resource.title} className="transition duration-300 ease-in-out max-w-md py-4 px-5 bg-white hover:shadow-2xl transform hover:-translate-y-1 hover:scale:110 rounded-xl mx-5 my-4">
-								<dt>
-									<h2 className="mt-2 mb-5 font-normal tracking-wide text-blue-400">{resource.title}</h2>
-								</dt>
-								<dd className="text-base">
-									{resource.description}
-								</dd>
+							<Card key={resource.title}>
+								<CardBody>
+									<Heading fontSize='3xl' textAlign='center' as="h2">{resource.title}</Heading>
+									<Container textAlign='center'>
+										{resource.description}
+									</Container>
+								</CardBody>
 								{resource.link && (
 									<Link href={resource.link} className="after:absolute after:inset-0"/>
 								)}
-							</div>
+							</Card>
 						))}
-					</dl>
-				</div>
-
-			</div>
+					</Grid>
+				</Container>
 		</Layout>
 	)
 }
@@ -112,13 +105,13 @@ const resources = [
 		description: (
 			<>
 				We provide four annual chemistry competitions for anyone to participate. For more information:
-				<ul className="ml-0 pl-0">
-					<li className="text-blue-400 mt-2" style={{"listStyle": "none"}}><Link href="/competitions/competitors_guide">Competitor&apos;s Guide</Link></li>
-					<li className="text-blue-400 mt-1" style={{"listStyle": "none"}}><Link href="/competitions/acot">ACOT</Link></li>
-					<li className="text-blue-400 mt-1" style={{"listStyle": "none"}}><Link href="/competitions/wcc">WCC</Link></li>
-					<li className="text-blue-400 mt-1" style={{"listStyle": "none"}}><Link href="/competitions/socc">SOCC</Link></li>
-					<li className="text-blue-400 mt-1" style={{"listStyle": "none"}}><Link href="/compeitions/scho">SChO</Link></li>
-				</ul>
+				<UnorderedList mt='2'>
+					<ListItem color="blue.400" style={{"listStyle": "none"}} my='2'><Link href="/competitions/competitors_guide">Competitor&apos;s Guide</Link></ListItem>
+					<ListItem color="blue.400" style={{"listStyle": "none"}} my='2'><Link href="/competitions/acot">ACOT</Link></ListItem>
+					<ListItem color="blue.400" style={{"listStyle": "none"}} my='2'><Link href="/competitions/wcc">WCC</Link></ListItem>
+					<ListItem color="blue.400" style={{"listStyle": "none"}} my='2'><Link href="/competitions/socc">SOCC</Link></ListItem>
+					<ListItem color="blue.400" style={{"listStyle": "none"}} my='2'><Link href="/compeitions/scho">SChO</Link></ListItem>
+				</UnorderedList>
 			</>
 		)
 	},
