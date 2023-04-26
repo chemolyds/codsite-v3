@@ -1,8 +1,9 @@
-import '@/styles/globals.css'
+//import '@/styles/globals.css'
 import type { AppProps } from 'next/app'
 import { Exo_2, Nunito, Raleway } from 'next/font/google'
 import localFont from 'next/font/local'
 import { ChakraProvider } from '@chakra-ui/react'
+import theme from '@/styles/theme'
 
 const exo2 = Exo_2({
 	subsets: ['latin'],
@@ -37,14 +38,8 @@ const raleway_bold = localFont({
 
 export default function App({ Component, pageProps }: AppProps) {
 	return (
-		<ChakraProvider>
+		<ChakraProvider theme={theme}>
 			<Component {...pageProps} />
 		</ChakraProvider>
-	)
-
-  return (
-		<div className={`${exo2.variable} ${nunito.variable} ${opensans_light.variable} ${raleway.variable} ${raleway_black.variable} ${raleway_bold.variable} font-sans`}>
-			<Component {...pageProps} />
-		</div>
 	)
 }
