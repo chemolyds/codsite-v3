@@ -8,9 +8,9 @@ import '@fontsource/nunito/400.css'
 import '@fontsource/raleway/variable.css'
 
 export default function App({ Component, pageProps }: AppProps) {
-	return (
-		<ChakraProvider theme={theme}>
-			<Component {...pageProps} />
-		</ChakraProvider>
-	)
+  return (
+    <ChakraProvider theme={theme}>
+      <Component {...pageProps} />
+    </ChakraProvider>
+  )
 }
