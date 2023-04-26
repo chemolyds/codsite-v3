@@ -97,4 +97,8 @@ const routes = [
     href: '/',
     title: 'Home',
   },
+  {
+    href: '/about',
+    title: 'About',
+  },
 ]
