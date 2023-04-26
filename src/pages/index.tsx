@@ -11,22 +11,22 @@ export default function Home() {
 				</Center>
 
 				{/* CODS Community */}
-				<Heading textAlign='center'>
+				<Heading textAlign='center' as="h2" fontSize="3xl">
 					CODS is a global community made for Chemistry Olympiad participants
 				</Heading>
-				<Heading fontSize="lg" fontWeight={400} textAlign='center'>
+				<Heading fontSize="2xl" textAlign='center' as="h3" fontWeight={400}>
 					Haven&apos;t joined the community yet?
 					You can join <Link href="https://discord.gg/chemistryolympiad" color='blue.400'>here</Link>.
 				</Heading>
 				
 				<Container px='20' maxW='full'>
 					{/* Mission Statement */}
-					<Heading fontSize='2xl' fontWeight={400} mt='10'>Our mission is to make Competitive Chemistry more...</Heading>
+					<Heading fontSize='3xl' mt='10' as="h3" fontWeight={400}>Our mission is to make Competitive Chemistry more...</Heading>
 					<Grid templateColumns='repeat(3, 1fr)' gap='8'>
 						{mission.map(card => (
 							<Card key={card.header}>
 								<CardBody>
-									<Heading fontSize='2xl' fontWeight={600}>{card.header}</Heading>
+									<Heading fontSize='4xl' as="h2">{card.header}</Heading>
 									<Text>{card.description}</Text>
 								</CardBody>
 							</Card>
@@ -34,7 +34,7 @@ export default function Home() {
 					</Grid>
 
 					{/* Website Purpose */}
-					<Heading fontSize='2xl' fontWeight={400} textAlign='center' mt='10'>What is CODSite for?</Heading>
+					<Heading fontSize='3xl' textAlign='center' mt='10' as="h2">What is CODSite for?</Heading>
 					<Text align='center'>
 						CODSite is an all-purpose website made for your community (competitive chemistry enthusiasts).
 						Everything on CODSite is free to use for anybody, no sign-ups or membership required.
@@ -43,15 +43,15 @@ export default function Home() {
 					</Text>
 
 					{/* Resources QuickLinks */}
-					<Heading fontSize='2xl' fontWeight={400} textAlign='center' mt='10'>Open Educational Resources at CODSite</Heading>
+					<Heading fontSize='3xl' textAlign='center' mt='10' as="h2">Open Educational Resources at CODSite</Heading>
 					<Grid templateColumns='repeat(3, 1fr)' gap='8'>
 						{resources.map(resource => (
 							<Card key={resource.title}>
 								<CardBody>
-									<Heading fontSize='2xl' fontWeight={400} textAlign='center'>{resource.title}</Heading>
-									<Text textAlign='center'>
+									<Heading fontSize='3xl' textAlign='center' as="h2">{resource.title}</Heading>
+									<Container textAlign='center'>
 										{resource.description}
-									</Text>
+									</Container>
 								</CardBody>
 								{resource.link && (
 									<Link href={resource.link} className="after:absolute after:inset-0"/>
