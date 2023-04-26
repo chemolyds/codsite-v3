@@ -1,20 +1,17 @@
 import Layout from '@/components/layout'
-import Image from 'next/image'
-import {
-  Text,
-  Heading,
-  Center,
-  Container,
-  Card,
-  CardHeader,
-  CardBody,
-  Box,
-  Grid,
-  List,
-  UnorderedList,
-  ListItem,
-} from '@chakra-ui/react'
 import { Link } from '@chakra-ui/next-js'
+import {
+	Card,
+	CardBody,
+	Center,
+	Container,
+	Grid,
+	Heading,
+	ListItem,
+	Text,
+	UnorderedList
+} from '@chakra-ui/react'
+import Image from 'next/image'
 
 export default function Home() {
   return (
