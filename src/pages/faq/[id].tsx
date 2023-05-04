@@ -1,10 +1,10 @@
 import Layout from '@/components/layout'
 import { getAllFaqsIds, getFaqData } from '@/lib/faqs'
-import { GetStaticProps, GetStaticPaths } from 'next'
+import { Box, Button, Flex, Spacer } from '@chakra-ui/react'
+import { Prose } from '@nikolovlazar/chakra-ui-prose'
+import { GetStaticPaths, GetStaticProps } from 'next'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
-import { Prose } from '@nikolovlazar/chakra-ui-prose'
-import { Button, Box, Spacer, Flex, LinkOverlay } from '@chakra-ui/react'
 import Link from 'next/link'
 
 export default function Faq({ mdxSource }: { mdxSource: any }) {

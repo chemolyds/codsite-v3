@@ -1,18 +1,15 @@
 import Layout from '@/components/layout'
-import Link from 'next/link'
+import { getFaqsData } from '@/lib/faqs'
 import {
-  Heading,
-  UnorderedList,
-  ListItem,
-  Grid,
-  GridItem,
   Card,
   CardHeader,
+  Grid,
+  GridItem,
+  Heading,
   LinkOverlay,
-  CardBody,
 } from '@chakra-ui/react'
-import { getFaqsData } from '@/lib/faqs'
 import { GetStaticProps } from 'next'
+import Link from 'next/link'
 
 export default function Home({
   allFaqsData,
