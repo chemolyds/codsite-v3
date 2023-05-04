@@ -1,12 +1,10 @@
 import fs from 'fs'
 import path from 'path'
 import matter from 'gray-matter'
-import { MDXProvider } from '@mdx-js/react'
-import Layout from '@/components/layout'
 
 const faqsDirectory = path.join(process.cwd(), 'faq')
 
-export function getFaqsData() {
+export async function getFaqsData() {
   // Get file names under /faq
   const fileNames = fs.readdirSync(faqsDirectory)
   const allFaqsData = fileNames.map((fileName) => {
@@ -24,8 +22,12 @@ export function getFaqsData() {
     return {
       id,
       ...(matterResult.data as { title: string }),
+      excerpt: matterResult.content,
     }
   })
+
+  // return the data (sorted maybe)
+  return allFaqsData
 }
 
 export function getAllFaqsIds() {
@@ -43,13 +45,9 @@ export async function getFaqData(id: string) {
   const fullPath = path.join(faqsDirectory, `${id}.mdx`)
   const fileContents = fs.readFileSync(fullPath, 'utf-8')
 
-  // Use gray-matter to parse the post metadata section
-  const matterResult = matter(fileContents)
-
-  // Convert to mdx
-
   // Combine the data with the id and contentHtml
   return {
     id,
+    fileContents,
   }
 }
