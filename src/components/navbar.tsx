@@ -98,6 +98,10 @@ const routes = [
     title: 'Home',
   },
   {
+    href: '/competitions',
+    title: 'Competitions',
+  },
+  {
     href: '/faq',
     title: 'FAQ',
   },
