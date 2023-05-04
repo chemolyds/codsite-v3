@@ -20,14 +20,15 @@ export default function Home({
   allFaqsData: {
     id: string
     title: string
+    excerpt: string
   }[]
 }) {
   return (
     <Layout title="FAQ" description="Frequently Asked Questions">
-      <Heading as="h1" textAlign="center">
+      <Heading as="h1" textAlign="center" mb="10">
         Frequently Asked Questions
       </Heading>
-      <Grid templateColumns="repeat(3, 1fr)" gap={8}>
+      <Grid templateColumns="repeat(2, 1fr)" gap={8}>
         {allFaqsData.map(({ id, title, excerpt }) => (
           <GridItem key={id}>
             <Card>
@@ -37,7 +38,6 @@ export default function Home({
                     {title}
                   </LinkOverlay>
                 </Heading>
-                <CardBody>{excerpt}</CardBody>
               </CardHeader>
             </Card>
           </GridItem>
