@@ -17,7 +17,6 @@ export default function Home({
   allFaqsData: {
     id: string
     title: string
-    excerpt: string
   }[]
 }) {
   return (
@@ -26,7 +25,7 @@ export default function Home({
         Frequently Asked Questions
       </Heading>
       <Grid templateColumns="repeat(2, 1fr)" gap={8}>
-        {allFaqsData.map(({ id, title, excerpt }) => (
+        {allFaqsData.map(({ id, title }) => (
           <GridItem key={id}>
             <Card>
               <CardHeader>

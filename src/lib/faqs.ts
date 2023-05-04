@@ -22,7 +22,6 @@ export async function getFaqsData() {
     return {
       id,
       ...(matterResult.data as { title: string }),
-      excerpt: matterResult.content,
     }
   })
 

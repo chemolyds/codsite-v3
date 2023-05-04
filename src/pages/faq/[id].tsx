@@ -6,6 +6,7 @@ import { GetStaticPaths, GetStaticProps } from 'next'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
 import Link from 'next/link'
+import remarkGfm from 'remark-gfm'
 
 export default function Faq({ mdxSource }: { mdxSource: any }) {
   return (
@@ -42,9 +43,12 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   // Convert to mdx
   const mdxSource = await serialize(faqData.fileContents, {
     parseFrontmatter: true,
+    mdxOptions: {
+      remarkPlugins: [remarkGfm],
+      rehypePlugins: [],
+    },
   })
 
-  console.log(mdxSource)
   return {
     props: {
       mdxSource,
