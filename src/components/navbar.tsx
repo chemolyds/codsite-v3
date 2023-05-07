@@ -99,15 +99,28 @@ export default function NavBar() {
           <DrawerBody>
             <VStack spacing="6" align="stretch" minW="full" mb="4">
               {routes.map((route) => (
-                <Button
-                  key={route.href}
-                  as={NextLink}
-                  href={route.href}
-                  size="lg"
-                  variant="link"
-                >
-                  {route.title}
-                </Button>
+                <>
+                  <Button
+                    key={route.href}
+                    as={NextLink}
+                    href={route.href}
+                    size="lg"
+                    variant="link"
+                  >
+                    {route.title}
+                  </Button>
+                  {route.children?.map((child) => (
+                    <Button
+                      key={child.href}
+                      as={NextLink}
+                      href={child.href}
+                      size="lg"
+                      variant="link"
+                    >
+                      {child.title}
+                    </Button>
+                  ))}
+                </>
               ))}
             </VStack>
           </DrawerBody>
