@@ -12,13 +12,17 @@ import {
   HStack,
   Heading,
   IconButton,
+  Menu,
+  MenuButton,
+  MenuItem,
+  MenuList,
   VStack,
   useBreakpointValue,
   useColorMode,
   useDisclosure,
 } from '@chakra-ui/react'
-import NextLink from 'next/link'
-import { FiMenu } from 'react-icons/fi'
+import { default as NextLink } from 'next/link'
+import { FiChevronDown, FiMenu } from 'react-icons/fi'
 
 export default function NavBar() {
   const { colorMode, toggleColorMode } = useColorMode()
@@ -35,11 +39,32 @@ export default function NavBar() {
               {isDesktop ? (
                 <Flex justify="space-between" flex="1">
                   <ButtonGroup variant="link" spacing="8">
-                    {routes.map((route) => (
-                      <Button key={route.href} as={NextLink} href={route.href}>
-                        {route.title}
-                      </Button>
-                    ))}
+                    {routes.map((route) =>
+                      route.children ? (
+                        <Menu key={route.href}>
+                          <MenuButton as={Button} rightIcon={<FiChevronDown />}>
+                            {route.title}
+                          </MenuButton>
+                          <MenuList>
+                            {route.children.map((child) => (
+                              <MenuItem key={child.href}>
+                                <NextLink href={`${route.href}/${child.href}`}>
+                                  {child.title}
+                                </NextLink>
+                              </MenuItem>
+                            ))}
+                          </MenuList>
+                        </Menu>
+                      ) : (
+                        <Button
+                          key={route.href}
+                          as={NextLink}
+                          href={route.href}
+                        >
+                          {route.title}
+                        </Button>
+                      )
+                    )}
                   </ButtonGroup>
                   <HStack spacing="3">
                     <Button onClick={toggleColorMode} variant="ghost">
@@ -74,15 +99,28 @@ export default function NavBar() {
           <DrawerBody>
             <VStack spacing="6" align="stretch" minW="full" mb="4">
               {routes.map((route) => (
-                <Button
-                  key={route.href}
-                  as={NextLink}
-                  href={route.href}
-                  size="lg"
-                  variant="link"
-                >
-                  {route.title}
-                </Button>
+                <>
+                  <Button
+                    key={route.href}
+                    as={NextLink}
+                    href={route.href}
+                    size="lg"
+                    variant="link"
+                  >
+                    {route.title}
+                  </Button>
+                  {route.children?.map((child) => (
+                    <Button
+                      key={child.href}
+                      as={NextLink}
+                      href={child.href}
+                      size="lg"
+                      variant="link"
+                    >
+                      {child.title}
+                    </Button>
+                  ))}
+                </>
               ))}
             </VStack>
           </DrawerBody>
@@ -100,6 +138,32 @@ const routes = [
   {
     href: '/competitions',
     title: 'Competitions',
+    children: [
+      {
+        href: 'competitors_guide',
+        title: `Competitor's Guide`,
+      },
+      {
+        href: 'acot',
+        title: 'ACOT',
+      },
+      {
+        href: 'wcc',
+        title: 'WCC',
+      },
+      {
+        href: 'socc',
+        title: 'SOCC',
+      },
+      {
+        href: 'scho',
+        title: 'SChO',
+      },
+    ],
+  },
+  {
+    href: '/resources',
+    title: 'Resources',
   },
   {
     href: '/faq',
