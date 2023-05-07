@@ -149,6 +149,10 @@ const routes = [
     ],
   },
   {
+    href: '/resources',
+    title: 'Resources',
+  },
+  {
     href: '/faq',
     title: 'FAQ',
   },
