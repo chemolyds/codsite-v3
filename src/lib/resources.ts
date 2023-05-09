@@ -1,4 +1,6 @@
-export type Tag =
+import { OptionBase } from 'chakra-react-select'
+
+export type ResourceTags =
   | 'Bronze'
   | 'Silver'
   | 'Gold'
@@ -12,11 +14,31 @@ export type Tag =
   | 'USNCO'
   | 'YouTube'
 
-export type Resource = {
+export interface TagOption extends OptionBase {
+  value: ResourceTags
+  label: ResourceTags
+}
+
+export const TagOptions: { value: ResourceTags; label: ResourceTags }[] = [
+  { value: 'Bronze', label: 'Bronze' },
+  { value: 'Silver', label: 'Silver' },
+  { value: 'Gold', label: 'Gold' },
+  { value: 'General', label: 'General' },
+  { value: 'Physical', label: 'Physical' },
+  { value: 'Analytical', label: 'Analytical' },
+  { value: 'Inorganic', label: 'Inorganic' },
+  { value: 'Organic', label: 'Organic' },
+  { value: 'Textbook', label: 'Textbook' },
+  { value: 'Problem Set', label: 'Problem Set' },
+  { value: 'USNCO', label: 'USNCO' },
+  { value: 'YouTube', label: 'YouTube' },
+]
+
+export interface Resource {
   name: string
   description: string
   link: string
-  tags: Tag[]
+  tags: ResourceTags[]
 }
 
 export const ResourceList: Resource[] = [
@@ -65,5 +87,42 @@ export const ResourceList: Resource[] = [
     description: 'Huge collection of organic chemistry problems',
     link: 'https://www.organicchemproblems.com',
     tags: ['Bronze', 'Silver', 'Gold', 'Organic', 'Problem Set'],
+  },
+  {
+    name: 'Evans Advanced Organic Chemistry Notes and Problems',
+    description:
+      'Extremely large file containing advanced organic notes and problems',
+    link: 'https://drive.google.com/file/d/1qa17PJ9HapLMl3yFP0nSO6j9xUZ4Q9th/view?usp=sharing',
+    tags: ['Gold', 'Organic', 'Textbook', 'Problem Set'],
+  },
+  {
+    name: 'Evans Selected Organic Chemistry Questions',
+    description: 'Advanced organic chemistry problems',
+    link: 'https://drive.google.com/file/d/1Z_GFx___qjgGIjIdDtUP82pzjf3_gajQ/view?usp=sharing',
+    tags: ['Gold', 'Organic', 'Problem Set'],
+  },
+  {
+    name: 'Various Topic Notes',
+    description: 'Short notes on assorted chemistry topics',
+    link: 'https://drive.google.com/drive/folders/17AvQoEmL4Y_UvoObRaa9Bg5h-m_2OIqs?usp=sharing',
+    tags: ['Bronze', 'General', 'Physical'],
+  },
+  {
+    name: 'Problem of the Day Archive',
+    description: 'Compilation of every CODS POTD',
+    link: 'https://docs.google.com/document/d/1LxA8xap-O20o3zdQSDub9lRHUPocsjO18QxIhbe6vcE/edit?usp=sharing',
+    tags: ['Silver', 'Gold', 'General', 'Physical', 'Organic', 'Inorganic'],
+  },
+  {
+    name: 'USNCO Exams',
+    description: 'Link to U.S. National Chemistry Olympiad Exams',
+    link: 'https://www.acs.org/content/acs/en/education/students/highschool/olympiad/prepare-for-exams.html',
+    tags: ['Bronze', 'Silver', 'General', 'USNCO', 'Problem Set'],
+  },
+  {
+    name: 'USNCO Quizzes',
+    description: 'Problem base of USNCO Exams, sorted by topic',
+    link: 'https://usnco-quizzes.web.app/',
+    tags: ['Bronze', 'Silver', 'General', 'USNCO', 'Problem Set'],
   },
 ]
