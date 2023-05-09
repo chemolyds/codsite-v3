@@ -23,6 +23,7 @@ import {
 } from '@chakra-ui/react'
 import { default as NextLink } from 'next/link'
 import { FiChevronDown, FiMenu } from 'react-icons/fi'
+import CodsLogo from './CodsLogo'
 
 export default function NavBar() {
   const { colorMode, toggleColorMode } = useColorMode()
@@ -31,11 +32,28 @@ export default function NavBar() {
 
   return (
     <>
-      <Box as="section" pb={{ base: '12', md: '24' }}>
+      <Box as="section" pb={10} /*pos="fixed" w="full"*/>
         <Box as="nav" bg="bg-surface" boxShadow="sm">
           <Container py={{ base: '4', lg: '5' }}>
             <HStack spacing="10" justify="space-between">
-              <Heading size="md">CODSite</Heading>
+              {true ? (
+                <Heading size="md">CODSite</Heading>
+              ) : (
+                <Box
+                  maxH="calc(4vh)"
+                  overflow="visible"
+                  position="relative"
+                  top="calc(-1.9vh)"
+                >
+                  <CodsLogo
+                    fill={colorMode === 'light' ? 'black' : 'white'}
+                    width="calc(8vh)"
+                    height="calc(8vh)"
+                    /*style={{ backgroundColor: 'purple' }}*/
+                  />
+                </Box>
+              )}
+
               {isDesktop ? (
                 <Flex justify="space-between" flex="1">
                   <ButtonGroup variant="link" spacing="8">
@@ -47,10 +65,12 @@ export default function NavBar() {
                           </MenuButton>
                           <MenuList>
                             {route.children.map((child) => (
-                              <MenuItem key={child.href}>
-                                <NextLink href={`${route.href}/${child.href}`}>
-                                  {child.title}
-                                </NextLink>
+                              <MenuItem
+                                key={child.href}
+                                as={NextLink}
+                                href={`${route.href}/${child.href}`}
+                              >
+                                {child.title}
                               </MenuItem>
                             ))}
                           </MenuList>
@@ -113,7 +133,7 @@ export default function NavBar() {
                     <Button
                       key={child.href}
                       as={NextLink}
-                      href={child.href}
+                      href={`${route.href}/${child.href}`}
                       size="lg"
                       variant="link"
                     >
