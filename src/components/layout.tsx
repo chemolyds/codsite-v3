@@ -1,6 +1,7 @@
+import { Box, Container } from '@chakra-ui/react'
 import Head from 'next/head'
-import { Container } from '@chakra-ui/react'
 import NavBar from './navbar'
+import { motion } from 'framer-motion'
 
 export default function Layout({
   children,
@@ -12,7 +13,7 @@ export default function Layout({
   description: string
 }) {
   return (
-    <div>
+    <Box maxH="calc(100vh)" overflow="clip">
       <Head>
         <title>{`CODsite | ${title}`}</title>
         <meta name="description" content={description} />
@@ -20,13 +21,30 @@ export default function Layout({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <NavBar />
-      {title === 'Home' ? (
-        <main>{children}</main>
-      ) : (
-        <Container maxW="container.xl">
+      <Box
+        overflowY="auto"
+        maxHeight="87vh"
+        as={motion.div}
+        key={title}
+        initial="initial"
+        animate="animate"
+        variants={{
+          initial: {
+            opacity: 0,
+          },
+          animate: {
+            opacity: 1,
+          },
+        }}
+      >
+        {title === 'Home' ? (
           <main>{children}</main>
-        </Container>
-      )}
-    </div>
+        ) : (
+          <Container maxW="container.xl">
+            <main>{children}</main>
+          </Container>
+        )}
+      </Box>
+    </Box>
   )
 }
