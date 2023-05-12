@@ -125,4 +125,52 @@ export const ResourceList: Resource[] = [
     link: 'https://usnco-quizzes.web.app/',
     tags: ['Bronze', 'Silver', 'General', 'USNCO', 'Problem Set'],
   },
+  {
+    name: 'Organic Chemistry Data',
+    description: 'A collection of information and syntheses',
+    link: 'https://organicchemistrydata.org/',
+    tags: ['Gold', 'Organic'],
+  },
+  {
+    name: 'SynArchive',
+    description: 'A database of organic synthesis',
+    link: 'https://synarchive.com/',
+    tags: ['Gold', 'Organic'],
+  },
+  {
+    name: 'Fukuyama group meeting problems',
+    description: 'A collection of difficult organic chemistry problems',
+    link: 'http://www.ps.nagoya-u.ac.jp/lab_pages/natural_products/problem-e.html',
+    tags: ['Gold', 'Organic', 'Problem Set'],
+  },
+  {
+    name: 'Chemistry by Design',
+    description: 'Step by step synthesis practice, using pharmaceutical drugs',
+    link: 'http://chemistrybydesign.oia.arizona.edu/app/',
+    tags: ['Silver', 'Gold', 'Organic', 'Problem Set'],
+  },
+  {
+    name: 'Master Organic Chemistry',
+    description: 'Free summary sheets on organic chemistry',
+    link: 'https://www.masterorganicchemistry.com/summary-sheets/',
+    tags: ['Bronze', 'Organic'],
+  },
+  {
+    name: 'Richard Thornley',
+    description: 'A funner way to learn A-level/IB chemistry',
+    link: 'https://www.youtube.com/user/richthornley/featured',
+    tags: ['Bronze', 'Silver', 'General', 'Analytical', 'YouTube'],
+  },
+  {
+    name: 'Scott Milam',
+    description: 'USNCO Exam Walkthroughs',
+    link: 'https://www.youtube.com/@APphyzicks/search?query=usnco',
+    tags: ['Bronze', 'Silver', 'General', 'USNCO', 'Problem Set', 'YouTube'],
+  },
+  {
+    name: 'Organic Chemistry Tutor',
+    description: 'Organic Chemistry Concept Explanations',
+    link: 'https://www.youtube.com/c/TheOrganicChemistryTutor/featured',
+    tags: ['Bronze', 'Silver', 'Organic'],
+  },
 ]
