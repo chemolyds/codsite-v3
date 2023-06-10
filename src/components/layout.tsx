@@ -2,6 +2,7 @@ import { Box, Container, Heading } from '@chakra-ui/react'
 import Head from 'next/head'
 import NavBar from './navbar'
 import { motion, useReducedMotion } from 'framer-motion'
+import Footer from './footer'
 
 export default function Layout({
   children,
@@ -15,7 +16,7 @@ export default function Layout({
   const shouldReduceMotion = useReducedMotion()
 
   return (
-    <Box /*maxH="calc(100vh)" overflow="clip"*/>
+    <Box>
       <Head>
         <title>{`CODsite | ${title}`}</title>
         <meta name="description" content={description} />
@@ -27,8 +28,6 @@ export default function Layout({
       {/* https://javascript.plainenglish.io/how-to-animate-the-page-transition-in-next-js-68c7b888dce3 */}
       {/* https://letsbuildui.dev/articles/animated-page-transitions-in-nextjs */}
       <Box
-        /*overflowY="auto"
-        maxHeight="87vh"*/
         mt={24}
         as={motion.div}
         key={title}
@@ -54,6 +53,7 @@ export default function Layout({
             <main>{children}</main>
           </Container>
         )}
+        <Footer mt={10} w="full" />
       </Box>
     </Box>
   )
