@@ -1,5 +1,10 @@
 import Layout from '@/components/layout'
-import { getAllCompsIds, getCompData } from '@/lib/comps'
+import {
+  getAllCountryGuidesIds,
+  getCountryGuideData,
+} from '@/lib/countryGuides'
+import { Link } from '@chakra-ui/next-js'
+import { Heading } from '@chakra-ui/react'
 import { Prose } from '@nikolovlazar/chakra-ui-prose'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { MDXRemote } from 'next-mdx-remote'
@@ -8,21 +13,24 @@ import rehypeKatex from 'rehype-katex'
 import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
 
-export default function Socc({ mdxSource }: { mdxSource: any }) {
+export default function CountryGuide({ mdxSource }: { mdxSource: any }) {
   return (
     <Layout
       title={mdxSource.frontmatter.title}
       description={mdxSource.frontmatter.description}
     >
+      <Heading as="h1" textAlign="center" mb={10}>
+        {mdxSource.frontmatter.title}
+      </Heading>
       <Prose>
-        <MDXRemote {...mdxSource} />
+        <MDXRemote {...mdxSource} components={{ Link: Link }} />
       </Prose>
     </Layout>
   )
 }
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = getAllCompsIds('socc')
+  const paths = getAllCountryGuidesIds()
   return {
     paths,
     fallback: false,
@@ -30,10 +38,10 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const compData = await getCompData('socc', params?.id as string)
+  const countryGuideData = await getCountryGuideData(params?.id as string)
 
   // Convert to mdx
-  const mdxSource = await serialize(compData.fileContents, {
+  const mdxSource = await serialize(countryGuideData.fileContents, {
     parseFrontmatter: true,
     mdxOptions: {
       remarkPlugins: [remarkGfm, remarkMath],
