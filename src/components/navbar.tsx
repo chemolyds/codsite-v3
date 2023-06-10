@@ -183,6 +183,10 @@ const routes = [
     ],
   },
   {
+    href: '/guides',
+    title: 'Guides',
+  },
+  {
     href: '/resources',
     title: 'Resources',
   },
