@@ -1,28 +1,30 @@
+import CodsLogo from '@/components/CodsLogo'
 import Layout from '@/components/layout'
 import { Link } from '@chakra-ui/next-js'
 import {
-	Card,
-	CardBody,
-	Center,
-	Container,
-	Grid,
-	Heading,
-	ListItem,
-	Text,
-	UnorderedList
+  Card,
+  CardBody,
+  Center,
+  Container,
+  Grid,
+  Heading,
+  ListItem,
+  Text,
+  UnorderedList,
+  useColorMode,
 } from '@chakra-ui/react'
-import Image from 'next/image'
 
 export default function Home() {
+  const { colorMode, toggleColorMode } = useColorMode()
+
   return (
     <Layout title="Home" description="CODSite Homepage">
       <Center>
-        <Image
-          priority
-          src="/images/banners/welcome.png"
-          alt="Welcome banner"
-          width={700}
-          height={300}
+        <CodsLogo
+          fill={colorMode === 'light' ? 'black' : 'white'}
+          width="calc(50vh)"
+          height="calc(50vh)"
+          /*style={{ backgroundColor: 'purple' }}*/
         />
       </Center>
 
@@ -171,6 +173,6 @@ const resources = [
   {
     title: 'Courses (WIP)',
     description:
-      'Made specifically for chemistyr olympiad participants, these courses will go over the fundamentals required for competitive chemistry, providing a variety of practice problems, tips, and tricks for competitors at any skill level.',
+      'Made specifically for chemistry olympiad participants, these courses will go over the fundamentals required for competitive chemistry, providing a variety of practice problems, tips, and tricks for competitors at any skill level.',
   },
 ]

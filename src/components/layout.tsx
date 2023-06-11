@@ -1,7 +1,8 @@
-import { Box, Container } from '@chakra-ui/react'
+import { Box, Container, Heading } from '@chakra-ui/react'
 import Head from 'next/head'
 import NavBar from './navbar'
 import { motion, useReducedMotion } from 'framer-motion'
+import Footer from './footer'
 
 export default function Layout({
   children,
@@ -15,19 +16,26 @@ export default function Layout({
   const shouldReduceMotion = useReducedMotion()
 
   return (
-    <Box maxH="calc(100vh)" overflow="clip">
+    <Box>
       <Head>
         <title>{`CODsite | ${title}`}</title>
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="stylesheet"
+          href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"
+          integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC"
+          crossOrigin="anonymous"
+          key="KaTeX"
+        ></link>
       </Head>
-      <NavBar />
+      {/* https://dev.to/shriram27/fixed-navbar-using-chakra-ui-4i7b */}
+      <NavBar pos="fixed" w="full" zIndex="200" />
       {/* https://javascript.plainenglish.io/how-to-animate-the-page-transition-in-next-js-68c7b888dce3 */}
       {/* https://letsbuildui.dev/articles/animated-page-transitions-in-nextjs */}
       <Box
-        overflowY="auto"
-        maxHeight="87vh"
+        mt={24}
         as={motion.div}
         key={title}
         initial="initial"
@@ -52,6 +60,7 @@ export default function Layout({
             <main>{children}</main>
           </Container>
         )}
+        <Footer mt={10} w="full" />
       </Box>
     </Box>
   )

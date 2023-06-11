@@ -58,7 +58,7 @@ export default function About() {
         </Container>
       ))}
 
-      <Heading as="h2" textAlign="center" mt="10">
+      <Heading as="h2" textAlign="center" mt="10" mb="4">
         Competition Writers
       </Heading>
       <Grid templateColumns="repeat(4, 1fr)" gap="4">
@@ -69,7 +69,7 @@ export default function About() {
         ))}
       </Grid>
 
-      <Heading as="h2" textAlign="center" mt="10">
+      <Heading as="h2" textAlign="center" mt="10" mb="4">
         Inactive Staff Members
       </Heading>
       <TableContainer>
@@ -96,7 +96,7 @@ export default function About() {
         </Table>
       </TableContainer>
 
-      <Heading as="h2" textAlign="center" mt="10">
+      <Heading as="h2" textAlign="center" mt="10" mb="4">
         Retired Staff Members
       </Heading>
       <TableContainer>
@@ -120,7 +120,7 @@ export default function About() {
         </Table>
       </TableContainer>
 
-      <Heading as="h1" textAlign="center" mt="10">
+      <Heading as="h1" textAlign="center" mt="10" mb="4">
         ISO Discord Network
       </Heading>
       <Text fontSize="lg" mb="5">

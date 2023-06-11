@@ -20,9 +20,9 @@ export interface TagOption extends OptionBase {
 }
 
 export const TagOptions: { value: ResourceTags; label: ResourceTags }[] = [
-  { value: 'Bronze', label: 'Bronze' },
-  { value: 'Silver', label: 'Silver' },
-  { value: 'Gold', label: 'Gold' },
+  //{ value: 'Bronze', label: 'Bronze' },
+  //{ value: 'Silver', label: 'Silver' },
+  //{ value: 'Gold', label: 'Gold' },
   { value: 'General', label: 'General' },
   { value: 'Physical', label: 'Physical' },
   { value: 'Analytical', label: 'Analytical' },

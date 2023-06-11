@@ -1,5 +1,6 @@
 import {
   Box,
+  BoxProps,
   Button,
   ButtonGroup,
   Container,
@@ -25,14 +26,14 @@ import { default as NextLink } from 'next/link'
 import { FiChevronDown, FiMenu } from 'react-icons/fi'
 import CodsLogo from './CodsLogo'
 
-export default function NavBar() {
+export default function NavBar(props: BoxProps) {
   const { colorMode, toggleColorMode } = useColorMode()
   const isDesktop = useBreakpointValue({ base: false, lg: true })
   const { isOpen, onOpen, onClose } = useDisclosure()
 
   return (
     <>
-      <Box as="section" pb={10} /*pos="fixed" w="full"*/>
+      <Box as="section" {...props}>
         <Box as="nav" bg="bg-surface" boxShadow="sm">
           <Container py={{ base: '4', lg: '5' }}>
             <HStack spacing="10" justify="space-between">
@@ -180,6 +181,10 @@ const routes = [
         title: 'SChO',
       },
     ],
+  },
+  {
+    href: '/guides',
+    title: 'Guides',
   },
   {
     href: '/resources',

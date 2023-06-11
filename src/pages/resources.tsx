@@ -2,9 +2,9 @@ import Layout from '@/components/layout'
 import {
   Resource,
   ResourceList,
+  ResourceTags,
   TagOption,
   TagOptions,
-  ResourceTags,
 } from '@/lib/resources'
 import {
   Card,
@@ -16,6 +16,7 @@ import {
   Grid,
   GridItem,
   Heading,
+  Input,
   LinkOverlay,
   Stack,
   Tag,
@@ -33,6 +34,7 @@ export default function Resources() {
     'Silver',
     'Gold',
   ])
+  const [query, setQuery] = useState<string>('')
 
   function filter(resource: Resource) {
     // Filter out tiers first
@@ -40,9 +42,20 @@ export default function Resources() {
       return false
 
     // Then filter by tag
+    if (
+      !(
+        selectedTags.length === 0 ||
+        selectedTags.some((tagOption) =>
+          resource.tags?.includes(tagOption.value)
+        )
+      )
+    )
+      return false
+
+    // Then filter by query
     return (
-      selectedTags.length === 0 ||
-      selectedTags.some((tagOption) => resource.tags?.includes(tagOption.value))
+      resource.name.toLowerCase().includes(query.toLowerCase()) ||
+      resource.description.toLowerCase().includes(query.toLowerCase())
     )
   }
 
@@ -76,6 +89,14 @@ export default function Resources() {
         options={TagOptions}
         value={selectedTags}
         onChange={setSelectedTags}
+      />
+
+      <Input
+        my="3"
+        placeholder="Query Resources"
+        value={query}
+        onChange={(e) => setQuery(e.target.value)}
+        _placeholder={{ opacity: 0.75, color: 'gray.500' }}
       />
 
       <Grid templateColumns="repeat(2, 1fr)" gap={8} mt="10">
