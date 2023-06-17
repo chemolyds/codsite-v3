@@ -64,11 +64,14 @@ export default function Home({
       </Grid>
 
       {/* Country Guides */}
+      <Heading as="h1" textAlign="center" my="10">
+        Country Guides
+      </Heading>
       <Accordion allowToggle mt={10}>
         <AccordionItem>
           <h2>
-            <AccordionButton>
-              <Box as="span" flex="1" textAlign="left">
+            <AccordionButton blockSize="14">
+              <Box as="span" flex="1" textAlign="left" fontSize="xl">
                 Country Guides
               </Box>
               <AccordionIcon />
