@@ -17,10 +17,10 @@ import {
 import Image from 'next/image'
 
 import dillionImg from '@/images/staff/dillion.jpeg'
-import elizaImg from '@/images/staff/eliza 2x.jpg'
+import elizaImg from '@/images/staff/eliza-2x.png'
 import ihorImg from '@/images/staff/ihor.jpg'
-import jeremyImg from '@/images/staff/jeremy 2x.jpg'
-import kwanwooImg from '@/images/staff/kwanwoo 2x.jpg'
+import jeremyImg from '@/images/staff/jeremy-2x.png'
+import kwanwooImg from '@/images/staff/kwanwoo-2x.png'
 import nicolaiImg from '@/images/staff/nicolai.jpg'
 
 export default function About() {
