@@ -97,7 +97,7 @@ export const ResourceList: Resource[] = [
   },
   {
     name: 'Evans Selected Organic Chemistry Questions',
-    description: 'Advanced organic chemistry problems',
+    description: 'Extremely large file containing advanced organic chemistry problems',
     link: 'https://drive.google.com/file/d/1Z_GFx___qjgGIjIdDtUP82pzjf3_gajQ/view?usp=sharing',
     tags: ['Gold', 'Organic', 'Problem Set'],
   },
@@ -109,27 +109,21 @@ export const ResourceList: Resource[] = [
   },
   {
     name: 'Problem of the Day Archive',
-    description: 'Compilation of every CODS POTD',
+    description: 'Compilation of every CODS Original POTD',
     link: 'https://docs.google.com/document/d/1LxA8xap-O20o3zdQSDub9lRHUPocsjO18QxIhbe6vcE/edit?usp=sharing',
     tags: ['Silver', 'Gold', 'General', 'Physical', 'Organic', 'Inorganic'],
   },
   {
     name: 'USNCO Exams',
-    description: 'Link to U.S. National Chemistry Olympiad Exams',
+    description: 'Link to U.S. National Chemistry Olympiad exams',
     link: 'https://www.acs.org/content/acs/en/education/students/highschool/olympiad/prepare-for-exams.html',
     tags: ['Bronze', 'Silver', 'General', 'USNCO', 'Problem Set'],
   },
   {
     name: 'USNCO Quizzes',
-    description: 'Problem base of USNCO Exams, sorted by topic',
+    description: 'Problem base of USNCO exams, sorted by topic',
     link: 'https://usnco-quizzes.web.app/',
     tags: ['Bronze', 'Silver', 'General', 'USNCO', 'Problem Set'],
-  },
-  {
-    name: 'Organic Chemistry Data',
-    description: 'A collection of information and syntheses',
-    link: 'https://organicchemistrydata.org/',
-    tags: ['Gold', 'Organic'],
   },
   {
     name: 'SynArchive',
@@ -142,12 +136,6 @@ export const ResourceList: Resource[] = [
     description: 'A collection of difficult organic chemistry problems',
     link: 'http://www.ps.nagoya-u.ac.jp/lab_pages/natural_products/problem-e.html',
     tags: ['Gold', 'Organic', 'Problem Set'],
-  },
-  {
-    name: 'Chemistry by Design',
-    description: 'Step by step synthesis practice, using pharmaceutical drugs',
-    link: 'http://chemistrybydesign.oia.arizona.edu/app/',
-    tags: ['Silver', 'Gold', 'Organic', 'Problem Set'],
   },
   {
     name: 'Master Organic Chemistry',
@@ -179,4 +167,35 @@ export const ResourceList: Resource[] = [
     link: 'https://www.youtube.com/CODSYoutube',
     tags: ['Bronze', 'Silver', 'General', 'Organic', 'USNCO', 'Problem Set', 'YouTube'],
   },
+  {
+    name: 'Chemistry By Design',
+    description: 'Excellent resource for learning new reactions by doing total synthesis problems.',
+    link: 'https://chemistrybydesign.oia.arizona.edu/',
+    tags: ['Gold', 'Organic', 'Problem Set'],
+  },
+  {
+    name: 'Organic Chemistry Data',
+    description: 'Extensive network of organic resources and some laboratory resources.',
+    link: 'https://organicchemistrydata.org/',
+    tags: ['Bronze', 'Silver', 'Gold', 'Organic', 'Analytical'],
+  },
+  {
+    name: 'Spectral Database for Organic Chemistry',
+    description: 'Comprehensive organic database including NS, CNMR, HNMR, IR, Raman, and ESR spectroscopy.',
+    link: 'https://sdbs.db.aist.go.jp/sdbs/cgi-bin/cre_index.cgi',
+    tags: ['Silver', 'Gold', 'Analytical'],
+  },
+  {
+    name: 'Sigma Aldrich Product Search',
+    description: 'Accurate information on the properties of any chemical.',
+    link: 'https://www.sigmaaldrich.com/US/en',
+    tags: ['Bronze', 'Silver', 'Gold', 'General', 'Analytical'],
+  },
+  {
+    name: 'Sigma Aldrich IR Spectroscopy Table',
+    description: 'Easy to understand IR spectroscopy sheet.',
+    link: 'https://www.sigmaaldrich.com/US/en/technical-documents/technical-article/analytical-chemistry/photometry-and-reflectometry/ir-spectrum-table',
+    tags: ['Silver', 'Gold', 'Analytical'],
+  },
+
 ]
