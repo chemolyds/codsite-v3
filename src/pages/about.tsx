@@ -45,10 +45,10 @@ export default function About() {
             {staff.name}
           </Heading>
           <Grid templateColumns="repeat(3, 1fr)" gap="4">
-            <GridItem>
+            <GridItem colSpan={{ base: 3, md: 1 }}>
               <Image src={staff.img} alt={`Picture of ${staff.name}`} />
             </GridItem>
-            <GridItem colSpan={2}>
+            <GridItem colSpan={{ base: 3, md: 2 }}>
               <Text fontSize="lg">{staff.bio.join(' ')}</Text>
               <Text fontSize="lg">
                 <b>CODS Sectors:</b> {staff.sectors}
@@ -61,7 +61,10 @@ export default function About() {
       <Heading as="h2" textAlign="center" mt="10" mb="4">
         Competition Writers
       </Heading>
-      <Grid templateColumns="repeat(4, 1fr)" gap="4">
+      <Grid
+        templateColumns={{ base: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' }}
+        gap="4"
+      >
         {writers.sort().map((writer) => (
           <GridItem key={writer} textAlign="center" fontSize="lg">
             {writer}
@@ -82,16 +85,13 @@ export default function About() {
             </Tr>
           </Thead>
           <Tbody>
-            <Tr>
-              <Td>Alec Zhu</Td>
-              <Td>Discord: apc1234567#2989</Td>
-              <Td>IChO Gold (&apos;19 and &apos;20 Camper)</Td>
-            </Tr>
-            <Tr>
-              <Td>Anugrah Chemparathy</Td>
-              <Td>Discord: llamachemist#3917</Td>
-              <Td>IChO Gold (&apos;19 and &apos;20 Camper)</Td>
-            </Tr>
+            {inactiveStaff.map(({ name, contact, information }) => (
+              <Tr key={name}>
+                <Td>{name}</Td>
+                <Td>{contact}</Td>
+                <Td>{information}</Td>
+              </Tr>
+            ))}
           </Tbody>
         </Table>
       </TableContainer>
@@ -225,6 +225,7 @@ const serverLinks = [
     discord: 'https://discord.gg/8RVtshPPTh',
   },
 ]
+
 const activeStaff = [
   {
     name: 'Elizabeth Davis (AyameElizaSuzuki#6175), USA',
@@ -237,7 +238,7 @@ const activeStaff = [
     ],
     sectors: 'Outreach, Competition administration, Discord',
   },
-  {
+  /*{
     name: 'Ihor Kholomieiev (Igeru#8910), Ukraine',
     img: ihorImg,
     bio: [
@@ -247,7 +248,7 @@ const activeStaff = [
       `Aside from chemistry, he enjoys cooking and watching random YouTube videos.`,
     ],
     sectors: 'Lectures',
-  },
+  },*/
   {
     name: 'Dillion Lim (TheOrangeJuice#8426), Singapore',
     img: dillionImg,
@@ -265,7 +266,7 @@ const activeStaff = [
     bio: [`I'm a mysterious person`],
     sectors: 'Organizational Head',
   },
-  {
+  /*{
     name: 'Nicolai Bogø Stabell (Stabell#6680), Denmark',
     img: nicolaiImg,
     bio: [
@@ -275,7 +276,7 @@ const activeStaff = [
       `In his free time, he enjoys skiing, gaming and puzzles.`,
     ],
     sectors: 'Competitions, Writers, and Organization Administration.',
-  },
+  },*/
   {
     name: 'Jeremy Tinana (Jerdan1980#8056), USA',
     img: jeremyImg,
@@ -285,5 +286,28 @@ const activeStaff = [
       `Aside from chemistry, Jeremy is a passionate reader, gamer, and cook.`,
     ],
     sectors: 'Software Development',
+  },
+]
+
+const inactiveStaff = [
+  {
+    name: 'Ihor Kholomieiev',
+    contact: 'Discord: Igeru#8910',
+    information: 'IChO Silver (&apos;21)',
+  },
+  {
+    name: 'Nicolai Bogø Stabell',
+    contact: 'Discord: Stabell#6680',
+    information: 'Danish Chemistry Olympiad Mentor',
+  },
+  {
+    name: 'Alec Zhu',
+    contact: 'Discord: apc1234567#2989',
+    information: 'IChO Gold (&apos;19 and &apos;20 Camper)',
+  },
+  {
+    name: 'Anugrah Chemparathy',
+    contact: 'Discord: llamachemist#3917',
+    information: 'IChO Gold (&apos;19 and &apos;20 Camper)',
   },
 ]
