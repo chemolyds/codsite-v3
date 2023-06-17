@@ -28,24 +28,27 @@ export default function Home() {
         />
       </Center>
 
-      {/* CODS Community */}
-      <Heading textAlign="center" as="h2" fontSize="3xl">
-        CODS is a global community made for Chemistry Olympiad participants
-      </Heading>
-      <Heading fontSize="2xl" textAlign="center" as="h3" fontWeight={400}>
-        Haven&apos;t joined the community yet? You can join{' '}
-        <Link href="https://discord.gg/chemistryolympiad" color="blue.400">
-          here
-        </Link>
-        .
-      </Heading>
+      <Container px={{ base: 4, md: 20 }} maxW="full">
+        {/* CODS Community */}
+        <Heading textAlign="center" as="h2" fontSize="3xl">
+          CODS is a global community made for Chemistry Olympiad participants
+        </Heading>
+        <Heading fontSize="2xl" textAlign="center" as="h3" fontWeight={400}>
+          Haven&apos;t joined the community yet? You can join{' '}
+          <Link href="https://discord.gg/chemistryolympiad" color="blue.400">
+            here
+          </Link>
+          .
+        </Heading>
 
-      <Container px="20" maxW="full">
         {/* Mission Statement */}
         <Heading fontSize="3xl" mt="10" as="h3" fontWeight={400}>
           Our mission is to make Competitive Chemistry more...
         </Heading>
-        <Grid templateColumns="repeat(3, 1fr)" gap="8">
+        <Grid
+          templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)' }}
+          gap="8"
+        >
           {mission.map((card) => (
             <Card key={card.header}>
               <CardBody>
@@ -76,7 +79,10 @@ export default function Home() {
         <Heading fontSize="3xl" textAlign="center" mt="10" as="h2">
           Open Educational Resources at CODSite
         </Heading>
-        <Grid templateColumns="repeat(3, 1fr)" gap="8">
+        <Grid
+          templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)' }}
+          gap="8"
+        >
           {resources.map((resource) => (
             <Card key={resource.title}>
               <CardBody>

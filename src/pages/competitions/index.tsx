@@ -16,7 +16,10 @@ export default function Home() {
       <Heading as="h1" textAlign="center" mb="10">
         Competitions
       </Heading>
-      <Grid templateColumns="repeat(2, 1fr)" gap={8}>
+      <Grid
+        templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }}
+        gap={8}
+      >
         {comps.map(({ id, title, description }) => (
           <GridItem key={id}>
             <Card>
