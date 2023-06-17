@@ -1,6 +1,6 @@
 //import { Link, LinkProps } from '@chakra-ui/next-js'
-import NextLink from 'next/link'
 import {
+  Link,
   Table,
   TableContainer,
   TableProps,
@@ -9,11 +9,7 @@ import {
   Th,
   Thead,
   Tr,
-  Link,
-  LinkProps,
-  Box,
 } from '@chakra-ui/react'
-import { ExternalLinkIcon } from '@chakra-ui/icons'
 
 export const ChakraMdxComponents = {
   Link: Link,
