@@ -173,4 +173,10 @@ export const ResourceList: Resource[] = [
     link: 'https://www.youtube.com/c/TheOrganicChemistryTutor/featured',
     tags: ['Bronze', 'Silver', 'Organic'],
   },
+  {
+    name: 'CODS Youtube',
+    description: 'Official CODS Youtube with Staff Lectures',
+    link: 'https://www.youtube.com/CODSYoutube',
+    tags: ['Bronze', 'Silver', 'General', 'Organic', 'USNCO', 'Problem Set', 'YouTube'],
+  },
 ]
