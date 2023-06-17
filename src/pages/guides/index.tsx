@@ -19,6 +19,8 @@ import {
   TableContainer,
   Tbody,
   Td,
+  Th,
+  Thead,
   Tr,
 } from '@chakra-ui/react'
 import { GetStaticProps } from 'next'
@@ -40,7 +42,11 @@ export default function Home({
       </Heading>
 
       {/* Generic Guides */}
-      <Grid templateColumns="repeat(3, 1fr)" gap={8} mt="10">
+      <Grid
+        templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)' }}
+        gap={8}
+        mt="10"
+      >
         {guides.map((guide) => (
           <GridItem key={guide.href}>
             <Card>
@@ -71,6 +77,12 @@ export default function Home({
           <AccordionPanel pb={4}>
             <TableContainer>
               <Table>
+                <Thead>
+                  <Tr>
+                    <Th>Link</Th>
+                    <Th>Description</Th>
+                  </Tr>
+                </Thead>
                 <Tbody>
                   {allCountryGuidesData.map(({ id, title, description }) => (
                     <Tr key={id}>
@@ -88,13 +100,42 @@ export default function Home({
           </AccordionPanel>
         </AccordionItem>
       </Accordion>
+
+      {/* Resources Presets */}
+      <Heading as="h1" textAlign="center" my="10">
+        Common Resources
+      </Heading>
+      <TableContainer>
+        <Table>
+          <Thead>
+            <Tr>
+              <Th>Link</Th>
+              <Th>Description</Th>
+            </Tr>
+          </Thead>
+          <Tbody>
+            {recResources.map((resource) => (
+              <Tr key={resource.title}>
+                <Td>
+                  <Link
+                    href={`/resources?${resource.searchParams}`}
+                    color="blue.400"
+                  >
+                    {resource.title}
+                  </Link>
+                </Td>
+                <Td>{resource.description}</Td>
+              </Tr>
+            ))}
+          </Tbody>
+        </Table>
+      </TableContainer>
     </Layout>
   )
 }
 
 export const getStaticProps: GetStaticProps = async () => {
   const allCountryGuidesData = await getCountryGuidesData()
-  console.log(allCountryGuidesData)
   return {
     props: {
       allCountryGuidesData,
@@ -102,7 +143,7 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-const guides = [
+const guides: { href: string; title: string; description: string }[] = [
   {
     href: 'intro',
     title: 'Introductory Guide',
@@ -120,5 +161,38 @@ const guides = [
     title: 'Laboratory Guide',
     description:
       'Read about how to tackle the laboratory section in competitive chemistry.',
+  },
+]
+
+const recResources: {
+  title: string
+  searchParams: string
+  description: string
+}[] = [
+  {
+    title: 'Textbooks',
+    searchParams: 'tags=Textbook',
+    description: 'Recommended Textbooks for various tiers.',
+  },
+  {
+    title: 'Bronze General',
+    searchParams: 'tiers=Bronze&tags=General',
+    description: 'General resources for bronze tier, AP/A level.',
+  },
+  {
+    title: 'Silver General',
+    searchParams: 'tiers=Silver&tags=General',
+    description:
+      'General resources for silver tier, National Chemistry Olympiad exam level.',
+  },
+  {
+    title: 'Gold General',
+    searchParams: 'tiers=Gold&tags=General',
+    description: 'General resources for gold tier, IChO/Mendeleev level.',
+  },
+  {
+    title: 'Organic',
+    searchParams: 'tags=Organic',
+    description: 'Organic chemistry resources for all tiers.',
   },
 ]
