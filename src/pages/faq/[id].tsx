@@ -1,3 +1,4 @@
+import { ChakraMdxComponents } from '@/components/ChakraMDX'
 import Layout from '@/components/layout'
 import { getAllFaqsIds, getFaqData } from '@/lib/faqs'
 import { Box, Button, Flex, Spacer } from '@chakra-ui/react'
@@ -25,7 +26,7 @@ export default function Faq({ mdxSource }: { mdxSource: any }) {
             </Button>
           </Box>
         </Flex>
-        <MDXRemote {...mdxSource} />
+        <MDXRemote components={ChakraMdxComponents} {...mdxSource} />
       </Prose>
     </Layout>
   )
