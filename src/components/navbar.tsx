@@ -25,6 +25,7 @@ import {
 import { default as NextLink } from 'next/link'
 import { FiChevronDown, FiMenu } from 'react-icons/fi'
 import CodsLogo from './CodsLogo'
+import { Fragment } from 'react'
 
 export default function NavBar(props: BoxProps) {
   const { colorMode, toggleColorMode } = useColorMode()
@@ -120,9 +121,8 @@ export default function NavBar(props: BoxProps) {
           <DrawerBody>
             <VStack spacing="6" align="stretch" minW="full" mb="4">
               {routes.map((route) => (
-                <>
+                <Fragment key={route.href}>
                   <Button
-                    key={route.href}
                     as={NextLink}
                     href={route.href}
                     size="lg"
@@ -141,7 +141,7 @@ export default function NavBar(props: BoxProps) {
                       {child.title}
                     </Button>
                   ))}
-                </>
+                </Fragment>
               ))}
             </VStack>
           </DrawerBody>
