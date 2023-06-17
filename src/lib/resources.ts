@@ -196,6 +196,5 @@ export const ResourceList: Resource[] = [
     description: 'Easy to understand IR spectroscopy sheet.',
     link: 'https://www.sigmaaldrich.com/US/en/technical-documents/technical-article/analytical-chemistry/photometry-and-reflectometry/ir-spectrum-table',
     tags: ['Silver', 'Gold', 'Analytical'],
-  },
-
+  }
 ]
