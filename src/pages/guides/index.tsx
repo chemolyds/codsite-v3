@@ -21,6 +21,7 @@ import {
   Td,
   Th,
   Thead,
+  Image,
   Tr,
 } from '@chakra-ui/react'
 import { GetStaticProps } from 'next'
@@ -63,7 +64,7 @@ export default function Home({
         ))}
       </Grid>
 
-      {/* Country Guides */}
+      {/* Country Information */}
       <Heading as="h1" textAlign="center" my="10">
         Country Guides
       </Heading>
@@ -95,6 +96,47 @@ export default function Home({
                         </Link>
                       </Td>
                       <Td>{description}</Td>
+                    </Tr>
+                  ))}
+                </Tbody>
+              </Table>
+            </TableContainer>
+          </AccordionPanel>
+        </AccordionItem>
+        <AccordionItem>
+          <h2>
+            <AccordionButton blockSize="14">
+              <Box as="span" flex="1" textAlign="left" fontSize="xl">
+                Country Websites
+              </Box>
+              <AccordionIcon />
+            </AccordionButton>
+          </h2>
+          <AccordionPanel pb={4}>
+            <TableContainer>
+              <Table>
+                <Thead>
+                  <Tr>
+                    <Th>Link</Th>
+                    <Th>Flag</Th>
+                  </Tr>
+                </Thead>
+                <Tbody>
+                  {countryWebsites.map((website) => (
+                    <Tr key={website[2]}>
+                      <Td>
+                        <Link href={website[1]} isExternal color="blue.400">
+                          {website[2]}
+                        </Link>
+                      </Td>
+                      <Td>
+                        <Image
+                          src={website[0]}
+                          alt={`Flag of ${website[2]}`}
+                          width={300}
+                          height={200}
+                        />
+                      </Td>
                     </Tr>
                   ))}
                 </Tbody>
@@ -165,6 +207,67 @@ const guides: { href: string; title: string; description: string }[] = [
     description:
       'Read about how to tackle the laboratory section in competitive chemistry.',
   },
+]
+
+const countryWebsites = [
+  // Flag, Link, Name
+  ['https://i.imgur.com/Lw5CgYu.jpg', 'https://www.oecho.at/de/', 'Austria'],
+  ['https://i.imgur.com/jJDO1kT.png', 'https://cco-occ.ca/', 'Canada'],
+  ['https://i.imgur.com/aVY3Icz.jpg', 'http://www1.chemsoc.org.cn/', 'China'],
+  [
+    'https://i.imgur.com/CWhtOQY.jpg',
+    'https://olympiada.vscht.cz/cs/',
+    'Czech Republic',
+  ],
+  [
+    'https://i.imgur.com/K5uq50y.jpg',
+    'http://olimpia.chem.elte.hu/',
+    'Hungary',
+  ],
+  [
+    'https://i.imgur.com/RTo92Ng.png',
+    'https://chem.hbcse.tifr.res.in/in-india/',
+    'India',
+  ],
+  ['https://i.imgur.com/iguxVSb.png', 'https://gp.csj.jp/next/', 'Japan'],
+  [
+    'https://i.imgur.com/QW3o4GM.jpg',
+    'https://chemolympiad.kcsnet.or.kr/',
+    'Korea',
+  ],
+  ['https://i.imgur.com/3iV2jtw.png', 'https://www.olchem.edu.pl/', 'Poland'],
+  [
+    'https://i.imgur.com/T1amxsU.jpg',
+    'http://www.chem.msu.su/rus/olimp/welcome.html',
+    'Romania',
+  ],
+  ['https://i.imgur.com/RGtpsGq.jpg', 'http://chemspb.3dn.ru/', 'Russia'],
+  [
+    'https://i.imgur.com/z5UHPfE.png',
+    'https://chemistry.nus.edu.sg/outreach/community-outreach/cho/',
+    'Singapore',
+  ],
+  ['https://i.imgur.com/VjcACjD.jpg', 'https://www.posn.or.th/', 'Thailand'],
+  [
+    'https://i.imgur.com/RNZIlaW.jpg',
+    'http://www.ukrchemolimp.com/',
+    'Ukraine',
+  ],
+  [
+    'https://i.imgur.com/CqEj58E.jpg',
+    'https://edu.rsc.org/enrichment/uk-chemistry-olympiad',
+    'United Kingdom',
+  ],
+  [
+    'https://i.imgur.com/q0dLdG9.jpg',
+    'https://www.acs.org/content/acs/en/education/students/highschool/olympiad.html',
+    'United States of America',
+  ],
+  [
+    'https://i.imgur.com/tWeYKx5.jpg',
+    'https://olympichoahocxi.hcmus.edu.vn/',
+    'Vietnam',
+  ],
 ]
 
 const recResources: {
