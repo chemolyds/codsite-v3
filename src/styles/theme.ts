@@ -22,8 +22,19 @@ const config = {
     p: {
       fontFamily: 'var(--chakra-fonts-body)',
     },
+    a: {
+      color: 'blue.400',
+    },
   },
 }
 
-const theme = extendTheme(proTheme, config, withProse())
+const proseConfig = {
+  baseStyle: {
+    a: {
+      color: 'blue.400',
+    },
+  },
+}
+
+const theme = extendTheme(proTheme, config, withProse(proseConfig))
 export default theme
