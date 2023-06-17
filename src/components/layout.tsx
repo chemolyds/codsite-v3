@@ -22,13 +22,6 @@ export default function Layout({
         <meta name="description" content={description} />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="stylesheet"
-          href="https://cdn.jsdelivr.net/npm/katex@0.16.0/dist/katex.min.css"
-          integrity="sha384-Xi8rHCmBmhbuyyhbI88391ZKP2dmfnOl4rT9ZfRI7mLTdk1wblIUnrIq35nqwEvC"
-          crossOrigin="anonymous"
-          key="KaTeX"
-        ></link>
       </Head>
       {/* https://dev.to/shriram27/fixed-navbar-using-chakra-ui-4i7b */}
       <NavBar pos="fixed" w="full" zIndex="200" />
