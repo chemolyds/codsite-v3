@@ -1,3 +1,4 @@
+import { ChakraMdxComponents } from '@/components/ChakraMdx'
 import Layout from '@/components/layout'
 import { getAllCompsIds, getCompData } from '@/lib/comps'
 import { Prose } from '@nikolovlazar/chakra-ui-prose'
@@ -15,7 +16,7 @@ export default function Wcc({ mdxSource }: { mdxSource: any }) {
       description={mdxSource.frontmatter.description}
     >
       <Prose>
-        <MDXRemote {...mdxSource} />
+        <MDXRemote components={ChakraMdxComponents} {...mdxSource} />
       </Prose>
     </Layout>
   )

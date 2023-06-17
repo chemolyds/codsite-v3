@@ -1,3 +1,4 @@
+import { ChakraMdxComponents } from '@/components/ChakraMdx'
 import Layout from '@/components/layout'
 import {
   getAllCountryGuidesIds,
@@ -23,7 +24,7 @@ export default function CountryGuide({ mdxSource }: { mdxSource: any }) {
         {mdxSource.frontmatter.title}
       </Heading>
       <Prose>
-        <MDXRemote {...mdxSource} components={{ Link: Link }} />
+        <MDXRemote components={ChakraMdxComponents} {...mdxSource} />
       </Prose>
     </Layout>
   )
