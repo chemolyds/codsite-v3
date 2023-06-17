@@ -125,7 +125,11 @@ export default function Home({
                   {countryWebsites.map((website) => (
                     <Tr key={website[2]}>
                       <Td>
-                        <Link href={website[1]} isExternal color="blue.400">
+                        <Link
+                          href={website[1]}
+                          color="blue.400"
+                          target="_blank"
+                        >
                           {website[2]}
                         </Link>
                       </Td>
