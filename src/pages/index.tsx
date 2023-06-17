@@ -8,11 +8,13 @@ import {
   Container,
   Grid,
   Heading,
+  LinkOverlay,
   ListItem,
   Text,
   UnorderedList,
   useColorMode,
 } from '@chakra-ui/react'
+import { ReactElement } from 'react'
 
 export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode()
@@ -92,9 +94,10 @@ export default function Home() {
                 <Container textAlign="center">{resource.description}</Container>
               </CardBody>
               {resource.link && (
-                <Link
+                <LinkOverlay
                   href={resource.link}
                   className="after:absolute after:inset-0"
+                  isExternal={resource.isExternal}
                 />
               )}
             </Card>
@@ -123,18 +126,25 @@ const mission = [
   },
 ]
 
-const resources = [
+const resources: {
+  link?: string
+  isExternal?: boolean
+  title: string
+  description: string | ReactElement
+}[] = [
   {
     link: 'https://www.youtube.com/channel/UCyO5Wn2qKDRYWC-F5EfN2kA',
     title: 'Lectures',
     description:
       'We provide lectures for everyone, from introductory lectures to problem solving and advanced topic lectures. You can watch our lectures on our YouTube channel.',
+    isExternal: true,
   },
   {
     link: 'https://drive.google.com/drive/u/4/folders/195kcNDwljvw1w5ZKVWzpE7LCdbvwQzVL',
     title: 'CODSNotes',
     description:
       'Made specially for the CODS community, these notes cover the fundamentals required for competitive chemistry, from Atomic Strucutres to Organic Chemistry.',
+    isExternal: true,
   },
   {
     link: '/guides',
@@ -170,7 +180,7 @@ const resources = [
             <Link href="/competitions/socc">SOCC</Link>
           </ListItem>
           <ListItem color="blue.400" style={{ listStyle: 'none' }} my="2">
-            <Link href="/compeitions/scho">SChO</Link>
+            <Link href="/competitions/scho">SChO</Link>
           </ListItem>
         </UnorderedList>
       </>
