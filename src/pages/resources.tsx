@@ -1,3 +1,5 @@
+'use client'
+
 import Layout from '@/components/layout'
 import {
   Resource,
@@ -25,9 +27,14 @@ import {
 import { GroupBase, MultiValue, Select } from 'chakra-react-select'
 import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
-import { useState } from 'react'
+import { useSearchParams } from 'next/navigation'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
 
 export default function Resources() {
+  const searchParams = useSearchParams()
+  const router = useRouter()
+
   const [selectedTags, setSelectedTags] = useState<MultiValue<TagOption>>([])
   const [selectedTiers, setSelectedTiers] = useState<ResourceTags[]>([
     'Bronze',
@@ -35,6 +42,71 @@ export default function Resources() {
     'Gold',
   ])
   const [query, setQuery] = useState<string>('')
+
+  useEffect(() => {
+    // Edit Tiers filter
+    if (searchParams.has('tiers')) {
+      let tiers = searchParams
+        .getAll('tiers')
+        .filter((str) =>
+          ['Bronze', 'Silver', 'Gold'].includes(str)
+        ) as ResourceTags[]
+      setSelectedTiers(tiers)
+    }
+
+    // Edit Tags filter
+    if (searchParams.has('tags')) {
+      let tags = searchParams.getAll('tags')
+      let opts = TagOptions.filter(({ value, label }) => tags.includes(value))
+      setSelectedTags(opts)
+    }
+
+    // Query is not serializable (dirty way to prevent injection)
+  }, [searchParams])
+
+  /*useEffect(() => {
+    router.push(
+      {
+        pathname: '/resources',
+        query: {
+          tiers: selectedTiers,
+          tags: selectedTags.map((tag) => tag.label),
+        },
+      },
+      undefined,
+      { shallow: true }
+    )
+  }, [selectedTiers, selectedTags])*/
+
+  function updateTiers(tiers: ResourceTags[]) {
+    setSelectedTiers(tiers)
+    router.push(
+      {
+        pathname: '/resources',
+        query: {
+          tiers: tiers,
+          tags: selectedTags.map((tag) => tag.label),
+        },
+      },
+      undefined,
+      { shallow: true }
+    )
+  }
+
+  function updateTags(tags: MultiValue<TagOption>) {
+    setSelectedTags(tags)
+    router.push(
+      {
+        pathname: '/resources',
+        query: {
+          tiers: selectedTiers,
+          tags: tags.map((tag) => tag.label),
+        },
+      },
+      undefined,
+      { shallow: true }
+    )
+  }
 
   function filter(resource: Resource) {
     // Filter out tiers first
@@ -68,12 +140,13 @@ export default function Resources() {
         Resources
       </Heading>
 
+      {/* Tier Filtering */}
       <Center my="3">
         <CheckboxGroup
           colorScheme="brand"
           size="lg"
-          defaultValue={selectedTiers}
-          onChange={(tiers: ResourceTags[]) => setSelectedTiers(tiers)}
+          value={selectedTiers}
+          onChange={(tiers: ResourceTags[]) => updateTiers(tiers)}
         >
           <Stack spacing={[1, 5]} direction={['column', 'row']}>
             <Checkbox value="Bronze">Bronze</Checkbox>
@@ -88,7 +161,7 @@ export default function Resources() {
         placeholder="Filter Tags"
         options={TagOptions}
         value={selectedTags}
-        onChange={setSelectedTags}
+        onChange={updateTags}
       />
 
       <Input
