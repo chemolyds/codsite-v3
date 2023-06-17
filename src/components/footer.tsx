@@ -21,11 +21,11 @@ export default function Footer(props: BoxProps) {
       </Center>
 
       <Center>
-        For inquiries, click{' '}
+        For inquiries, click &lrm;
         <Link color="blue.400" href="/about">
           here
         </Link>
-        . For donations, contact{' '}
+        . For donations, contact &lrm;
         <Link color="blue.400" href="mailto:chemolyds@gmail.com">
           chemolyds@gmail.com
         </Link>
