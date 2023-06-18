@@ -53,8 +53,8 @@ export default function Layout({
             <main>{children}</main>
           </Container>
         )}
-        <Footer mt={10} w="full" />
       </Box>
+      <Footer mt={10} w="full" />
     </Box>
   )
 }
