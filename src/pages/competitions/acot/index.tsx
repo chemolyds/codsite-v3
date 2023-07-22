@@ -22,9 +22,9 @@ export default function Home({
   }[]
 }) {
   return (
-    <Layout title="ACOT" description="Autumn Chemistry Olympiad Tournament">
+    <Layout title="ACOT" description="Autumn Chemistry Open Tournament">
       <Heading as="h1" textAlign="center" mb="10">
-        Autumn Chemistry Olympiad Tournament
+        Autumn Chemistry Open Tournament
       </Heading>
       <Grid
         templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }}
