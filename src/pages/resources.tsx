@@ -175,6 +175,7 @@ export default function Resources() {
       <Grid
         templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }}
         gap={8}
+        mt="10"
       >
         <AnimatePresence>
           {ResourceList.filter((resource) => filter(resource)).map(
