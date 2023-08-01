@@ -172,7 +172,10 @@ export default function Resources() {
         _placeholder={{ opacity: 0.75, color: 'gray.500' }}
       />
 
-      <Grid templateColumns="repeat(2, 1fr)" gap={8} mt="10">
+      <Grid
+        templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(2, 1fr)' }}
+        gap={8}
+      >
         <AnimatePresence>
           {ResourceList.filter((resource) => filter(resource)).map(
             (resource) => (
