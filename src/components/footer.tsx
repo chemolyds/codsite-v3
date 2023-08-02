@@ -1,60 +1,103 @@
 import { Link } from '@chakra-ui/next-js'
-import { Box, BoxProps, Button, ButtonGroup, Center } from '@chakra-ui/react'
+import {
+  Box,
+  BoxProps,
+  Button,
+  ButtonGroup,
+  Center,
+  Container,
+  Grid,
+  GridItem,
+  HStack,
+  Show,
+  Stack,
+  VStack,
+  useColorMode,
+} from '@chakra-ui/react'
 import { default as NextLink } from 'next/link'
+import CodsLogo from './CodsLogo'
 
 export default function Footer(props: BoxProps) {
+  const { colorMode, toggleColorMode } = useColorMode()
+
   return (
-    <Box bg="bg-surface" boxShadow="sm" py={10} as="section" {...props}>
-      <Center>
-        <ButtonGroup variant="link" spacing="8">
-          {routes.map((route) => (
-            <Button key={route.href} as={NextLink} href={route.href}>
-              {route.title}
-            </Button>
-          ))}
-        </ButtonGroup>
-      </Center>
+    <Box bg="bg-surface" boxShadow="sm" py={4} as="section" {...props}>
+      <Container
+        as={Stack}
+        maxW="6xl"
+        py={4}
+        spacing={4}
+        justify="center"
+        align="center"
+      >
+        <CodsLogo
+          fill={colorMode === 'light' ? 'black' : 'white'}
+          width="calc(5vh)"
+          height="calc(5vh)"
+        />
 
-      <Center mt="5">
-        CODSite was made by our community and staff members on the CODServer. If
-        you would like to contribute, visit our Github.
-      </Center>
+        {/* Page Links Desktop */}
+        <Show above="md">
+          <Grid templateColumns="repeat(5, 1fr)" gap={6}>
+            {routes.map((route) => (
+              <Button
+                key={route.href}
+                as={NextLink}
+                href={route.href}
+                variant="link"
+              >
+                {route.title}
+              </Button>
+            ))}
+          </Grid>
+        </Show>
 
-      <Center>
-        For inquiries, click{' '}
-        <Link color="blue.400" href="/about">
-          here
-        </Link>
-        . For donations, contact{' '}
-        <Link color="blue.400" href="mailto:chemolyds@gmail.com">
-          chemolyds@gmail.com
-        </Link>
-      </Center>
+        {/* Page Links Mobile */}
+        <Show below="md">
+          <Grid templateColumns="repeat(2, 1fr)" gap={6}>
+            {routesMobile.map((routeGroup) =>
+              routeGroup.map((route) => (
+                <GridItem colSpan={2 / routeGroup.length} key={route.href}>
+                  <Center>
+                    <Button as={NextLink} href={route.href} variant="link">
+                      {route.title}
+                    </Button>
+                  </Center>
+                </GridItem>
+              ))
+            )}
+          </Grid>
+        </Show>
+      </Container>
 
-      {/*
-      <Center>
-        <HStack>
-          <Text fontSize="4xl" fontWeight="extrabold">
-            -
-          </Text>
-          <Text fontSize="4xl" fontWeight="extrabold" color="#e70011">
-            C
-          </Text>
-          <Text fontSize="4xl" fontWeight="extrabold" color="#f9be00">
-            O
-          </Text>
-          <Text fontSize="4xl" fontWeight="extrabold" color="#009c44">
-            D
-          </Text>
-          <Text fontSize="4xl" fontWeight="extrabold" color="#1055bd">
-            S
-          </Text>
-          <Text fontSize="4xl" fontWeight="extrabold">
-            -
-          </Text>
-        </HStack>
-      </Center>
-      */}
+      {/* Social Links */}
+      <Box
+        borderTopWidth={1}
+        borderStyle={'solid'}
+        borderColor={colorMode === 'light' ? 'gray.200' : 'gray.700'}
+      >
+        <Container
+          as={Stack}
+          maxW={'6xl'}
+          py={4}
+          direction={{ base: 'column', md: 'row' }}
+          spacing={4}
+          justify="center"
+          align="center"
+        >
+          <Stack direction={'row'} spacing={6}>
+            <Link color="blue.400" href="https://discord.gg/chemistryolympiad">
+              Discord
+            </Link>
+            <Link color="blue.400" href="mailto:chemolyds@gmail.com">
+              Gmail
+            </Link>
+            <Link color="blue.400" href="mailto:chem@isodn.org">
+              ISODN
+            </Link>
+          </Stack>
+        </Container>
+      </Box>
     </Box>
   )
 }
@@ -81,3 +124,12 @@ const routes = [
     title: 'About',
   },
 ]
+
+const routesMobile = routes.reduce(
+  (accum: { href: string; title: string }[][], val, i) => {
+    if (i % 2 === 0) accum.push([val])
+    else accum[Math.trunc(i / 2)].push(val)
+    return accum
+  },
+  []
+)

@@ -1,4 +1,4 @@
-import { ChakraMdxComponents } from '@/components/ChakraMDX'
+import { ChakraMdxComponents } from '@/components/ChakraMdx'
 import Layout from '@/components/layout'
 import { getAllFaqsIds, getFaqData } from '@/lib/faqs'
 import { Box, Button, Flex, Spacer } from '@chakra-ui/react'

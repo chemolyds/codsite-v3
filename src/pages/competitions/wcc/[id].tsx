@@ -1,4 +1,4 @@
-import { ChakraMdxComponents } from '@/components/ChakraMDX'
+import { ChakraMdxComponents } from '@/components/ChakraMdx'
 import Layout from '@/components/layout'
 import { getAllCompsIds, getCompData } from '@/lib/comps'
 import { Prose } from '@nikolovlazar/chakra-ui-prose'
