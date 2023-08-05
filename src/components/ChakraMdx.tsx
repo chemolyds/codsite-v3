@@ -10,6 +10,9 @@ import {
   Thead,
   Tr,
 } from '@chakra-ui/react'
+import rehypeKatex from 'rehype-katex'
+import remarkGfm from 'remark-gfm'
+import remarkMath from 'remark-math'
 
 export const ChakraMdxComponents = {
   Link: Link,
@@ -23,4 +26,9 @@ export const ChakraMdxComponents = {
   th: Th,
   tbody: Tbody,
   td: Td,
+}
+
+export const MdxOptions = {
+  remarkPlugins: [remarkGfm, remarkMath],
+  rehypePlugins: [rehypeKatex],
 }
