@@ -21,7 +21,7 @@ export default function Course({
 }) {
   return (
     <Layout title={mdxSource.frontmatter.title} description="courses">
-      <Prose>sdf
+      <Prose>
         <Flex>
           <Box>
             <h1>{mdxSource.frontmatter.title}: {mdxSource.frontmatter.description}</h1>

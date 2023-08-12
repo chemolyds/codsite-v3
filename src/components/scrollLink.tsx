@@ -19,7 +19,7 @@ const ScrollLink: React.FC<ScrollLinkProps> = ({ id, offset, children }) => {
   };
 
   return (
-    <a href={`#${id}`} onClick={onClick}>
+    <a onClick={onClick}>
       {children}
     </a>
   )

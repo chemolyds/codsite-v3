@@ -34,7 +34,9 @@ export default function tableOfContents({
               color: "teal.500",
             }}  
           >
-            <a href={`#${id}`}>{title}</a>
+            <ScrollLink id={id} offset={100}>
+              {title}
+            </ScrollLink>
           </ListItem>
         ))}
       </UnorderedList>
