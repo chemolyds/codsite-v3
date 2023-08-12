@@ -8,10 +8,12 @@ export default function Layout({
   children,
   title,
   description,
+  maxW = 'container.xl',
 }: {
   children: React.ReactNode
   title: string
   description: string
+  maxW?: string
 }) {
   const shouldReduceMotion = useReducedMotion()
 
@@ -49,7 +51,7 @@ export default function Layout({
         {title === 'Home' ? (
           <main>{children}</main>
         ) : (
-          <Container maxW="container.xl">
+          <Container maxW={maxW}>
             <main>{children}</main>
           </Container>
         )}
