@@ -271,8 +271,8 @@ const activeStaff = [
     name: 'Anurag Sodhi (a.new.rag), USA',
     img: anuragImg,
     bio: [
-      `Anurag is a senior in high school who has been part of the CODS community since 2018; he now helps edits (and occasionally writes) for CODSCompetitions since SOCC '23.`,
-      `An avid competitor in chemistry olympiad himself, Anurag has qualified for the United States IChO Team ('23) and the US Chemistry Olympiad Camp ('22, '23).`,
+      `Anurag is a senior in high school who has been part of the CODS community since 2018; he now edits and writes for CODSCompetitions since SOCC '23.`,
+      `An avid competitor in chemistry olympiad himself, Anurag has qualified for the United States IChO Team ('23, Gold Medalist) and the US Chemistry Olympiad Camp ('22, '23).`,
       `Asides from chemistry, Anurag enjoys following the NFL as well as grinding Tetris and chess.`,
       `He also occasionally touches grass in the forms of playing frisbee or badminton.`,
     ],
