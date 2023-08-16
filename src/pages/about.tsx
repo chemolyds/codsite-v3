@@ -264,7 +264,9 @@ const activeStaff = [
   {
     name: 'Kwanwoo Park (fizzest#0001), USA',
     img: kwanwooImg,
-    bio: [`I'm a mysterious person`],
+    bio: [
+      `Kwanwoo is a luxury chemist who wishes to be unidentified. He touches grass and works with benzene, perhaps reducing his life expectancy by 20 years.`,
+    ],
     sectors: 'Organizational Head',
   },
   {
@@ -272,7 +274,7 @@ const activeStaff = [
     img: anuragImg,
     bio: [
       `Anurag is a senior in high school who has been part of the CODS community since 2018; he now helps edits (and occasionally writes) for CODSCompetitions since SOCC '23.`,
-      `An avid competitor in chemistry olympiad himself, Anurag has qualified for the United States IChO Team ('23) and the US Chemistry Olympiad Camp ('22, '23).`,
+      `An avid competitor in chemistry olympiad himself, Anurag has qualified for the United States IChO Team ('23, Gold Medalist) and the US Chemistry Olympiad Camp ('22, '23).`,
       `Asides from chemistry, Anurag enjoys following the NFL as well as grinding Tetris and chess.`,
       `He also occasionally touches grass in the forms of playing frisbee or badminton.`,
     ],
