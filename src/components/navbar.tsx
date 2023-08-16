@@ -112,7 +112,7 @@ export default function NavBar(props: BoxProps) {
         <DrawerContent>
           <DrawerHeader>
             <Flex justify="space-between" flex="1">
-              Jerdan1980
+              CODSite
               <Button onClick={toggleColorMode}>
                 Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
               </Button>
