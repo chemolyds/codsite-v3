@@ -5,7 +5,7 @@ import {
   Heading,
   useColorModeValue,
 } from '@chakra-ui/react'
-import ScrollLink from './ScrollLink'
+import ScrollLink from './scrollLink'
 
 export default function tableOfContents({
   contents,
