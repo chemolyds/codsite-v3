@@ -34,7 +34,7 @@ export default function Course({
           </Box>
         </Flex>
         <Flex justify="space-between" gap="40px">
-          <Box maxWidth="2xl">
+          <Box maxWidth={{ lg: "2xl"}}>
             <MDXRemote components={ChakraMdxComponents} {...mdxSource} />
           </Box>
           <TableOfContents contents={contents}></TableOfContents>
@@ -55,7 +55,6 @@ export const getStaticPaths: GetStaticPaths = async () => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
   const courseData = await getCourseData(params?.section as string, params?.id as string)
   const contents = await getCourseTableOfContents(params?.section as string, params?.id as string)
-
   // Convert to mdx
   const mdxSource = await serialize(courseData.fileContents, {
     parseFrontmatter: true,

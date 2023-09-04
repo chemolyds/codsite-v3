@@ -2,8 +2,8 @@ import {
   Box, 
   ListItem, 
   UnorderedList, 
-  Link,
   Heading,
+  useColorModeValue,
 } from '@chakra-ui/react'
 import ScrollLink from './ScrollLink'
 
@@ -16,30 +16,37 @@ export default function tableOfContents({
   }[]
 }) {
   return (
-    <Box display={{ base: "none", lg: "inline-block"}} position="sticky" top="80px" maxHeight="600px" p={1}>
-      <Heading as="h4">
-        Table of Contents
-      </Heading>
-      <UnorderedList 
-        margin={0} 
-        style={{ paddingLeft: '0' }}
+    <Box 
+      display={{ base: "none", lg: "block"}} 
+      position="sticky" 
+      maxHeight="200px" 
+      top="120px"
+      width="230px"
+    >
+      <Box 
+        px={6}
+        py={5}
+        borderRadius='lg' 
+        bg={useColorModeValue('white', 'gray.800')}
       >
-        {contents.map(({title, id}) => (
-          <ListItem 
-            key={id} 
-            listStyleType="none" 
-            style={{ margin: "0", padding: "10px" }}
-            _hover={{
-              background: "blue",
-              color: "teal.500",
-            }}  
-          >
-            <ScrollLink id={id} offset={100}>
-              {title}
-            </ScrollLink>
-          </ListItem>
-        ))}
-      </UnorderedList>
+        <h4 style={{marginTop: "0"}}>Table of Contents</h4>
+        <UnorderedList 
+          ml={0}
+          style={{ padding: "0" }}
+        >
+          {contents.map(({title, id}) => (
+            <ListItem 
+              key={id} 
+              listStyleType="none" 
+              style={{ margin: "0", padding: "10px 0" }}
+            >
+              <ScrollLink id={id} offset={100}>
+                {title}
+              </ScrollLink>
+            </ListItem>
+          ))}
+        </UnorderedList>
+      </Box>
     </Box>
   )
 }

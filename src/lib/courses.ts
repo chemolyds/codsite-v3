@@ -83,7 +83,7 @@ export async function getCourseTableOfContents(section: string, id: string) {
       .replace(/[^\w-]+/g, '')
 
     return {
-      title: header.match(/[A-Za-z][A-Za-z\s]*/),
+      title: header.substring(3),
       id: id,
     }
   })
