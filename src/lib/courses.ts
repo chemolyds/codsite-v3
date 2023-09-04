@@ -30,7 +30,7 @@ export async function getCoursesData(section: string) {
     // Combine the data with the id
     return {
       id,
-      ...(matterResult.data as { title: string, description: string}),
+      ...(matterResult.data as { title: string; description: string }),
     }
   })
 
@@ -68,10 +68,10 @@ export async function getCourseData(section: string, id: string) {
 export async function getCourseTableOfContents(section: string, id: string) {
   const fullPath = path.join(coursesDirectory, section, `${id}.mdx`)
   const fileContents = fs.readFileSync(fullPath, 'utf-8')
-  
-  const headers = fileContents.match(/##.+(?=\n)/g)
 
-  if (!headers) return undefined;
+  const headers = fileContents.match(/##.+$/gm)
+
+  if (!headers) return null
   return headers.map((header) => {
     // Cleans up heading for id
     // Removes subsection number, special characters and converts space to dash
