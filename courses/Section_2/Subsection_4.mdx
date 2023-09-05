@@ -1,0 +1,739 @@
+---
+title: WCC 2023
+description: Information about the WCC 2023 competition
+---
+
+# 2.4 Hydrogen Atom
+
+---
+
+# 2.4.1 Energy Levels
+
+**I.** The hydrogen atom is similar to a particle-in-a-box with boundary conditions, except for the fact that the attraction of the nucleus confines
+the electron, not a wall with infinite potential energy.
+
+<ol type="a">
+  <li>
+    Similar to a particle-in-a-box, the energies are quantized and have discrete
+    energy levels.
+  </li>
+</ol>
+
+**II.** The energy levels in one-electron species are:
+
+$E_{n} = - \frac{Z^{2}hR}{n^{2}} \left(R = \frac{m_{e}e^{4}}{8h^{3}\varepsilon_{0}^{2}}\right)$
+
+<ol type="a">
+  <li>
+    the Rydberg constant (R) measured spectroscopically from the hydrogen emission
+    spectrum is identical to the Rydberg's constant derived from fundamental constants
+  </li>
+  <li>
+    the energy levels are negative as they are measured relative to a free electron
+  </li>
+  <li>
+    In a single-electron atom, as nuclear charge (Z) increases, the electron is more tightly
+    bound to the nucleus due to Coulomb's law. ($F_{e} = k_{e}\frac{\left|q_{1}q_{2}\right|}{r^{2}}$)
+    <ol type="i">
+      <li>
+        Nuclear charge is equivalent to the number of protons in an atom.
+      </li>
+    </ol>
+  </li>
+  <li>
+    As n approaches infinity, $E_{n}= 0$. The energy required for an electron to completely
+    escape the attractive force of the atom is known as ionization energy (Ref. 2.6).
+  </li>
+</ol>
+
+## 2.4.2 Atomic Orbitals
+
+**III.** Atomic Orbitals: wavefunction of electrons in atoms
+
+<ol type="a">
+  <li>
+    Atomic orbitals are electron "clouds" centered around the nucleus. The
+    density of the cloud at each point is represented by $\psi^{2}$.
+  </li>
+  <li>
+    Spherical polar coordinates are used to specify the exact location of each
+    point around a nucleus using three parameters exist: $r, \theta, \phi$ (Ref.
+    Figure 8)
+    <ol type="a">
+      <li>r - distance from the nucleus</li>
+      <li>$\theta$ - angle from the positive z-axis (latitude)</li>
+      <li>$\phi$ - angle about the z-axis (longitude)</li>
+    </ol>
+  </li>
+</ol>
+
+**IV.** All wavefunctions can be represented as the product of these two wavefunctions:
+
+$\psi \left( (r,\theta,\phi) = R(r)\times Y(\theta,\phi) \right) $ (Eq. 13)
+
+<ol type="a">
+  <li>
+    Radial wavefunction: expresses how wavefunction varies on distance from the nucleus
+    <ol type="i">
+      <li>
+        describes the size of an orbital.
+      </li>
+      <li>
+        the function purely depends on the r parameter.
+      </li>
+    </ol>
+  </li>
+  <li>
+    Angular wavefunction: expresses how the wavefunction changes as angles change.
+    <ol type="i">
+      <li>
+        In terms of probability, the angular wavefunction describes how the probability
+        of an electron at a specific point changes from point to point at a given distance
+      </li>
+      <li>
+        describes the shape and orientation of an orbital
+      </li>
+    </ol>
+  </li>
+  <li>
+    the 1s atomic orbital of hydrogen is shown as an example:
+    $\phi(r,\theta,\phi) = \left(\frac{1}{\pi a_{0}^{3}}^{\frac{1}{2}} e^{\frac{-r}{a_{0}}} \right)$ (Eq. 14)
+      <ol type="i">
+        <li>
+          only the r parameter is included in this equation; therefore, the wavefunction is
+          spherically symmetric, and independent of the angles $\theta,\phi$.
+        </li>
+      </ol>
+  </li>
+  <li>
+    Nodal surface: a surface with zero electron density, where $\psi = 0$.
+      <ol type="i">
+        <li>
+          A nodal surface occurs when either $R(r) = 0$ or $Y(\theta,\phi) = 0$.
+        </li>
+      </ol>
+  </li>
+</ol>
+
+## 2.4.3 Quantum Numbers, Shells, and Subshells
+
+**V.** When solving for a one-dimensional particle-in-a-box, only one quantum number (n, principal quantum number) is utilized.
+
+<ol type="a">
+  <li>
+    For a three-dimensional atom, three quantum numbers ($n, l, m_{l}$) are
+    utilized.
+  </li>
+</ol>
+
+**VI.** Principal quantum number (n): roughly determines the size of orbital and its energy
+
+<ol type="a">
+  <li>
+    in a one-electron atom, all atomic orbitals with the same principal quantum
+    number is degenerate (due to there being no repulsion between electrons)
+  </li>
+  <li>
+    All of the orbitals with the same n belong to the same shell of an atom
+  </li>
+  <li>
+    mean distance of an electron from the nucleus increases with the value of n
+  </li>
+</ol>
+
+**VII.** Orbital angular momentum quantum number (l): determines the shape of the orbital
+
+<ol type="a">
+  <li>
+  contributes to the energy of the orbital like principal quantum number, but not as much
+  </li>
+  <li>
+    this quantum number can take the values of 0, 1, 2, ..., n - 1.
+      <ol type="i">
+        <li>
+          there are n subshells (groups of orbitals with identical l) for a given orbital shell
+          with principal quantum number n
+        </li>
+      </ol>
+  </li>
+  <li>
+    As implied by the name, l can be used to calculate the orbital angular momentum of an
+    electron, using the equation:
+    (orbital angular momentum) = ${l(l + 1)^{\frac{1}{2}}h}$ (Eq. 15)
+    <ol type="i">
+      <li>
+        In physics, angular momentum the quantity of rotation of a body.
+      </li>
+      <li>
+        when l = 0, its angular momentum is also zero. Therefore, s-electrons do not
+        circulate around the nucleus, but instead the electron cloud is "spherically
+        distributed"
+      </li>
+      <li>
+        angular momentum becomes important as electrons with low angular momentum
+        (like ns electrons) spend more time closer to the nucleus compared to higher
+        values of l.
+      </li>
+      <li>
+        In chemistry, we say that the ns electron has greater penetration and shielding
+        than orbitals with higher values of l. (Ref. 2.5.1)
+      </li>
+    </ol>
+  </li>
+</ol>
+
+**VIII.** Magnetic quantum number ($m_{l}$): determines orientation of motion of the electron
+
+<ol type="a">
+  <li>this quantum number can take the values from l to -l (including zero)</li>
+  <li>there are 2l + 1 orbitals in a subshell of quantum number l.</li>
+  <li>
+    theses orbitals are degenerate in energy (even in many-electron species)
+  </li>
+  <li>
+    the direction of the orbital magnetic angular momentum is dependent on the
+    magnetic quantum number.
+  </li>
+</ol>
+
+## 2.4.4 The Shape of Orbitals
+
+**IX.** ns-orbital: The s-orbital (l = 0) in a shell with the principal quantum number n
+
+<ol type="a">
+  <li>
+    Independent of the angles $\theta$ and $\phi$
+      <ol type="i">
+        <li>
+          All s-orbitals are spherically symmetrical
+        </li>
+      </ol>
+  </li>
+  <li>
+    The probability density of an electron at the point ($r, \theta, \phi$) is:
+    $\psi^{2}(r, \theta, \phi) = \frac{1}{\pi a_{0}^{3}}e^{\frac{-2r}{a_{0}}}$
+      <ol type="i">
+        <li>
+          The probability approaches zero with increasing distance from the nucleus
+        </li>
+        <li>
+          Practically, the electron is almost always found in < 250 pm distance.
+        </li>
+        <li>
+          Instead of drawing an orbital as an electron cloud, a boundary surface that
+          encloses most of the electron cloud (with 90% probability that the electron will
+          be found inside the surface) is drawn.
+        </li>
+      </ol>
+  </li>
+  <li>
+    Because an ns-orbital has no angular momentum, it does not fling away from the
+    nucleus and has a nonzero probability of being found right at the nucleus
+  </li>
+</ol>
+
+**X.** radial distribution function (P): total probability of finding an electron at a distance r at all
+possible orientations (meaning, at all values of θ, $\phi$)
+
+<ol type="a">
+  <li>
+    For all orbitals, $P(r) = r^{2}R^{2}(r).$
+  </li>
+  <li>
+    For ns-orbitals: $P(r) = 4\pi r^{2}\psi^{2} $(Eq. 16)
+    <ol type="i">
+      <li>An s orbital is spherically symmetrical.</li>
+    </ol>
+  </li>
+  <li>
+    The probability of an electron found anywhere in a thin shell around the
+    nucleus with radius r and thickness $\sigma r$ is given by $P(r)\sigma r$
+  </li>
+  <li>
+    Although for a 1s orbital $\psi$^2 reaches maximum as $r \rightarrow 0$,
+    P(r) = 0 when r = 0.
+    <ol type="i">
+      <li>
+        This is because for a 1s orbital, the probability density determines one
+        specific point of infinitesimal volume (where r = 0) meanwhile the
+        region in which the electron is being sought is zero volume (and size)
+        because the "radius" of the shell is zero, so P(r) = 0
+      </li>
+    </ol>
+  </li>
+  <li>
+    As r increases, the shell gets bigger but $\psi^{2}$ decreases (for an
+    1s-orbital)
+  </li>
+  <li>
+    Bohr radius (a_{0}): the radius at which an 1s electron in a hydrogen atom
+    is most likely to be found
+    <ol type="i">
+      <li>
+        The bohr radius is the distance where P is maximum for a 1s electron
+      </li>
+    </ol>
+  </li>
+</ol>
+
+**XI.** Radial nodes: nodes that occur when the radial function changes signs; P(r) = 0
+
+<ol type="a">
+  <li>
+    there are n - l - 1 number of radial nodes.
+    <ol type="i">
+      <li>1s, 2p, 3d, and 4f orbitals do not have radial nodes.</li>
+    </ol>
+  </li>
+  <li>
+    gives the atomic orbitals a "layered" appearance
+    <img src="https://i.imgur.com/bSVhpwI.png" />
+    <ol type="i">
+      <li>
+        A node is when a wavefunction (or in this case, the radial function
+        'R(r)') passes through zero.
+      </li>
+      <li>
+        The 2p and 3d orbitals have zero radial nodes, while the 3p orbital has
+        one radial node and the 4p orbital has two radial nodes.
+      </li>
+      <li>
+        Although radial functions, and other wavefunctions, can be negative,
+        radial distribution functions or anything else that indicates
+        probability cannot be negative.
+      </li>
+    </ol>
+  </li>
+</ol>
+
+**XII.** angular nodes: planar or conical nodes when the angular function changes signs; Y = 0
+
+<ol type="a">
+  <li>also known as nodal surfaces, there are l number of angular nodes</li>
+  <li>
+    An electron in a p-orbital has nonzero orbital angular momentum that allows
+    it to "fling" away from the nucleus unlike an electron in a s-orbital.
+  </li>
+</ol>
+
+<img src="https://i.imgur.com/XwXnb5U.png" />
+
+XIII. the total number of orbitals in a shell with principal quantum number n is $n^{2}$
+
+<ol type="a">
+  <li>
+    Therefore, the total number of electrons that can fit in a shell is $2n^{2}$
+    <img src="https://i.imgur.com/qmTVD4R.png" />
+    <ol type="i">
+      <li>All of the radial distribution functions are zero when r = 0.</li>
+      <li>
+        As expected, there is one radial node for 2s, and two radial nodes for
+        3s orbitals.
+      </li>
+      <li>
+        The radius where an electron is most likely to be found increases as n
+        increases; the graph is plotted using Bohr radius to avoid using small
+        numbers.
+      </li>
+      <li>
+        Conveniently, the 1s electron has its highest probability when radius is
+        equal to 1 with these units, as expected
+      </li>
+    </ol>
+  </li>
+</ol>
+
+## 2.4.5 Electron Spin
+
+**XIV.** Spin: the property of an electron behaving somewhat like a spinning sphere
+
+<ol type="a">
+  <li>
+    spin is a concept that was proposed to account for the slight deviations
+    from Schrödinger's predicted frequencies and observed spectral lines
+  </li>
+  <li>
+    An electron can have two spin states; $\alpha (\uparrow) and
+    \beta(\downarrow)$
+  </li>
+  <li>
+    represented by the spin magnetic quantum number (ms); can take values of
+    ($\pm \frac{1}
+    {2}$)
+    <ol type="i">
+      <li>
+        $+\frac{1}
+        {2}$ represents up spin ($\uparrow$), $-\frac{1}
+        {2}$ represents up spin ($\downarrow$)
+      </li>
+    </ol>
+  </li>
+</ol>
+--- title: WCC 2023 description: Information about the WCC 2023 competition ---
+
+# 2.4 Hydrogen Atom
+
+---
+
+## 2.4.1 Energy Levels
+
+**I.** The hydrogen atom is similar to a particle-in-a-box with boundary conditions, except for the fact that the attraction of the nucleus confines
+the electron, not a wall with infinite potential energy.
+
+<ol type="a">
+  <li>
+    Similar to a particle-in-a-box, the energies are quantized and have discrete
+    energy levels.
+  </li>
+</ol>
+
+**II.** The energy levels in one-electron species are:
+
+$E_{n} = - \frac{Z^{2}hR}{n^{2}} \left(R = \frac{m_{e}e^{4}}{8h^{3}\varepsilon_{0}^{2}}\right)$
+
+<ol type="a">
+  <li>
+    the Rydberg constant (R) measured spectroscopically from the hydrogen emission
+    spectrum is identical to the Rydberg's constant derived from fundamental constants
+  </li>
+  <li>
+    the energy levels are negative as they are measured relative to a free electron
+  </li>
+  <li>
+    In a single-electron atom, as nuclear charge (Z) increases, the electron is more tightly
+    bound to the nucleus due to Coulomb's law. ($F_{e} = k_{e}\frac{\left|q_{1}q_{2}\right|}{r^{2}}$)
+    <ol type="i">
+      <li>
+        Nuclear charge is equivalent to the number of protons in an atom.
+      </li>
+    </ol>
+  </li>
+  <li>
+    As n approaches infinity, $E_{n}= 0$. The energy required for an electron to completely
+    escape the attractive force of the atom is known as ionization energy (Ref. 2.6).
+  </li>
+</ol>
+
+## 2.4.2 Atomic Orbitals
+
+**III.** Atomic Orbitals: wavefunction of electrons in atoms
+
+<ol type="a">
+  <li>
+    Atomic orbitals are electron "clouds" centered around the nucleus. The
+    density of the cloud at each point is represented by $\psi^{2}$.
+  </li>
+  <li>
+    Spherical polar coordinates are used to specify the exact location of each
+    point around a nucleus using three parameters exist: $r, \theta, \phi$ (Ref.
+    Figure 8)
+    <ol type="a">
+      <li>r - distance from the nucleus</li>
+      <li>$\theta$ - angle from the positive z-axis (latitude)</li>
+      <li>$\phi$ - angle about the z-axis (longitude)</li>
+    </ol>
+  </li>
+</ol>
+
+**IV.** All wavefunctions can be represented as the product of these two wavefunctions:
+
+$\psi \left( (r,\theta,\phi) = R(r)\times Y(\theta,\phi) \right) $ (Eq. 13)
+
+<ol type="a">
+  <li>
+    Radial wavefunction: expresses how wavefunction varies on distance from the nucleus
+    <ol type="i">
+      <li>
+        describes the size of an orbital.
+      </li>
+      <li>
+        the function purely depends on the r parameter.
+      </li>
+    </ol>
+  </li>
+  <li>
+    Angular wavefunction: expresses how the wavefunction changes as angles change.
+    <ol type="i">
+      <li>
+        In terms of probability, the angular wavefunction describes how the probability
+        of an electron at a specific point changes from point to point at a given distance
+      </li>
+      <li>
+        describes the shape and orientation of an orbital
+      </li>
+    </ol>
+  </li>
+  <li>
+    the 1s atomic orbital of hydrogen is shown as an example:
+    $\phi(r,\theta,\phi) = \left(\frac{1}{\pi a_{0}^{3}}^{\frac{1}{2}} e^{\frac{-r}{a_{0}}} \right)$ (Eq. 14)
+      <ol type="i">
+        <li>
+          only the r parameter is included in this equation; therefore, the wavefunction is
+          spherically symmetric, and independent of the angles $\theta,\phi$.
+        </li>
+      </ol>
+  </li>
+  <li>
+    Nodal surface: a surface with zero electron density, where $\psi = 0$.
+      <ol type="i">
+        <li>
+          A nodal surface occurs when either $R(r) = 0$ or $Y(\theta,\phi) = 0$.
+        </li>
+      </ol>
+  </li>
+</ol>
+
+## 2.4.3 Quantum Numbers, Shells, and Subshells
+
+**V.** When solving for a one-dimensional particle-in-a-box, only one quantum number (n, principal quantum number) is utilized.
+
+<ol type="a">
+  <li>
+    For a three-dimensional atom, three quantum numbers ($n, l, m_{l}$) are
+    utilized.
+  </li>
+</ol>
+
+**VI.** Principal quantum number (n): roughly determines the size of orbital and its energy
+
+<ol type="a">
+  <li>
+    in a one-electron atom, all atomic orbitals with the same principal quantum
+    number is degenerate (due to there being no repulsion between electrons)
+  </li>
+  <li>
+    All of the orbitals with the same n belong to the same shell of an atom
+  </li>
+  <li>
+    mean distance of an electron from the nucleus increases with the value of n
+  </li>
+</ol>
+
+**VII.** Orbital angular momentum quantum number (l): determines the shape of the orbital
+
+<ol type="a">
+  <li>
+  contributes to the energy of the orbital like principal quantum number, but not as much
+  </li>
+  <li>
+    this quantum number can take the values of 0, 1, 2, ..., n - 1.
+      <ol type="i">
+        <li>
+          there are n subshells (groups of orbitals with identical l) for a given orbital shell
+          with principal quantum number n
+        </li>
+      </ol>
+  </li>
+  <li>
+    As implied by the name, l can be used to calculate the orbital angular momentum of an
+    electron, using the equation:
+    (orbital angular momentum) = ${l(l + 1)^{\frac{1}{2}}h}$ (Eq. 15)
+    <ol type="i">
+      <li>
+        In physics, angular momentum the quantity of rotation of a body.
+      </li>
+      <li>
+        when l = 0, its angular momentum is also zero. Therefore, s-electrons do not
+        circulate around the nucleus, but instead the electron cloud is "spherically
+        distributed"
+      </li>
+      <li>
+        angular momentum becomes important as electrons with low angular momentum
+        (like ns electrons) spend more time closer to the nucleus compared to higher
+        values of l.
+      </li>
+      <li>
+        In chemistry, we say that the ns electron has greater penetration and shielding
+        than orbitals with higher values of l. (Ref. 2.5.1)
+      </li>
+    </ol>
+  </li>
+</ol>
+
+**VIII.** Magnetic quantum number ($m_{l}$): determines orientation of motion of the electron
+
+<ol type="a">
+  <li>this quantum number can take the values from l to -l (including zero)</li>
+  <li>there are 2l + 1 orbitals in a subshell of quantum number l.</li>
+  <li>
+    theses orbitals are degenerate in energy (even in many-electron species)
+  </li>
+  <li>
+    the direction of the orbital magnetic angular momentum is dependent on the
+    magnetic quantum number.
+  </li>
+</ol>
+
+## 2.4.4 The Shape of Orbitals
+
+**IX.** ns-orbital: The s-orbital (l = 0) in a shell with the principal quantum number n
+
+<ol type="a">
+  <li>
+    Independent of the angles $\theta$ and $\phi$
+      <ol type="i">
+        <li>
+          All s-orbitals are spherically symmetrical
+        </li>
+      </ol>
+  </li>
+  <li>
+    The probability density of an electron at the point ($r, \theta, \phi$) is:
+    $\psi^{2}(r, \theta, \phi) = \frac{1}{\pi a_{0}^{3}}e^{\frac{-2r}{a_{0}}}$
+      <ol type="i">
+        <li>
+          The probability approaches zero with increasing distance from the nucleus
+        </li>
+        <li>
+          Practically, the electron is almost always found in < 250 pm distance.
+        </li>
+        <li>
+          Instead of drawing an orbital as an electron cloud, a boundary surface that
+          encloses most of the electron cloud (with 90% probability that the electron will
+          be found inside the surface) is drawn.
+        </li>
+      </ol>
+  </li>
+  <li>
+    Because an ns-orbital has no angular momentum, it does not fling away from the
+    nucleus and has a nonzero probability of being found right at the nucleus
+  </li>
+</ol>
+
+**X.** radial distribution function (P): total probability of finding an electron at a distance r at all
+possible orientations (meaning, at all values of θ, $\phi$)
+
+<ol type="a">
+  <li>
+    For all orbitals, $P(r) = r^{2}R^{2}(r).$
+  </li>
+  <li>
+    For ns-orbitals: $P(r) = 4\pi r^{2}\psi^{2} $(Eq. 16)
+    <ol type="i">
+      <li>An s orbital is spherically symmetrical.</li>
+    </ol>
+  </li>
+  <li>
+    The probability of an electron found anywhere in a thin shell around the
+    nucleus with radius r and thickness $\sigma r$ is given by $P(r)\sigma r$
+  </li>
+  <li>
+    Although for a 1s orbital $\psi$^2 reaches maximum as $r \rightarrow 0$,
+    P(r) = 0 when r = 0.
+    <ol type="i">
+      <li>
+        This is because for a 1s orbital, the probability density determines one
+        specific point of infinitesimal volume (where r = 0) meanwhile the
+        region in which the electron is being sought is zero volume (and size)
+        because the "radius" of the shell is zero, so P(r) = 0
+      </li>
+    </ol>
+  </li>
+  <li>
+    As r increases, the shell gets bigger but $\psi^{2}$ decreases (for an
+    1s-orbital)
+  </li>
+  <li>
+    Bohr radius (a_{0}): the radius at which an 1s electron in a hydrogen atom
+    is most likely to be found
+    <ol type="i">
+      <li>
+        The bohr radius is the distance where P is maximum for a 1s electron
+      </li>
+    </ol>
+  </li>
+</ol>
+
+**XI.** Radial nodes: nodes that occur when the radial function changes signs; P(r) = 0
+
+<ol type="a">
+  <li>
+    there are n - l - 1 number of radial nodes.
+    <ol type="i">
+      <li>1s, 2p, 3d, and 4f orbitals do not have radial nodes.</li>
+    </ol>
+  </li>
+  <li>
+    gives the atomic orbitals a "layered" appearance
+    <img src="https://i.imgur.com/bSVhpwI.png" />
+    <ol type="i">
+      <li>
+        A node is when a wavefunction (or in this case, the radial function
+        'R(r)') passes through zero.
+      </li>
+      <li>
+        The 2p and 3d orbitals have zero radial nodes, while the 3p orbital has
+        one radial node and the 4p orbital has two radial nodes.
+      </li>
+      <li>
+        Although radial functions, and other wavefunctions, can be negative,
+        radial distribution functions or anything else that indicates
+        probability cannot be negative.
+      </li>
+    </ol>
+  </li>
+</ol>
+
+**XII.** angular nodes: planar or conical nodes when the angular function changes signs; Y = 0
+
+<ol type="a">
+  <li>also known as nodal surfaces, there are l number of angular nodes</li>
+  <li>
+    An electron in a p-orbital has nonzero orbital angular momentum that allows
+    it to "fling" away from the nucleus unlike an electron in a s-orbital.
+  </li>
+</ol>
+
+<img src="https://i.imgur.com/XwXnb5U.png" />
+
+XIII. the total number of orbitals in a shell with principal quantum number n is $n^{2}$
+
+<ol type="a">
+  <li>
+    Therefore, the total number of electrons that can fit in a shell is $2n^{2}$
+    <img src="https://i.imgur.com/qmTVD4R.png" />
+    <ol type="i">
+      <li>All of the radial distribution functions are zero when r = 0.</li>
+      <li>
+        As expected, there is one radial node for 2s, and two radial nodes for
+        3s orbitals.
+      </li>
+      <li>
+        The radius where an electron is most likely to be found increases as n
+        increases; the graph is plotted using Bohr radius to avoid using small
+        numbers.
+      </li>
+      <li>
+        Conveniently, the 1s electron has its highest probability when radius is
+        equal to 1 with these units, as expected
+      </li>
+    </ol>
+  </li>
+</ol>
+
+## 2.4.5 Electron Spin
+
+**XIV.** Spin: the property of an electron behaving somewhat like a spinning sphere
+
+<ol type="a">
+  <li>
+    spin is a concept that was proposed to account for the slight deviations
+    from Schrödinger's predicted frequencies and observed spectral lines
+  </li>
+  <li>
+    An electron can have two spin states; $\alpha (\uparrow) and
+    \beta(\downarrow)$
+  </li>
+  <li>
+    represented by the spin magnetic quantum number (ms); can take values of
+    ($\pm \frac{1}
+    {2}$)
+    <ol type="i">
+      <li>
+        $+\frac{1}
+        {2}$ represents up spin ($\uparrow$), $-\frac{1}
+        {2}$ represents up spin ($\downarrow$)
+      </li>
+    </ol>
+  </li>
+</ol>
