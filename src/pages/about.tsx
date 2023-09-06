@@ -306,22 +306,22 @@ const activeStaff = [
 const inactiveStaff = [
   {
     name: 'Ihor Kholomieiev',
-    discord: 'Igeru#8910',
-    information: 'IChO Silver (&apos;21)',
+    contact: 'discord: Igeru#8910',
+    information: 'IChO Silver (2021)',
   },
   {
     name: 'Nicolai Bogø Stabell',
-    discord: 'Stabell#6680',
+    contact: 'discord: Stabell#6680',
     information: 'Danish Chemistry Olympiad Mentor',
   },
   {
     name: 'Alec Zhu',
-    discord: 'apc1234567#2989',
-    information: 'IChO Gold (&apos;19 and &apos;20 Camper)',
+    contact: 'discord: apc1234567#2989',
+    information: 'IChO Gold (2019 and 2020 Camper)',
   },
   {
     name: 'Anugrah Chemparathy',
-    discord: 'llamachemist#3917',
-    information: 'IChO Gold (&apos;19 and &apos;20 Camper)',
+    contact: 'discord: llamachemist#3917',
+    information: 'IChO Gold (2019 and 2020 Camper)',
   },
 ]
