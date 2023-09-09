@@ -20,7 +20,7 @@ export default function tableOfContents({
       position="sticky"
       maxHeight="200px"
       top="120px"
-      width="230px"
+      width="sm"
     >
       <Box
         px={6}
