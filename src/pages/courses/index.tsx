@@ -30,43 +30,42 @@ export default function Home({
   }[]
 }) {
   const { colorMode } = useColorMode()
-  
+
   return (
     <Layout title="Courses" description="CODS Courses" maxW="container.md">
       <Heading as="h1" textAlign="center" mb="10">
         Courses
       </Heading>
-      {allCoursesData.map(({sectionTitle, sectionData}) => (
+      {allCoursesData.map(({ sectionTitle, sectionData }) => (
         <TableContainer key={sectionTitle}>
-          <Table 
-            variant='simple' 
-            borderRadius='md'
-          >
+          <Table variant="simple" borderRadius="md">
             <Thead>
               <Tr>
-                <Th 
-                  borderTopRadius='md' 
-                  border='none' 
-                  fontSize='xl' 
-                  fontWeight='bold'
-                  paddingY='4' 
-                  background={colorMode === 'light' ? 'gray.100' : 'rgba(45, 55, 72, 0.4)'}
+                <Th
+                  borderTopRadius="md"
+                  border="none"
+                  fontSize="xl"
+                  fontWeight="bold"
+                  paddingY="4"
+                  background={
+                    colorMode === 'light' ? 'gray.100' : 'rgba(45, 55, 72, 0.4)'
+                  }
                 >
-                  {sectionTitle}
+                  {sectionTitle.replaceAll('_', ' ')}
                 </Th>
               </Tr>
             </Thead>
-            <Tbody borderTopRadius='md'>
-              {sectionData.map(({id, title, description}) => (
+            <Tbody borderTopRadius="md">
+              {sectionData.map(({ id, title, description }) => (
                 <Tr key={id}>
-                  <Td border='none' fontSize='md'>
+                  <Td border="none" fontSize="md">
                     <Link href={`/courses/${sectionTitle}/${id}`}>
-                      <Flex alignItems='center' sx={{'gap': '8px'}}>
+                      <Flex alignItems="center" sx={{ gap: '8px' }}>
                         <CodsLogo
                           fill={colorMode === 'light' ? 'black' : 'white'}
                           width="28px"
                           height="28px"
-                          display='inline'
+                          display="inline"
                         />
                         {title}: {description}
                       </Flex>
@@ -90,7 +89,7 @@ export const getStaticProps: GetStaticProps = async () => {
   for (let section of allSectionTitles) {
     allCoursesData.push({
       sectionTitle: section,
-      sectionData: await getCoursesData(section)
+      sectionData: await getCoursesData(section),
     })
   }
   return {
