@@ -187,15 +187,15 @@ const routes = [
     ],
   },
   {
-    href: '/',
+    href: '',
     title: 'Resources',
     children: [
       {
-        href: '/resources',
+        href: 'resources',
         title: 'Resources',
       },
       {
-        href: '/guides',
+        href: 'guides',
         title: `Guides`,
       },
     ],
