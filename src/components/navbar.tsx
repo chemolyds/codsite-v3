@@ -165,6 +165,10 @@ const routes = [
         title: `Competitor's Guide`,
       },
       {
+        href: 'syllabus',
+        title: `Syllabus`,
+      },
+      {
         href: 'acot',
         title: 'ACOT',
       },
@@ -183,16 +187,22 @@ const routes = [
     ],
   },
   {
-    href: '/guides',
-    title: 'Guides',
+    href: '/',
+    title: 'Resources',
+    children: [
+      {
+        href: '/resources',
+        title: 'Resources',
+      },
+      {
+        href: '/guides',
+        title: `Guides`,
+      },
+    ],
   },
   {
     href: '/courses',
     title: 'Courses',
-  },
-  {
-    href: '/resources',
-    title: 'Resources',
   },
   {
     href: '/faq',

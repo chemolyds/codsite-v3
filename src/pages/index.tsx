@@ -133,62 +133,36 @@ const resources: {
   description: string | ReactElement
 }[] = [
   {
-    link: 'https://www.youtube.com/channel/UCyO5Wn2qKDRYWC-F5EfN2kA',
-    title: 'Lectures',
-    description:
-      'We provide lectures for everyone, from introductory lectures to problem solving and advanced topic lectures. You can watch our lectures on our YouTube channel.',
-    isExternal: true,
+    link: '/competitions',
+    title: 'Competitions',
+    description: 'Four annual competitions with an archive of past papers',
   },
   {
-    link: 'https://drive.google.com/drive/u/4/folders/195kcNDwljvw1w5ZKVWzpE7LCdbvwQzVL',
-    title: 'CODSNotes',
-    description:
-      'Made specially for the CODS community, these notes cover the fundamentals required for competitive chemistry, from Atomic Strucutres to Organic Chemistry.',
-    isExternal: true,
+    link: '/resources',
+    title: 'Resources',
+    description: 'Compiled resources for all levels of chemistry',
   },
   {
     link: '/guides',
     title: 'Guides',
-    description:
-      'Our staff is dedicated to writing guides for all levels. From introductory guides to those for the IChO level, there is a guide for anyone written by the the best in the competitive chemistry scene.',
+    description: 'Introductory, advanced and country-specific guides.',
   },
   {
-    link: '/competitions',
-    title: 'Past Papers',
-    description:
-      'All of our pastcompetition papers are released to the public and can be accessed immediately. Click here to access our list of past exams.',
+    link: 'https://www.youtube.com/@CODSYoutube/featured',
+    title: 'Lectures',
+    description: 'Lectures and problem solves on our Youtube channel.',
+    isExternal: true,
   },
   {
-    title: 'Competitions',
-    description: (
-      <>
-        We provide four annual chemistry competitions for anyone to participate.
-        For more information:
-        <UnorderedList mt="2">
-          <ListItem color="blue.400" style={{ listStyle: 'none' }} my="2">
-            <Link href="/competitions/competitors_guide">
-              Competitor&apos;s Guide
-            </Link>
-          </ListItem>
-          <ListItem color="blue.400" style={{ listStyle: 'none' }} my="2">
-            <Link href="/competitions/acot">ACOT</Link>
-          </ListItem>
-          <ListItem color="blue.400" style={{ listStyle: 'none' }} my="2">
-            <Link href="/competitions/wcc">WCC</Link>
-          </ListItem>
-          <ListItem color="blue.400" style={{ listStyle: 'none' }} my="2">
-            <Link href="/competitions/socc">SOCC</Link>
-          </ListItem>
-          <ListItem color="blue.400" style={{ listStyle: 'none' }} my="2">
-            <Link href="/competitions/scho">SChO</Link>
-          </ListItem>
-        </UnorderedList>
-      </>
-    ),
+    link: '/courses',
+    title: 'Courses',
+    description: 'Modules, problems, tips and tricks.',
   },
+
   {
-    title: 'Courses (WIP)',
-    description:
-      'Made specifically for chemistry olympiad participants, these courses will go over the fundamentals required for competitive chemistry, providing a variety of practice problems, tips, and tricks for competitors at any skill level.',
+    link: 'https://tinyurl.com/codsmerch',
+    title: 'Merch',
+    description: 'Fun chemistry merch for our community',
+    isExternal: true,
   },
 ]
