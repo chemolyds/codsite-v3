@@ -45,7 +45,7 @@ export default function Home() {
 
         {/* Mission Statement */}
         <Heading fontSize="3xl" mt="10" as="h3" fontWeight={400}>
-          Our mission is to make Competitive Chemistry more...
+          Our mission is to make competitive chemistry more...
         </Heading>
         <Grid
           templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)' }}
@@ -79,7 +79,7 @@ export default function Home() {
 
         {/* Resources QuickLinks */}
         <Heading fontSize="3xl" textAlign="center" mt="10" as="h2">
-          Open Educational Resources at CODSite
+          Open educational resources at CODSite
         </Heading>
         <Grid
           templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)' }}
@@ -88,7 +88,12 @@ export default function Home() {
           {resources.map((resource) => (
             <Card key={resource.title}>
               <CardBody>
-                <Heading fontSize="3xl" textAlign="center" as="h2">
+                <Heading
+                  fontSize="3xl"
+                  textAlign="center"
+                  as="h2"
+                  color="blue.400"
+                >
                   {resource.title}
                 </Heading>
                 <Container textAlign="center">{resource.description}</Container>
@@ -135,12 +140,12 @@ const resources: {
   {
     link: '/competitions',
     title: 'Competitions',
-    description: 'Four annual competitions with an archive of past papers',
+    description: 'An archive of our four annual competitions.',
   },
   {
     link: '/resources',
     title: 'Resources',
-    description: 'Compiled resources for all levels of chemistry',
+    description: 'Compiled resources for all levels of chemistry.',
   },
   {
     link: '/guides',
@@ -149,20 +154,20 @@ const resources: {
   },
   {
     link: 'https://www.youtube.com/@CODSYoutube/featured',
-    title: 'Lectures',
-    description: 'Lectures and problem solves on our Youtube channel.',
+    title: 'YouTube',
+    description: 'Lectures, problem solves, and award ceremonies.',
     isExternal: true,
   },
   {
     link: '/courses',
     title: 'Courses',
-    description: 'Modules, problems, tips and tricks.',
+    description: 'Learning modules, practice problems, and tips and tricks.',
   },
 
   {
     link: 'https://tinyurl.com/codsmerch',
     title: 'Merch',
-    description: 'Fun chemistry merch for our community',
+    description: 'Fun chemistry merch for our community!',
     isExternal: true,
   },
 ]
