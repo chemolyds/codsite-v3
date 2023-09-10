@@ -120,17 +120,9 @@ export default function NavBar(props: BoxProps) {
           </DrawerHeader>
           <DrawerBody>
             <VStack spacing="6" align="stretch" minW="full" mb="4">
-              {routes.map((route) => (
-                <Fragment key={route.href}>
-                  <Button
-                    as={NextLink}
-                    href={route.href}
-                    size="lg"
-                    variant="link"
-                  >
-                    {route.title}
-                  </Button>
-                  {route.children?.map((child) => (
+              {routes.map((route) => {
+                if (route.children) {
+                  return route.children.map((child) => (
                     <Button
                       key={child.href}
                       as={NextLink}
@@ -140,9 +132,21 @@ export default function NavBar(props: BoxProps) {
                     >
                       {child.title}
                     </Button>
-                  ))}
-                </Fragment>
-              ))}
+                  ))
+                } else {
+                  return (
+                    <Button
+                      as={NextLink}
+                      href={route.href}
+                      size="lg"
+                      variant="link"
+                      key={route.href}
+                    >
+                      {route.title}
+                    </Button>
+                  )
+                }
+              })}
             </VStack>
           </DrawerBody>
         </DrawerContent>
@@ -165,6 +169,10 @@ const routes = [
         title: `Competitor's Guide`,
       },
       {
+        href: 'syllabus',
+        title: `Syllabus`,
+      },
+      {
         href: 'acot',
         title: 'ACOT',
       },
@@ -183,12 +191,22 @@ const routes = [
     ],
   },
   {
-    href: '/guides',
-    title: 'Guides',
+    href: '',
+    title: 'Resources',
+    children: [
+      {
+        href: 'resources',
+        title: 'Resources',
+      },
+      {
+        href: 'guides',
+        title: `Guides`,
+      },
+    ],
   },
   {
-    href: '/resources',
-    title: 'Resources',
+    href: '/courses',
+    title: 'Courses',
   },
   {
     href: '/faq',
