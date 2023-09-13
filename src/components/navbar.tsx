@@ -112,7 +112,7 @@ export default function NavBar(props: BoxProps) {
         <DrawerContent>
           <DrawerHeader>
             <Flex justify="space-between" flex="1">
-              Jerdan1980
+              CODSite
               <Button onClick={toggleColorMode}>
                 Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
               </Button>
@@ -120,17 +120,9 @@ export default function NavBar(props: BoxProps) {
           </DrawerHeader>
           <DrawerBody>
             <VStack spacing="6" align="stretch" minW="full" mb="4">
-              {routes.map((route) => (
-                <Fragment key={route.href}>
-                  <Button
-                    as={NextLink}
-                    href={route.href}
-                    size="lg"
-                    variant="link"
-                  >
-                    {route.title}
-                  </Button>
-                  {route.children?.map((child) => (
+              {routes.map((route) => {
+                if (route.children) {
+                  return route.children.map((child) => (
                     <Button
                       key={child.href}
                       as={NextLink}
@@ -140,9 +132,21 @@ export default function NavBar(props: BoxProps) {
                     >
                       {child.title}
                     </Button>
-                  ))}
-                </Fragment>
-              ))}
+                  ))
+                } else {
+                  return (
+                    <Button
+                      as={NextLink}
+                      href={route.href}
+                      size="lg"
+                      variant="link"
+                      key={route.href}
+                    >
+                      {route.title}
+                    </Button>
+                  )
+                }
+              })}
             </VStack>
           </DrawerBody>
         </DrawerContent>
@@ -187,15 +191,15 @@ const routes = [
     ],
   },
   {
-    href: '/',
+    href: '',
     title: 'Resources',
     children: [
       {
-        href: '/resources',
+        href: 'resources',
         title: 'Resources',
       },
       {
-        href: '/guides',
+        href: 'guides',
         title: `Guides`,
       },
     ],

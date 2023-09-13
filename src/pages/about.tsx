@@ -251,7 +251,7 @@ const activeStaff = [
     sectors: 'Lectures',
   },*/
   {
-    name: 'Dillion Lim (TheOrangeJuice#8426), Singapore',
+    name: 'Dillion Lim (theorangejuice), Singapore',
     img: dillionImg,
     bio: [
       `Dillion started off his journey with research in environmental chemistry, going so far as to participate in the International Science and Engineering Fair (ISEF).`,
@@ -262,7 +262,7 @@ const activeStaff = [
     contact_for: 'Competitions',
   },
   {
-    name: 'Kwanwoo Park (fizzest#0001), USA',
+    name: 'Kwanwoo Park (fizzest), USA',
     img: kwanwooImg,
     bio: [
       `Kwanwoo is a luxury chemist who wishes to be unidentified. He touches grass and works with benzene, perhaps reducing his life expectancy by 20 years.`,
@@ -273,7 +273,7 @@ const activeStaff = [
     name: 'Anurag Sodhi (a.new.rag), USA',
     img: anuragImg,
     bio: [
-      `Anurag is a senior in high school who has been part of the CODS community since 2018; he now edits and writes for CODSCompetitions since SOCC '23.`,
+      `Anurag is a senior in high school who has been part of the CODS community since 2018; he now helps edits (and occasionally writes) for CODSCompetitions since SOCC '23.`,
       `An avid competitor in chemistry olympiad himself, Anurag has qualified for the United States IChO Team ('23, Gold Medalist) and the US Chemistry Olympiad Camp ('22, '23).`,
       `Asides from chemistry, Anurag enjoys following the NFL as well as grinding Tetris and chess.`,
       `He also occasionally touches grass in the forms of playing frisbee or badminton.`,
@@ -292,14 +292,14 @@ const activeStaff = [
     sectors: 'Competitions, Writers, and Organization Administration.',
   },*/
   {
-    name: 'Jeremy Tinana (Jerdan1980#8056), USA',
+    name: 'Jeremy Tinana (jerdan1980), USA',
     img: jeremyImg,
     bio: [
       `Jeremy was part of CODS's initial admin team of 2018, and now works mainly on updating and maintaining the website and discord features.`,
       `He has bachelor degrees in (generalized) Chemistry and Computer Science from the University of Florida.`,
       `Aside from chemistry, Jeremy is a passionate reader, gamer, and cook.`,
     ],
-    contact_for: 'Website',
+    contact_for: 'Website, anything programming related',
   },
 ]
 
