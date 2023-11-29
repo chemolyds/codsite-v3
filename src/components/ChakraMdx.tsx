@@ -71,8 +71,7 @@ export const ChakraMdxComponents = {
       <iframe
         title={props.title}
         src={`https://www.youtube.com/embed/${props.youtubeId}?feature=oembed`}
-        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture full"
-        sandbox="allow-scripts allow-modal"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
       />
     </AspectRatio>
   ),
