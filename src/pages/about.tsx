@@ -111,7 +111,7 @@ export default function About() {
           <Tbody>
             <Tr>
               <Td>Philip Jeong</Td>
-              <Td>Discord: burts bees cucumber mint#2331</Td>
+              <Td>Discord: burtsbeescucumbermint</Td>
             </Tr>
             <Tr>
               <Td>Dan Ni</Td>
@@ -251,7 +251,7 @@ const activeStaff = [
     sectors: 'Lectures',
   },*/
   {
-    name: 'Dillion Lim (TheOrangeJuice#8426), Singapore',
+    name: 'Dillion Lim (theorangejuice), Singapore',
     img: dillionImg,
     bio: [
       `Dillion started off his journey with research in environmental chemistry, going so far as to participate in the International Science and Engineering Fair (ISEF).`,
@@ -262,7 +262,7 @@ const activeStaff = [
     sectors: 'Resources',
   },
   {
-    name: 'Kwanwoo Park (fizzest#0001), USA',
+    name: 'Kwanwoo Park (fizzest), USA',
     img: kwanwooImg,
     bio: [`I'm a mysterious person`],
     sectors: 'Organizational Head',
@@ -290,7 +290,7 @@ const activeStaff = [
     sectors: 'Competitions, Writers, and Organization Administration.',
   },*/
   {
-    name: 'Jeremy Tinana (Jerdan1980#8056), USA',
+    name: 'Jeremy Tinana (jerdan1980), USA',
     img: jeremyImg,
     bio: [
       `Jeremy was part of CODS's initial admin team of 2018, and now works mainly on updating and maintaining the website and discord features.`,
@@ -314,12 +314,12 @@ const inactiveStaff = [
   },
   {
     name: 'Alec Zhu',
-    contact: 'Discord: apc1234567#2989',
+    contact: 'Discord: apc1234567',
     information: 'IChO Gold (&apos;19 and &apos;20 Camper)',
   },
   {
     name: 'Anugrah Chemparathy',
-    contact: 'Discord: llamachemist#3917',
+    contact: 'Discord: llamachemist',
     information: 'IChO Gold (&apos;19 and &apos;20 Camper)',
   },
 ]
