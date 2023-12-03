@@ -1,13 +1,10 @@
-import { ChakraMdxComponents } from '@/components/ChakraMdx'
+import { ChakraMdxComponents, MdxOptions } from '@/components/ChakraMdx'
 import Layout from '@/components/layout'
 import { getAllCompsIds, getCompData } from '@/lib/comps'
 import { Prose } from '@nikolovlazar/chakra-ui-prose'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'
-import rehypeKatex from 'rehype-katex'
-import remarkGfm from 'remark-gfm'
-import remarkMath from 'remark-math'
 
 export default function Acot({ mdxSource }: { mdxSource: any }) {
   return (
@@ -36,10 +33,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   // Convert to mdx
   const mdxSource = await serialize(compData.fileContents, {
     parseFrontmatter: true,
-    mdxOptions: {
-      remarkPlugins: [remarkGfm, remarkMath],
-      rehypePlugins: [rehypeKatex],
-    },
+    mdxOptions: MdxOptions,
   })
 
   return {

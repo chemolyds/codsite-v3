@@ -41,6 +41,16 @@ export default function Home() {
 
 const comps: { id: string; title: string; description: string }[] = [
   {
+    id: 'competitors_guide',
+    title: `Competitor's Guide`,
+    description: 'All about our competitions!',
+  },
+  {
+    id: 'syllabus',
+    title: `Syllabus`,
+    description: 'Competition syllabus!',
+  },
+  {
     id: 'acot',
     title: 'ACOT',
     description: 'Autumn Chemistry Olympiad Tournament',
@@ -59,10 +69,5 @@ const comps: { id: string; title: string; description: string }[] = [
     id: 'scho',
     title: 'SChO',
     description: 'Summer Chemistry Olympiad',
-  },
-  {
-    id: 'competitors_guide',
-    title: `Competitor's Guide`,
-    description: 'All about our competitions!',
   },
 ]

@@ -52,7 +52,7 @@ export default function About() {
             <GridItem colSpan={{ base: 3, md: 2 }}>
               <Text fontSize="lg">{staff.bio.join(' ')}</Text>
               <Text fontSize="lg">
-                <b>CODS Sectors:</b> {staff.sectors}
+                <b>Contact for:</b> {staff.contact_for}
               </Text>
             </GridItem>
           </Grid>
@@ -237,7 +237,7 @@ const activeStaff = [
       `In her free time, she enjoys singing, gaming, working out, and volunteering.`,
       `You can often find her hanging out in the CODS Discord so please stop by! `,
     ],
-    sectors: 'Outreach, Competition administration, Discord',
+    contact_for: 'MAIN CONTACT. Any sector.',
   },
   /*{
     name: 'Ihor Kholomieiev (Igeru#8910), Ukraine',
@@ -259,24 +259,26 @@ const activeStaff = [
       `He firmly believes in the need for equitable access to quality resources, and thereby joined CODS in 2022 to help realise this dream for others.`,
       `Aside from chemistry, he enjoys programming and playing the piano.`,
     ],
-    sectors: 'Resources',
+    contact_for: 'Competitions',
   },
   {
     name: 'Kwanwoo Park (fizzest), USA',
     img: kwanwooImg,
-    bio: [`I'm a mysterious person`],
-    sectors: 'Organizational Head',
+    bio: [
+      `Kwanwoo is a luxury chemist who wishes to be unidentified. He touches grass and works with benzene, perhaps reducing his life expectancy by 20 years.`,
+    ],
+    contact_for: 'No preferred sector',
   },
   {
     name: 'Anurag Sodhi (a.new.rag), USA',
     img: anuragImg,
     bio: [
       `Anurag is a senior in high school who has been part of the CODS community since 2018; he now helps edits (and occasionally writes) for CODSCompetitions since SOCC '23.`,
-      `An avid competitor in chemistry olympiad himself, Anurag has qualified for the United States IChO Team ('23) and the US Chemistry Olympiad Camp ('22, '23).`,
+      `An avid competitor in chemistry olympiad himself, Anurag has qualified for the United States IChO Team ('23, Gold Medalist) and the US Chemistry Olympiad Camp ('22, '23).`,
       `Asides from chemistry, Anurag enjoys following the NFL as well as grinding Tetris and chess.`,
       `He also occasionally touches grass in the forms of playing frisbee or badminton.`,
     ],
-    sectors: 'Competitions',
+    contact_for: 'Competitions, Lectures',
   },
   /*{
     name: 'Nicolai Bogø Stabell (Stabell#6680), Denmark',
@@ -297,19 +299,19 @@ const activeStaff = [
       `He has bachelor degrees in (generalized) Chemistry and Computer Science from the University of Florida.`,
       `Aside from chemistry, Jeremy is a passionate reader, gamer, and cook.`,
     ],
-    sectors: 'Software Development',
+    contact_for: 'Website, anything programming related',
   },
 ]
 
 const inactiveStaff = [
   {
     name: 'Ihor Kholomieiev',
-    contact: 'Discord: Igeru#8910',
-    information: 'IChO Silver (&apos;21)',
+    contact: 'discord: Igeru#8910',
+    information: 'IChO Silver (2021)',
   },
   {
     name: 'Nicolai Bogø Stabell',
-    contact: 'Discord: Stabell#6680',
+    contact: 'discord: Stabell#6680',
     information: 'Danish Chemistry Olympiad Mentor',
   },
   {
@@ -321,5 +323,6 @@ const inactiveStaff = [
     name: 'Anugrah Chemparathy',
     contact: 'Discord: llamachemist',
     information: 'IChO Gold (&apos;19 and &apos;20 Camper)',
+
   },
 ]
