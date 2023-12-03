@@ -1,26 +1,18 @@
 //import { Link, LinkProps } from '@chakra-ui/next-js'
 import {
-  Box,
-  BoxProps,
-  Flex,
+  AspectRatio,
+  Heading,
   Link,
   Table,
   TableContainer,
   TableProps,
   Tbody,
   Td,
-  Text,
-  TextProps,
   Th,
   Thead,
   Tr,
-  Image,
-  ImageProps,
-  Center,
-  Heading,
-  HeadingProps,
 } from '@chakra-ui/react'
-import { ReactNode } from 'react';
+import { ReactNode } from 'react'
 import rehypeKatex from 'rehype-katex'
 import remarkGfm from 'remark-gfm'
 import remarkMath from 'remark-math'
@@ -30,13 +22,9 @@ interface HeadingWithIdProps {
 }
 
 // Create id for headings in markdown for table of contents
-const HeadingWithId: React.FC<HeadingWithIdProps> = ({children}) => {
+const HeadingWithId: React.FC<HeadingWithIdProps> = ({ children }) => {
   if (!children) {
-    return (
-      <Heading as='h2'>
-        {children}
-      </Heading>
-    )
+    return <Heading as="h2">{children}</Heading>
   }
 
   // Cleans up heading for id
@@ -50,7 +38,7 @@ const HeadingWithId: React.FC<HeadingWithIdProps> = ({children}) => {
     .replace(/[^\w-]+/g, '')
 
   return (
-    <Heading as='h2' id={id}>
+    <Heading as="h2" id={id}>
       {children}
     </Heading>
   )
@@ -77,7 +65,16 @@ export const ChakraMdxComponents = {
   Blue: (props: { children: JSX.Element }) => (
     <span style={{ color: '#285fc0' }} {...props} />
   ),
-  h2: (props: HeadingWithIdProps) => <HeadingWithId {...props} />
+  h2: (props: HeadingWithIdProps) => <HeadingWithId {...props} />,
+  Youtube: (props: { youtubeId: string; title: string }) => (
+    <AspectRatio ratio={16 / 9}>
+      <iframe
+        title={props.title}
+        src={`https://www.youtube.com/embed/${props.youtubeId}?feature=oembed`}
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen"
+      />
+    </AspectRatio>
+  ),
 }
 
 export const MdxOptions = {
