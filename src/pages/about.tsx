@@ -111,7 +111,7 @@ export default function About() {
           <Tbody>
             <Tr>
               <Td>Philip Jeong</Td>
-              <Td>Discord: burts bees cucumber mint#2331</Td>
+              <Td>Discord: burtsbeescucumbermint</Td>
             </Tr>
             <Tr>
               <Td>Dan Ni</Td>
@@ -316,12 +316,13 @@ const inactiveStaff = [
   },
   {
     name: 'Alec Zhu',
-    contact: 'discord: apc1234567#2989',
-    information: 'IChO Gold (2019 and 2020 Camper)',
+    contact: 'Discord: apc1234567',
+    information: 'IChO Gold (&apos;19 and &apos;20 Camper)',
   },
   {
     name: 'Anugrah Chemparathy',
-    contact: 'discord: llamachemist#3917',
-    information: 'IChO Gold (2019 and 2020 Camper)',
+    contact: 'Discord: llamachemist',
+    information: 'IChO Gold (&apos;19 and &apos;20 Camper)',
+
   },
 ]
