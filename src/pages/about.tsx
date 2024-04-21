@@ -229,7 +229,7 @@ const serverLinks = [
 
 const activeStaff = [
   {
-    name: 'Elizabeth Davis (AyameElizaSuzuki#6175), USA',
+    name: 'Elizabeth Davis (ayameelizasuzuki), USA',
     img: elizaImg,
     bio: [
       `Elizabeth leads CODS's Outreach initiative and has run its online community since 2019.`,
