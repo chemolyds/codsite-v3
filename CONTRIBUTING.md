@@ -17,11 +17,13 @@ if it has already been filed. If not, please file a new one with the
 
 ## I have a great idea!
 
-The issues section is made just for you! Please check the 
+The issues section is made just for you! Please check the
 [existing issues](https://github.com/chemolyds/codsite-v3/issues?q=is%3Aissue) to see
 if the idea has already been proposed. If not, please file a new one with the
 [`feature request` issue label](https://github.com/chemolyds/codsite-v3/issues/new?assignees=&labels=&projects=&template=feature_request.md&title=%5BREQUEST%5D&labels=enhancement).
 
 ## I want to contribute code!
 
-Great! Please open a pull request. Before merging, make sure to run local tests to ensure that you are not breaking anything in production.
+Great! Please open a pull request.
+Before merging, make sure to run local tests to ensure that you are not breaking anything in production.
+If you are having issues with running code, feel free to message me on Discord.
