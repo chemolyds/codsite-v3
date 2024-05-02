@@ -92,7 +92,7 @@ export default function Footer(props: BoxProps) {
             <Link color="blue.400" href="mailto:chemolyds@gmail.com">
               Gmail
             </Link>
-            <Link color="blue.400" href="mailto:chem@isodn.org">
+            <Link color="blue.400" href="mailto:cods@isodn.org">
               ISODN
             </Link>
           </Stack>
