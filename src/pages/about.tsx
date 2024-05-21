@@ -105,17 +105,23 @@ export default function About() {
           <Thead>
             <Tr>
               <Th>Staff Member</Th>
-              <Th>Contact Information</Th>
             </Tr>
           </Thead>
           <Tbody>
             <Tr>
+              <Td>Nicolai Bogø Stabell</Td>
+            </Tr>
+            <Tr>
+              <Td>Anugrah Chemparathy</Td>
+            </Tr>
+            <Tr>
+              <Td>Alec Zhu</Td>
+            </Tr>
+            <Tr>
               <Td>Philip Jeong</Td>
-              <Td>Discord: burtsbeescucumbermint</Td>
             </Tr>
             <Tr>
               <Td>Dan Ni</Td>
-              <Td>Discord: dan.k.memes#5912</Td>
             </Tr>
           </Tbody>
         </Table>
@@ -233,7 +239,7 @@ const activeStaff = [
     img: elizaImg,
     bio: [
       `Elizabeth leads CODS's Outreach initiative and has run its online community since 2019.`,
-      `She is currently studying Pharmaceutical Studies at The Ohio State University and is an avid Buckeye fan.`,
+      `She is currently pursuing a doctorate in Pharmaceutical Studies at The Ohio State University and is an avid Buckeye fan.`,
       `In her free time, she enjoys singing, gaming, working out, and volunteering.`,
       `You can often find her hanging out in the CODS Discord so please stop by! `,
     ],
@@ -308,21 +314,5 @@ const inactiveStaff = [
     name: 'Ihor Kholomieiev',
     contact: 'discord: Igeru#8910',
     information: 'IChO Silver (2021)',
-  },
-  {
-    name: 'Nicolai Bogø Stabell',
-    contact: 'discord: Stabell#6680',
-    information: 'Danish Chemistry Olympiad Mentor',
-  },
-  {
-    name: 'Alec Zhu',
-    contact: 'Discord: apc1234567',
-    information: 'IChO Gold (&apos;19 and &apos;20 Camper)',
-  },
-  {
-    name: 'Anugrah Chemparathy',
-    contact: 'Discord: llamachemist',
-    information: 'IChO Gold (&apos;19 and &apos;20 Camper)',
-
   },
 ]
