@@ -33,8 +33,11 @@ export default function Home({
 
   return (
     <Layout title="Courses" description="CODS Courses" maxW="container.md">
-      <Heading as="h1" textAlign="center" mb="10">
+      <Heading as="h1" textAlign="center">
         Courses
+      </Heading>
+      <Heading as="h2" size="sm" textAlign="center" mb="10">
+        Annotated by Kwanwoo Park
       </Heading>
       {allCoursesData.map(({ sectionTitle, sectionData }) => (
         <TableContainer key={sectionTitle}>
