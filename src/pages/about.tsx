@@ -18,11 +18,12 @@ import Image from 'next/image'
 
 import anuragImg from '@/images/staff/AnuragSodhiCropped.png'
 import dillionImg from '@/images/staff/dillion.jpeg'
-import elizaImg from '@/images/staff/eliza-2x.png'
+import ayameImg from '@/images/staff/ayame.jpg'
 import ihorImg from '@/images/staff/ihor.jpg'
 import jeremyImg from '@/images/staff/jeremy-2x.png'
 import kwanwooImg from '@/images/staff/kwanwoo-2x.png'
 import nicolaiImg from '@/images/staff/nicolai.jpg'
+import ranenImg from '@/images/staff/ranen.png'
 
 export default function About() {
   return (
@@ -74,30 +75,6 @@ export default function About() {
       </Grid>
 
       <Heading as="h2" textAlign="center" mt="10" mb="4">
-        Inactive Staff Members
-      </Heading>
-      <TableContainer>
-        <Table variant="simple">
-          <Thead>
-            <Tr>
-              <Th>Staff Member</Th>
-              <Th>Contact Information</Th>
-              <Th>Additional Information</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            {inactiveStaff.map(({ name, contact, information }) => (
-              <Tr key={name}>
-                <Td>{name}</Td>
-                <Td>{contact}</Td>
-                <Td>{information}</Td>
-              </Tr>
-            ))}
-          </Tbody>
-        </Table>
-      </TableContainer>
-
-      <Heading as="h2" textAlign="center" mt="10" mb="4">
         Retired Staff Members
       </Heading>
       <TableContainer>
@@ -105,17 +82,23 @@ export default function About() {
           <Thead>
             <Tr>
               <Th>Staff Member</Th>
-              <Th>Contact Information</Th>
             </Tr>
           </Thead>
           <Tbody>
             <Tr>
+              <Td>Nicolai Bogø Stabell</Td>
+            </Tr>
+            <Tr>
+              <Td>Anugrah Chemparathy</Td>
+            </Tr>
+            <Tr>
+              <Td>Alec Zhu</Td>
+            </Tr>
+            <Tr>
               <Td>Philip Jeong</Td>
-              <Td>Discord: burtsbeescucumbermint</Td>
             </Tr>
             <Tr>
               <Td>Dan Ni</Td>
-              <Td>Discord: dan.k.memes#5912</Td>
             </Tr>
           </Tbody>
         </Table>
@@ -230,16 +213,16 @@ const serverLinks = [
 const activeStaff = [
   {
     name: 'Elizabeth Davis (ayameelizasuzuki), USA',
-    img: elizaImg,
+    img: ayameImg,
     bio: [
       `Elizabeth leads CODS's Outreach initiative and has run its online community since 2019.`,
-      `She is currently studying Pharmaceutical Studies at The Ohio State University and is an avid Buckeye fan.`,
+      `She is currently pursuing a doctorate in Pharmaceutical Studies at The Ohio State University and is an avid Buckeye fan.`,
       `In her free time, she enjoys singing, gaming, working out, and volunteering.`,
       `You can often find her hanging out in the CODS Discord so please stop by! `,
     ],
     contact_for: 'MAIN CONTACT. Any sector.',
   },
-  /*{
+  {
     name: 'Ihor Kholomieiev (Igeru#8910), Ukraine',
     img: ihorImg,
     bio: [
@@ -248,8 +231,8 @@ const activeStaff = [
       `He was a student in the National University of Kyiv where he did research in organic chemistry before transferring to the University of Groningen.`,
       `Aside from chemistry, he enjoys cooking and watching random YouTube videos.`,
     ],
-    sectors: 'Lectures',
-  },*/
+    contact_for: 'Lectures',
+  },
   {
     name: 'Dillion Lim (theorangejuice), Singapore',
     img: dillionImg,
@@ -301,28 +284,14 @@ const activeStaff = [
     ],
     contact_for: 'Website, anything programming related',
   },
-]
-
-const inactiveStaff = [
   {
-    name: 'Ihor Kholomieiev',
-    contact: 'discord: Igeru#8910',
-    information: 'IChO Silver (2021)',
-  },
-  {
-    name: 'Nicolai Bogø Stabell',
-    contact: 'discord: Stabell#6680',
-    information: 'Danish Chemistry Olympiad Mentor',
-  },
-  {
-    name: 'Alec Zhu',
-    contact: 'Discord: apc1234567',
-    information: 'IChO Gold (&apos;19 and &apos;20 Camper)',
-  },
-  {
-    name: 'Anugrah Chemparathy',
-    contact: 'Discord: llamachemist',
-    information: 'IChO Gold (&apos;19 and &apos;20 Camper)',
-
+    name: 'Ranen Yong (rymh), Singapore',
+    img: ranenImg,
+    bio: [
+      `Ranen joined the CODS community in 2023, and has been setting problems for our competitions since then.`,
+      `Besides being a camper, he has dabbled in research, presenting his work on the synthesis and applications polypeptide complexes at the Singapore Science and Engineering Fair (SSEF).`,
+      `Beyond chemistry, Ranen also enjoys music (particularly music theory and piano), cooking/eating, and anime.`,
+    ],
+    contact_for: 'Competitions',
   },
 ]
