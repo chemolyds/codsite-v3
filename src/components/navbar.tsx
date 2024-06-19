@@ -188,6 +188,10 @@ const routes = [
         href: 'scho',
         title: 'SChO',
       },
+      {
+        href: 'hall_of_fame',
+        title: 'Hall of Fame',
+      },
     ],
   },
   {

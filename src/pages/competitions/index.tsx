@@ -70,4 +70,9 @@ const comps: { id: string; title: string; description: string }[] = [
     title: 'SChO',
     description: 'Summer Chemistry Olympiad',
   },
+  {
+    id: 'hall_of_fame',
+    title: 'Hall of  Fame',
+    description: 'Our hall of fame for past competitors',
+  },
 ]
