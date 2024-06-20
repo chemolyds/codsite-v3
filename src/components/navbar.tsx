@@ -216,4 +216,8 @@ const routes = [
     href: '/about',
     title: 'About',
   },
+  {
+    href: '/personal',
+    title: 'Dashboard',
+  },
 ]
