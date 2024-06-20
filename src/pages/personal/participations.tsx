@@ -1,14 +1,9 @@
 import {
-  Badge,
   Card,
   CardHeader,
   Center,
   Heading,
-  List,
-  ListIcon,
-  ListItem,
   SimpleGrid,
-  Stack,
   Tab,
   TabList,
   TabPanel,
@@ -17,14 +12,6 @@ import {
   Text,
 } from '@chakra-ui/react'
 import PersonalLayout from './layout'
-import {
-  FiCheckCircle,
-  FiDivideCircle,
-  FiMinusCircle,
-  FiPlayCircle,
-  FiSettings,
-} from 'react-icons/fi'
-import { GoCheckCircle, GoClock } from 'react-icons/go'
 
 export default function PersonalParticipations() {
   return (
