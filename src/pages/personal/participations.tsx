@@ -48,7 +48,7 @@ export default function PersonalParticipations() {
 
                   <SimpleGrid
                     spacing={4}
-                    templateColumns="repeat(auto-fill, minmax(300px, 1fr))"
+                    templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
                     mb={15}
                   >
                     {data
@@ -78,7 +78,7 @@ export default function PersonalParticipations() {
 
                 <SimpleGrid
                   spacing={4}
-                  templateColumns="repeat(auto-fill, minmax(300px, 1fr))"
+                  templateColumns="repeat(auto-fill, minmax(200px, 1fr))"
                   mb={15}
                 >
                   {data
