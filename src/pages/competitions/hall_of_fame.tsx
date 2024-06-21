@@ -26,6 +26,7 @@ export default function HallOfFame() {
               <Th>1sts</Th>
               <Th>2nds</Th>
               <Th>3rds</Th>
+              <Th>Dampers</Th>
               <Th>High Honors</Th>
               <Th>Honors</Th>
               <Th>Participations</Th>
@@ -39,6 +40,7 @@ export default function HallOfFame() {
                 <Td>{contestant.firsts}</Td>
                 <Td>{contestant.seconds}</Td>
                 <Td>{contestant.thirds}</Td>
+                <Td>{contestant.dampers}</Td>
                 <Td>{contestant.highHonors}</Td>
                 <Td>{contestant.honors}</Td>
                 <Td>{contestant.participations}</Td>
@@ -59,6 +61,7 @@ const data = [
     firsts: 1,
     seconds: 2,
     thirds: 3,
+    dampers: 0,
     highHonors: 4,
     honors: 5,
     participations: 16,
@@ -70,6 +73,7 @@ const data = [
     firsts: 1,
     seconds: 2,
     thirds: 3,
+    dampers: 0,
     highHonors: 4,
     honors: 5,
     participations: 16,
@@ -81,6 +85,7 @@ const data = [
     firsts: 1,
     seconds: 2,
     thirds: 3,
+    dampers: 1,
     highHonors: 4,
     honors: 5,
     participations: 16,
