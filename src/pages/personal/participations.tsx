@@ -6,6 +6,7 @@ import {
   Heading,
   LinkOverlay,
   SimpleGrid,
+  Stack,
   Tab,
   TabList,
   TabPanel,
@@ -72,7 +73,15 @@ export default function PersonalParticipations() {
                                 </Heading>
                               </Tooltip>
                             )}
-                            <Badge variant={comp.tier.toLowerCase()} mt={1}>{comp.tier}</Badge>
+                            <Stack direction="row">
+                              <Badge variant={comp.tier.toLowerCase()} mt={1}>{comp.tier}</Badge>
+                              {comp.tierChange == 1 && (
+                                <Badge colorScheme="green" mt={1}>Promoted</Badge>
+                              )}
+                              {comp.tierChange == -1 && (
+                                <Badge colorScheme="red" mt={1}>Demoted</Badge>
+                              )}
+                            </Stack>
                           </CardHeader>
                         </Card>
                       ))}
@@ -132,7 +141,7 @@ type Competition = {
   tier: Tier
   rank: number
   totalParticipants: number
-  promoted: false
+  tierChange: number
   award: string
 }
 type Tier = 'Gold' | 'Silver' | 'Bronze'
@@ -141,46 +150,37 @@ const data: Competition[] = [
     competition: 'SChO',
     year: 2024,
     tier: 'Gold',
-    rank: 1,
-    totalParticipants: 20,
-    promoted: false,
-    award: "Damper",
+    rank: 4,
+    totalParticipants: 10,
+    tierChange: 0,
+    award: "Honors",
   },
   {
     competition: 'SOCC',
     year: 2024,
-    tier: 'Bronze',
-    rank: 10,
-    totalParticipants: 30,
-    promoted: false,
-    award: "Honors",
+    tier: 'Gold',
+    rank: 4,
+    totalParticipants: 12,
+    tierChange: 0,
+    award: "High Honors",
+  },
+  {
+    competition: 'SChO',
+    year: 2023,
+    tier: 'Silver',
+    rank: 2,
+    totalParticipants: 20,
+    tierChange: 1,
+    award: "Damper",
   },
   {
     competition: 'SOCC',
     year: 2023,
     tier: 'Gold',
-    rank: 5,
-    totalParticipants: 25,
-    promoted: false,
-    award: "High Honors",
-  },
-  {
-    competition: 'WCC',
-    year: 2022,
-    tier: 'Bronze',
-    rank: 2,
-    totalParticipants: 15,
-    promoted: false,
-    award: "Damper",
-  },
-  {
-    competition: 'SChO',
-    year: 2022,
-    tier: 'Bronze',
-    rank: 1,
-    totalParticipants: 20,
-    promoted: false,
-    award: "Damper",
+    rank: 7,
+    totalParticipants: 7,
+    tierChange: -1,
+    award: "",
   },
   {
     competition: 'WCC',
@@ -188,7 +188,7 @@ const data: Competition[] = [
     tier: 'Silver',
     rank: 3,
     totalParticipants: 10,
-    promoted: false,
+    tierChange: 1,
     award: "Damper",
   },
   {
@@ -197,16 +197,25 @@ const data: Competition[] = [
     tier: 'Silver',
     rank: 5,
     totalParticipants: 15,
-    promoted: false,
+    tierChange: 0,
     award: "High Honors",
   },
   {
     competition: 'SChO',
-    year: 2023,
-    tier: 'Silver',
-    rank: 10,
+    year: 2022,
+    tier: 'Bronze',
+    rank: 1,
     totalParticipants: 20,
-    promoted: false,
-    award: "",
+    tierChange: 1,
+    award: "Damper",
+  },
+  {
+    competition: 'WCC',
+    year: 2022,
+    tier: 'Bronze',
+    rank: 15,
+    totalParticipants: 40,
+    tierChange: 0,
+    award: "Honors",
   },
 ]

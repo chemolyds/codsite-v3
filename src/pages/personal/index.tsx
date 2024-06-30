@@ -50,7 +50,7 @@ export default function PersonalDashboard() {
       },
     },
     xaxis: {
-      categories: [1991, 1992, 1993, 1994, 1995, 1996, 1997, 1998],
+      type: "category" as const,
       tooltip: {
         enabled: false,
       },
@@ -66,7 +66,7 @@ export default function PersonalDashboard() {
         }
       },
       title: {
-        text: "Ranking Percentile",
+        text: "Rankings Percentile",
       },
     },
     annotations: {
@@ -95,7 +95,7 @@ export default function PersonalDashboard() {
           y2: 300,
           fillColor: "#FFD700"
         },
-      ]
+      ],
     },
     tooltip: {
       custom: function({series, seriesIndex, dataPointIndex, w}: {series: number[], seriesIndex: number, dataPointIndex: number, w: any}) {
