@@ -1,17 +1,20 @@
 import {
+  Badge,
   Card,
   CardHeader,
   Center,
   Heading,
+  LinkOverlay,
   SimpleGrid,
   Tab,
   TabList,
   TabPanel,
   TabPanels,
   Tabs,
-  Text,
+  Tooltip,
 } from '@chakra-ui/react'
 import PersonalLayout from './layout'
+import Link from 'next/link';
 
 export default function PersonalParticipations() {
   return (
@@ -28,14 +31,13 @@ export default function PersonalParticipations() {
 
         <TabPanels>
           <TabPanel>
-            {[
-              ...data
-                .reduce((set, comp) => {
-                  set.add(comp.year)
-                  return set
-                }, new Set<number>())
-                .values(),
-            ]
+            {Array.from(
+              data.reduce((set, comp) => {
+                  set.add(comp.year);
+                  return set;
+              }, new Set<number>())
+              .values()
+            )
               .toSorted()
               .toReversed()
               .map((year) => (
@@ -56,10 +58,21 @@ export default function PersonalParticipations() {
                       .map((comp) => (
                         <Card key={`${comp.competition} ${comp.year}`}>
                           <CardHeader>
-                            <Heading size="sm">
-                              {comp.competition} {comp.year}
-                            </Heading>
-                            <Text>{comp.tier}</Text>
+                            {comp.year != 2024 && (
+                              <LinkOverlay href={`/competitions/${comp.competition.toLowerCase()}/${comp.year}`} as={Link}>
+                                <Heading size="sm">
+                                  {comp.competition} {comp.year}
+                                </Heading>
+                              </LinkOverlay>
+                            )}
+                            {comp.year == 2024 && (
+                              <Tooltip placement='top' label={`The page for ${comp.competition} ${comp.year} is still under construction. Check again later!`}>
+                                <Heading size="sm">
+                                  {comp.competition} {comp.year}
+                                </Heading>
+                              </Tooltip>
+                            )}
+                            <Badge variant={comp.tier.toLowerCase()}>{comp.tier}</Badge>
                           </CardHeader>
                         </Card>
                       ))}
@@ -71,7 +84,7 @@ export default function PersonalParticipations() {
             {['Gold', 'Silver', 'Bronze'].map((tier) => (
               <div key={tier}>
                 <Center>
-                  <Heading size="md" color={tier} mb={5}>
+                  <Heading size="md" color={tier.toLowerCase()} mb={5}>
                     {tier}
                   </Heading>
                 </Center>
@@ -86,9 +99,20 @@ export default function PersonalParticipations() {
                     .map((comp) => (
                       <Card key={`${comp.competition} ${comp.year}`}>
                         <CardHeader>
-                          <Heading size="sm">
-                            {comp.competition} {comp.year}
-                          </Heading>
+                          {comp.year != 2024 && (
+                            <LinkOverlay href={`/competitions/${comp.competition.toLowerCase()}/${comp.year}`} as={Link}>
+                              <Heading size="sm">
+                                {comp.competition} {comp.year}
+                              </Heading>
+                            </LinkOverlay>
+                          )}
+                          {comp.year == 2024 && (
+                            <Tooltip label={`The page for ${comp.competition} ${comp.year} is still under construction. Check again later!`}>
+                              <Heading size="sm">
+                                {comp.competition} {comp.year}
+                              </Heading>
+                            </Tooltip>
+                          )}
                         </CardHeader>
                       </Card>
                     ))}
@@ -118,7 +142,7 @@ const data = [
   {
     competition: 'SOCC',
     year: 2024,
-    tier: 'Gold',
+    tier: 'Bronze',
   },
   {
     competition: 'SOCC',

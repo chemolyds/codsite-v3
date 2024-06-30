@@ -25,7 +25,7 @@ export default function PersonalDiplomas() {
               <Heading size="md">{diploma.competition}</Heading>
               <Stack direction="row">
                 {diploma.tags.map((tag) => (
-                  <Badge key={tag}>{tag}</Badge>
+                  <Badge key={tag} variant={tag.toLowerCase()}>{tag}</Badge>
                 ))}
               </Stack>
             </CardHeader>
