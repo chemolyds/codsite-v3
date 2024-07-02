@@ -6,8 +6,8 @@ import {
   Heading,
   SimpleGrid,
   Stack,
-  Text,
 } from '@chakra-ui/react'
+import { sampleData as data } from '@/lib/dashboard'
 import PersonalLayout from './layout'
 
 export default function PersonalDiplomas() {
@@ -60,90 +60,14 @@ export default function PersonalDiplomas() {
     </PersonalLayout>
   )
 }
-
 type Competition = {
   competition: string
   year: number
   tier: Tier
   rank: number
   totalParticipants: number
-  promoted: false
+  tierChange: number
   award: string
 }
 type Tier = 'Gold' | 'Silver' | 'Bronze'
-const data: Competition[] = [
-  {
-    competition: 'SChO',
-    year: 2024,
-    tier: 'Gold',
-    rank: 1,
-    totalParticipants: 20,
-    promoted: false,
-    award: "Damper",
-  },
-  {
-    competition: 'SOCC',
-    year: 2024,
-    tier: 'Bronze',
-    rank: 10,
-    totalParticipants: 30,
-    promoted: false,
-    award: "Honors",
-  },
-  {
-    competition: 'SOCC',
-    year: 2023,
-    tier: 'Gold',
-    rank: 5,
-    totalParticipants: 25,
-    promoted: false,
-    award: "High Honors",
-  },
-  {
-    competition: 'WCC',
-    year: 2022,
-    tier: 'Bronze',
-    rank: 2,
-    totalParticipants: 15,
-    promoted: false,
-    award: "Damper",
-  },
-  {
-    competition: 'SChO',
-    year: 2022,
-    tier: 'Bronze',
-    rank: 1,
-    totalParticipants: 20,
-    promoted: false,
-    award: "Damper",
-  },
-  {
-    competition: 'WCC',
-    year: 2023,
-    tier: 'Silver',
-    rank: 3,
-    totalParticipants: 10,
-    promoted: false,
-    award: "Damper",
-  },
-  {
-    competition: 'ACOT',
-    year: 2023,
-    tier: 'Silver',
-    rank: 5,
-    totalParticipants: 15,
-    promoted: false,
-    award: "High Honors",
-  },
-  {
-    competition: 'SChO',
-    year: 2023,
-    tier: 'Silver',
-    rank: 10,
-    totalParticipants: 20,
-    promoted: false,
-    award: "",
-  },
-]
-
 const competitionOrder = ['ACOT', 'WCC', 'SOCC', 'SChO']

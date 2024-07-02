@@ -1,5 +1,4 @@
 import {
-  Box,
   Heading,
   Stat,
   StatGroup,
@@ -7,6 +6,7 @@ import {
   StatNumber,
 } from '@chakra-ui/react'
 import PersonalLayout from './layout'
+import { Competition, FormattedCompetition, competitionOrder, sampleData as data } from '@/lib/dashboard'
 import dynamic from "next/dynamic"
 const Chart = dynamic(() => import('react-apexcharts'), { ssr: false });
 
@@ -59,11 +59,7 @@ export default function PersonalDashboard() {
       min: 0,
       max: 300,
       labels: {
-        formatter: function (value: number) {
-          if (value <= 100) return value.toString()
-          else if (value <= 200) return (value - 100).toString()
-          else return (value - 200).toString()
-        }
+        show: false,
       },
       title: {
         text: "Rankings Percentile",
@@ -153,102 +149,8 @@ export default function PersonalDashboard() {
         type="line"
         width="100%"
         height="200"
+        style={{ marginLeft: '20px' }}
       />
     </PersonalLayout>
   )
 }
-
-type Competition = {
-  competition: string
-  year: number
-  tier: Tier
-  rank: number
-  totalParticipants: number
-  promoted: false
-  award: string
-}
-type Tier = 'Gold' | 'Silver' | 'Bronze'
-type FormattedCompetition = {
-  x: string
-  y: number
-  rank: number
-  totalParticipants: number
-  tier: string
-  competition: string
-  year: number
-}
-const data: Competition[] = [
-  {
-    competition: 'SChO',
-    year: 2024,
-    tier: 'Gold',
-    rank: 1,
-    totalParticipants: 20,
-    promoted: false,
-    award: "Damper",
-  },
-  {
-    competition: 'SOCC',
-    year: 2024,
-    tier: 'Bronze',
-    rank: 10,
-    totalParticipants: 30,
-    promoted: false,
-    award: "Honors",
-  },
-  {
-    competition: 'SOCC',
-    year: 2023,
-    tier: 'Gold',
-    rank: 5,
-    totalParticipants: 25,
-    promoted: false,
-    award: "High Honors",
-  },
-  {
-    competition: 'WCC',
-    year: 2022,
-    tier: 'Bronze',
-    rank: 2,
-    totalParticipants: 15,
-    promoted: false,
-    award: "Damper",
-  },
-  {
-    competition: 'SChO',
-    year: 2022,
-    tier: 'Bronze',
-    rank: 1,
-    totalParticipants: 20,
-    promoted: false,
-    award: "Damper",
-  },
-  {
-    competition: 'WCC',
-    year: 2023,
-    tier: 'Silver',
-    rank: 3,
-    totalParticipants: 10,
-    promoted: false,
-    award: "Damper",
-  },
-  {
-    competition: 'ACOT',
-    year: 2023,
-    tier: 'Silver',
-    rank: 5,
-    totalParticipants: 15,
-    promoted: false,
-    award: "High Honors",
-  },
-  {
-    competition: 'SChO',
-    year: 2023,
-    tier: 'Silver',
-    rank: 10,
-    totalParticipants: 20,
-    promoted: false,
-    award: "",
-  },
-]
-const competitionOrder = ['ACOT', 'WCC', 'SOCC', 'SChO']

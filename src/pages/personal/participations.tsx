@@ -16,6 +16,7 @@ import {
 } from '@chakra-ui/react'
 import PersonalLayout from './layout'
 import Link from 'next/link';
+import { sampleData as data } from '@/lib/dashboard';
 
 export default function PersonalParticipations() {
   return (
@@ -134,88 +135,3 @@ export default function PersonalParticipations() {
     </PersonalLayout>
   )
 }
-
-type Competition = {
-  competition: string
-  year: number
-  tier: Tier
-  rank: number
-  totalParticipants: number
-  tierChange: number
-  award: string
-}
-type Tier = 'Gold' | 'Silver' | 'Bronze'
-const data: Competition[] = [
-  {
-    competition: 'SChO',
-    year: 2024,
-    tier: 'Gold',
-    rank: 4,
-    totalParticipants: 10,
-    tierChange: 0,
-    award: "Honors",
-  },
-  {
-    competition: 'SOCC',
-    year: 2024,
-    tier: 'Gold',
-    rank: 4,
-    totalParticipants: 12,
-    tierChange: 0,
-    award: "High Honors",
-  },
-  {
-    competition: 'SChO',
-    year: 2023,
-    tier: 'Silver',
-    rank: 2,
-    totalParticipants: 20,
-    tierChange: 1,
-    award: "Damper",
-  },
-  {
-    competition: 'SOCC',
-    year: 2023,
-    tier: 'Gold',
-    rank: 7,
-    totalParticipants: 7,
-    tierChange: -1,
-    award: "",
-  },
-  {
-    competition: 'WCC',
-    year: 2023,
-    tier: 'Silver',
-    rank: 3,
-    totalParticipants: 10,
-    tierChange: 1,
-    award: "Damper",
-  },
-  {
-    competition: 'ACOT',
-    year: 2023,
-    tier: 'Silver',
-    rank: 5,
-    totalParticipants: 15,
-    tierChange: 0,
-    award: "High Honors",
-  },
-  {
-    competition: 'SChO',
-    year: 2022,
-    tier: 'Bronze',
-    rank: 1,
-    totalParticipants: 20,
-    tierChange: 1,
-    award: "Damper",
-  },
-  {
-    competition: 'WCC',
-    year: 2022,
-    tier: 'Bronze',
-    rank: 15,
-    totalParticipants: 40,
-    tierChange: 0,
-    award: "Honors",
-  },
-]
