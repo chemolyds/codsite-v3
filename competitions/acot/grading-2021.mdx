@@ -1,0 +1,49 @@
+---
+title: ACOT Grading System Rev 1
+description: For ACOT 2021 to ACOT 2023
+---
+
+# Grading Scheme
+
+The score is based off of two variables: time and accuracy.
+The time makes up 20% of the overall score, with accuracy the other 80%.
+The formula can be written as follows:
+
+$$
+S = 0.20 \cdot f(t) + 0.80 \cdot P
+$$
+
+Where $S$ is score, $f(t)$ is points from time, and $P$ is points from the exam, all in percent.
+
+## Time
+
+The score in time is a piecewise function, meant to allot full points to those who use half the max time or less.
+Afterwards, it linearly decreases until it hits zero points at the max time.
+The formula is shown as follows:
+
+$$
+f(x) =
+\left\{
+	\begin{array}{ll}
+			1 																															& \quad t \leq \dfrac{t_{MAX}}{2} \\
+			1 + \dfrac{t - 0.5 \cdot t_{MAX}}{0.5 \cdot t_{MAX} - t_{MAX}} 	& \quad t \geq \dfrac{t_{MAX}}{2}
+	\end{array}
+\right.
+$$
+
+Where $t_{MAX}$ is the maximum time alloted for the exam.
+This ensures that "rushing" the exam will award no extra points compared to spending half the alloted time.
+
+### Examples
+
+There's not a lot of cases to cover for this, but I will give a couple examples.
+Assume that the exam is 60 minutes long, meaning you get full credit if you turn it in within 30 minutes.
+
+- Someone submitted the exam after a minute (somehow): 100%
+- Someone submitted the exam in 30 minutes: 100%
+- Someone submitted the exam in 31 minutes: 96.67%
+- Someone submitted the exam in 59 minutes: 3.33%
+
+## Accuracy
+
+Please check the page on [Grading Accuracy](https://chem.isodn.org/competitions/acot/grading-accuracy) for more details.
