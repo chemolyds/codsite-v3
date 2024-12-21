@@ -21,6 +21,15 @@ const nextConfig = {
   pageExtensions: ['ts', 'tsx', 'js', 'jsx', 'md', 'mdx'],
   // Optionally, add any other Next.js config below
   reactStrictMode: true,
+  async rewrites() {
+    return [
+      {
+        source: '/api/:path*',
+        destination:
+          'https://cods-api-dyakfpe7hshpe6fn.eastus-01.azurewebsites.net/:path*',
+      },
+    ]
+  },
 }
 
 // Merge MDX config with Next.js config
