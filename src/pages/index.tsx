@@ -16,6 +16,8 @@ import {
 } from '@chakra-ui/react'
 import { ReactElement } from 'react'
 
+
+
 export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode()
 
