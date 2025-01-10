@@ -25,7 +25,6 @@ import {
   Tr,
 } from '@chakra-ui/react'
 import { GetStaticProps } from 'next'
-
 export default function Home({
   allCountryGuidesData,
 }: {
@@ -41,7 +40,6 @@ export default function Home({
       <Heading as="h1" textAlign="center" mb="10">
         Guides
       </Heading>
-
       {/* Generic Guides */}
       <Grid
         templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)' }}
@@ -63,12 +61,11 @@ export default function Home({
           </GridItem>
         ))}
       </Grid>
-
       {/* Country Information */}
       <Heading as="h1" textAlign="center" my="10">
         Country Guides
       </Heading>
-            <TableContainer>
+      <TableContainer>
               <Table>
                 <Thead>
                   <Tr>
@@ -90,8 +87,7 @@ export default function Home({
                 </Tbody>
               </Table>
             </TableContainer>
-
-      {/* Resources Presets */}
+{/* Resources Presets */}
       <Heading as="h1" textAlign="center" my="10">
         Common Resources
       </Heading>
@@ -123,7 +119,6 @@ export default function Home({
     </Layout>
   )
 }
-
 export const getStaticProps: GetStaticProps = async () => {
   const allCountryGuidesData = await getCountryGuidesData()
   return {
@@ -132,7 +127,6 @@ export const getStaticProps: GetStaticProps = async () => {
     },
   }
 }
-
 const guides: { href: string; title: string; description: string }[] = [
   {
     href: 'intro',
@@ -153,7 +147,6 @@ const guides: { href: string; title: string; description: string }[] = [
       'Read about how to tackle the laboratory section in competitive chemistry.',
   },
 ]
-
 const recResources: {
   title: string
   searchParams: string

@@ -43,7 +43,7 @@ export default function Page() {
                   </LinkOverlay>
                 </Heading>
               </CardHeader>
-              <CardBody pt="0">{countryPapers.description}</CardBody>
+              <CardBody pt="0"></CardBody>
             </Card>
           </GridItem>
         ))}
@@ -56,6 +56,7 @@ const countryPapers: {
   link?: string
   isExternal?: boolean
   title: string | ReactElement
+  href: string
 }[] = [
   {
     href: 'https://oaq.exactas.uba.ar/index.php?option=com_content&view=article&id=6&Itemid=128',
