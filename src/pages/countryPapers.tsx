@@ -1,7 +1,6 @@
 import Layout from '@/components/layout'
 import { Link } from '@chakra-ui/next-js'
 import {
-  Box,
   Card,
   CardBody,
   CardHeader,
@@ -9,16 +8,7 @@ import {
   GridItem,
   Heading,
   LinkOverlay,
-  Table,
-  TableContainer,
-  Tbody,
-  Td,
-  Th,
-  Thead,
-  Image,
-  Tr,
 } from '@chakra-ui/react'
-import CountryGuide from './guides/[id]'
 import { ReactElement } from 'react'
 
 export default function Page() {
