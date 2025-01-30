@@ -70,23 +70,43 @@ const countryPapers: {
   },
   {
     href: 'https://obquimica.org/olimpiadas/index/olimpiada-brasileira-de-quimica/item/exames',
+    title: 'Brazil',
+  },
+  {
+    href: 'https://www.cheminst.ca/discover/canadian-chemistry-contest/',
     title: 'Canada',
+  },
+  {
+    href: 'http://www1.chemsoc.org.cn/news/newlist.asp?hzi=6&hci=17&hfu=10',
+    title: 'China',
   },
   {
     href: 'https://olympiada.vscht.cz/cs/ulohy/kategorie-a/',
     title: 'Czech Republic',
   },
   {
+    href: 'https://www.scienceolympiaden.de/icho/material/aufgabenarchiv-icho',
+    title: 'Germany',
+  },
+  {
     href: 'https://dcho.us/icho-1',
     title: 'IChO',
   },
   {
+    href: 'https://chem.hbcse.tifr.res.in/indian-national-chemistry-olympiad-2002-2007/',
+    title: 'India (old)',
+  },
+  {
     href: 'https://olympiads.hbcse.tifr.res.in/how-to-prepare/past-papers/',
-    title: 'India',
+    title: 'India (new)',
   },
   {
     href: 'https://gp.csj.jp/examarchives/',
     title: 'Japan',
+  },
+  {
+    href: 'https://chemolympiad.kcsnet.or.kr/kmchc_solve',
+    title: 'Korea (middle school)',
   },
   {
     href: 'https://dcho.us/mendeleev',
@@ -117,6 +137,10 @@ const countryPapers: {
     title: 'Thailand',
   },
   {
+    href: 'https://bilimolimpiyatlari.tubitak.gov.tr/tr/gecmis-sinav-sorulari',
+    title: 'Turkey',
+  },
+  {
     href: 'https://www.ukrchemolimp.com/index.php?con=prob',
     title: 'Ukraine',
   },
@@ -127,9 +151,5 @@ const countryPapers: {
   {
     href: 'https://www.acs.org/education/olympiad/prepare-for-exams.html',
     title: 'United States of America',
-  },
-  {
-    href: 'https://tapchikem.com/blogs/bai-giang/hsgquocgia',
-    title: 'Vietnam',
   },
 ]
