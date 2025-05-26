@@ -1,0 +1,652 @@
+---
+title: Module 5.2
+description: Enthalpy
+version: 1.7.1
+author: Kwanwoo Park
+transcribedBy: Elizabeth Davis
+---
+
+# 5.1 Work and Heat
+
+---
+
+## 5.2.1 Internal Energy and the First Law
+
+**I** First Law of Thermodynamics: the internal energy of an isolated system is constant.
+
+<ol type="a">
+  <li>
+    in a closed system, energy is often transferred through both heat and work. Therefore,
+    $\Delta \textrm{U} = \textrm{q} + \textrm{w}$ (Eq. 62)
+  </li>
+  <li>
+    the change of internal energy in an isothermal expansion is zero (Ref. Eq. 61 Derivation)
+    <ol type="i">
+      <li>
+        the internal energy of an ideal gas is independent of volume (no IMFs)
+      </li>
+    </ol>
+  </li>
+</ol>
+
+**II** State function: A function that solely depends on the current state of the system
+
+<ol type="a">
+  <li>
+    internal energy, temperature, volume, pressure, and density are all state functions
+  </li>
+  <li>
+    its path, or how it got to that specific state does not matter; it is independent of its
+    history of how it got there
+  </li>
+  <li>
+    the change of state functions (∆X) solely depends on their initial and final states
+    <ol type="i">
+      <li>
+        Temperature is a state function; it does not matter if the change in temperature
+        occurs in the path of $0 \degree \textrm{C} \rightarrow 100 \degree \textrm{C}$, or $0 \degree \textrm{C} \rightarrow 140 \degree \textrm{C} \rightarrow 100 \degree \textrm{C}$, the resulting
+        $\Delta \textrm{T}$ will always be $100 \degree \textrm{C}$.
+      </li>
+    </ol>
+  </li>
+  <li>
+    work and heat are not state functions and are path-dependent
+  </li>
+  <li>
+    cyclic process: a series of changes that brings the system back to its initial state.
+    <ol type="i">
+      <li>
+        for state functions, a cyclic process results in the function remaining unchanged.
+      </li>
+    </ol>
+  </li>
+</ol>
+
+**III** in isochoric conditions, expansion work cannot be done as there is no change in volume;
+assuming there is no non-expansion work,
+
+$\Delta \textrm{U} = \textrm{q}_{v}$ (Eq.63)
+
+<img src="https://i.imgur.com/YzhAIK5.png" />
+
+<ol type="a">
+  <li>
+    bomb calorimeters are constant-volume calorimeters that prevent energy loss as heat
+    <ol type="i">
+      <li>
+        because the temperature of the surroundings constantly match the temperature of
+        the system, no energy is transferred as heat to the surroundings.
+      </li>
+    </ol>
+  </li>
+  <li>
+    With the relationship defined in Eq. 63, constant-volume heat capacity is defined as:
+    $\textrm{C}_{\textrm{V}} = \frac{\textrm{U}}{\textrm{T}}$ (Eq. 64)
+    <ol type="i">
+      <li>
+        in other words, CV expresses how the internal energy of an isochoric system
+        varies with temperature (the heat capacity is the slope of T-U graph)
+      </li>
+      <li> 
+        The change in internal energy of a system can therefore be calculated by:
+        $\Delta \textrm{U} = \textrm{C}_{V} \Delta \textrm{T}$ (Eq. 65)
+      </li>
+    </ol>
+  </li>
+</ol>
+
+
+## 5.2.2 A Molecular Interlude
+
+**IV** Although on the macroscopic level heat and work are both ways of transferring energy, they
+differ on the microscopic level. If energy is transferred from the system to the surroundings as
+
+<ol type="a">
+  <li>
+    work, the system stimulates molecules of the surroundings to move in a definite direction
+  </li>
+  <li>
+    heat, the system stimulates molecules of the surroundings to move in random directions
+  </li>
+</ol>
+
+<img src="https://i.imgur.com/DQzYezp.png" />
+
+**V** Statistical thermodynamics: a study of thermodynamics that connects macroscopic observations
+with microscopic parameters
+
+<ol type="a">
+  <li>
+    often used to explain macroscopic thermodynamic behavior
+  </li>
+  <li>
+    In Section 2.3.2, we have learned that energy levels that an electron can possess is quantized.
+    <ol type="i">
+      <li>
+        the particle-in-a-box illustrates a type of molecular motion, known as electronic motion.
+      </li>
+    </ol>
+  </li>
+  <li>
+    the other three types of molecular motion, which are also quantized are:
+    <ol type="i">
+      <li>
+        translation: the motion through space of a molecule in a large space
+      </li>
+      <li>
+        rotation: the motion around an axis through the molecule
+      </li>
+      <li>
+        vibration: periodic distortion of the molecule (bending bonds, stretching, etc.)
+      </li>
+    </ol>
+  </li>
+
+  <img src="https://i.imgur.com/fsoMRJV.png" />
+
+  <li>
+    the separation between energy levels are determined by the types of molecular motion,
+    and molecular properties (such as mass)
+  </li>
+  <li>
+    Boltzmann distribution: a probability distribution that determines the probability of a
+    molecule to exist in certain states, the distribution changes with different temperature
+    $\textrm{N}+{i} \propto \textrm{e}^{\frac{-\epsilon_{i}}{\textrm{k} \textrm{T}}}$ (Eq. 66)
+
+    <ol type="i">
+      <li>
+        you do not need to know this equation or interpret it
+      </li>
+      <li>
+        at lower temperatures, molecules tend to populate states of lower energy.
+      </li>
+      <li>
+        As temperature increases, molecules start to occupy higher energy levels.
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<img src="https://i.imgur.com/fsoMRJV.png" />
+
+
+
+**VI** equipartition theorem: the average value of each quadratic contribution to the energy is $\frac{1}{2} \textrm{k} \textrm{T}$.
+
+<ol type="a">
+  <li>
+    “a quadratic contribution” to the energy is one that depends on the square of velocity or a
+    displacement (such as kinetic energy)
+  </li>
+  <li>
+    the equipartition theorem can be used to estimate the internal energy of an ideal gas if:
+    <ol type="i">
+      <li>
+        the temperature of the system is high enough that many energy levels (states) are
+        occupied (for translational and rotational, room temperature is high enough)
+      </li>
+      <li>
+        the motion of molecules is nearly classical (quantum mechanics ignored)
+      </li>
+    </ol>
+  </li>
+  <li>
+    the internal energy of molecules is shared equally over all the available modes (types of motion)
+  </li>
+  <li>
+    as there are three types of translational motion for each direction (x, y, z), the
+    equipartition theorem states that the overall contribution of translational motion to molar
+    internal energy is:
+
+  $U_{m} = \frac{3}{2} \textrm{N}_{\textrm{A}} \textrm{k} \textrm{t} = \frac{3}{2} \textrm{R} \textrm{T}$ (Eq. 67)
+
+    <ol type="i">
+      <li>
+        The gas constant R is defined as $\textrm{N}_{A}$ times the Boltzmann constant ($\textrm{k}$).
+      </li>
+      <li>
+        translational motion is a type of kinetic energy.
+      </li>
+      <li>
+        the classical expression (in physics) of translational motion is: $\frac{1}{2} \textrm{m} \textrm{v}^{2}$
+      </li>
+      <li>
+        the internal energy of an ideal gas is solely dependent on translational motion.
+      </li>
+    </ol>
+  </li>
+  <li>
+    A linear molecule has two rotational modes of motion, and a nonlinear molecule has
+    three rotational modes of motion. The equipartition theorem states that:
+    
+    $\textrm{U}_{m} (\textrm{rotation, linear}) = \textrm{N}_{\textrm{A}} \textrm{k} \textrm{T} = 
+    \textrm{R} \textrm{T}$ (Eq. 68)
+
+    $\textrm{U}_{m} (\textrm{rotation, nonlinear}) = \frac{3}{2} \textrm{N}_{\textrm{A}} \textrm{k} \textrm{t} = \frac{3}{2} \textrm{R} \textrm{T}$ (Eq. 69)
+ 
+    <ol type="i">
+      <li>
+        rotational motion is also a type of kinetic energy (rotational kinetic energy).
+      </li>
+      <li>
+        the classical expression (in physics) of rotational motion is: $\frac{1}{2} \textrm{I} \omega$
+      </li> 
+    </ol>
+  </li>
+  <li>
+    the separation of energy levels is much larger for vibration modes compared to
+    translation or rotation modes.
+    <ol type="i">
+      <li>
+        At room temperature, it can only occupy the low energy levels compared to other
+        modes due to larger separation, and does not meet the requirements of using the
+        equipartition theorem as an approximation.
+      </li>
+    </ol>
+  </li>
+</ol>
+
+## 5.2.3 Enthalpy
+
+**VII** Chemical reactions often involve energy transfers through both work and heat
+
+<ol type="a">
+  <li>
+    most reactions occur in the atmosphere that is in constant-pressure
+    <ol type="i">
+      <li>
+        when gaseous reactants or products are involved, this leads to work done on the
+        atmosphere or done by the atmosphere.
+      </li>
+      <li>
+        energy transfer also occurs in the form of heat depending on whether the reaction
+        is endothermic or exothermic
+      </li>
+    </ol>
+  </li>
+</ol>
+
+**VIII** enthalpy (H): a state function that considers the expansion work while heat is transferred
+
+<ol type="a">
+  <li>
+    the definition of enthalpy is:
+    $\textrm{H} = \textrm{U} + \textrm{P} \textrm{V}$
+    <ol type="i">
+      <li>
+        as enthalpy is defined by state functions (U, P, V) it is also a state function.
+      </li>
+    </ol>
+  </li>
+  <li>
+    As enthalpy is an extensive property, it can also be expressed in terms of molar enthalpy
+    <ol type="i">
+      <li>
+        for a perfect gas, the molar enthalpy can be defined as:
+        $\textrm{H}_{m} = \textrm{U}_{m} + \textrm{R} \textrm{T} (\textrm{R} \textrm{T} = \textrm{P} \textrm{V}_{m})$ (Eq. 71)
+      </li>
+      <li>
+        for solids and liquids, its molar volume is typically 1000 times smaller than the
+        molar volume of gases. Therefore,
+        $\textrm{H}_{m} = \textrm{U}_{m}$ (Eq. 72)
+      </li>
+    </ol>
+  </li>
+  <li>
+    in practice, the change in enthalpy ($\Delta \textrm{H}$) is measured; at constant pressure,
+    $\Delta \textrm{H} = \Delta \textrm{U} + \textrm{P} \Delta \textrm{V}$ (Eq. 73)
+    <ol type="i">
+      <li>
+        at constant pressure with no non-expansion work, the PV term and work cancels
+        out, only leaving:
+        $\Delta \textrm{H} = \textrm{q}_{p}$ (Eq. 74)
+      </li>
+    </ol>
+  </li>
+  <li>
+    the signs of enthalpy determine the direction of energy transfer in a reaction:
+    <ol type="i">
+      <li>
+        $\Delta \textrm{H} \gt 0$ is equivalent to an endothermic process.
+      </li>
+      <li>
+        $\Delta \textrm{H} \lt 0$ is equivalent to an exothermic process.
+      </li>
+    </ol>
+  </li>
+</ol>
+
+
+## 5.2.4 Heat Capacities in Detail
+
+**IX** constant pressure heat capacity ($\textrm{C}_{p}$): heat is equivalent to the enthalpy at constant pressure.
+
+  $\textrm{C}_{p} = \frac{\Delta \textrm{H}}{\Delta \textrm{T}} $ (Eq. 75)
+
+**X** constant volume heat capacity ($\textrm{C}_{v}$): heat is equivalent to the internal energy at constant volume.
+
+  $\textrm{C}_{v} = \frac{\Delta \textrm{U}}{\Delta \textrm{T}} $ 
+
+<ol type="a">
+  <li>
+    the relation between the two heat capacities is revealed by substituting $\Delta \textrm{H}$ for its
+    definition:
+
+    $\textrm{C}_{p} = \frac{\Delta \textrm{H}}{\Delta \textrm{T}} = \frac{\Delta \textrm{U} + \textrm{n} \textrm{R} \Delta \textrm{T}}{\Delta \textrm{T}} = \textrm{C}_{v} + \textrm{n} \textrm{R} (\textrm{C}_{v} = \frac{\Delta \textrm{U}}{\Delta \textrm{T}})$ (Eq. 76)
+
+    <ol type="i">
+      <li>
+        in other words, $\textrm{C}_{P,m} = \textrm{C}_{V,m} + \textrm{R}$
+      </li>
+    </ol>
+  </li>
+  <li>
+    heat capacities are dependent on molecular properties such as the equipartition theorem
+  </li>
+</ol>
+
+<img src="https://i.imgur.com/t8Xsom0.png" />
+
+**XI** standard state ($\Theta$): the pure substance at exactly one bar (= 105 Pa)
+
+<ol type="a">
+  <li>
+    the standard state defined for 1 atm (=101.325 kPa) is the old standard but the difference
+    is negligible
+  </li>
+  <li>
+    temperature is not defined by the standard state; it must be defined separately.
+    <ol type="i">
+      <li>
+        many thermodynamic constants are defined at 298.15 K
+      </li>
+    </ol>
+  </li>
+  <li>
+    a standard state does not have to be stable.
+  </li>
+</ol>
+
+## 5.2.5 Physical change
+
+**XII** phase transition: A transition from one state to another
+
+<ol type="a">
+  <li>
+    heat (enthalpy) is released during phase transitions due to formation and reduction of
+    intermolecular forces
+  </li>
+  <li>
+    if intermolecular forces increase from a phase transition, the overall reaction would be
+    exothermic (heat is released)
+  </li>
+  <li>
+    if intermolecular forces decrease from a phase transition, the overall reaction would be
+    endothermic (heat is absorbed)
+  </li>
+</ol>
+
+**XIII** standard enthalpy of vaporization ($\Delta \textrm{H}_{vap}^{\Theta}$): the energy that must be supplied as heat in order
+for one mole of substance to vaporize (liquid $\rightarrow$ vapor)
+
+<ol type="a">
+  <li>
+    Stronger intermolecular forces results in a larger positive value of $\Delta \textrm{H}_{vap}^{\Theta}$
+  </li>
+  <li>
+    $\Delta \textrm{H}_{vap}^{\Theta}$ is the difference in molar enthalpy between the two phases
+    $\Delta \textrm{H}_{vap} = \textrm{H}_{m}(\textrm{vapor}) − \textrm{H}_{m}(\textrm{liquid})$ (Eq. 77)
+  </li>
+</ol>
+
+
+
+**XIV** standard enthalpy of fusion ($\Delta \textrm{H}_{fus}^{\Theta}$): the energy that must be supplied as heat in order for one
+mole of substance to melt (solid $\rightarrow$ liquid)
+
+<ol type="a">
+  <li>
+    $\Delta \textrm{H}_{fus}^{\Theta}$ is often smaller than $\Delta \textrm{H}_{vap}^{\Theta}$ as molecules do not have to be completely separated
+    from each other.
+  </li>
+  <li>
+    similar to vaporization, $\Delta \textrm{H}_{fus}^{\Theta}$ is the difference in molar enthalpy between the two phases
+    $\Delta \textrm{H}_{fus} = \textrm{H}_{m}(\textrm{liquid}) − \textrm{H}_{m}(\textrm{solid})$ (Eq. 78)  
+  </li>
+</ol>
+
+**XV** as enthalpy is a state function, the reverse transition is always equal to the negative enthalpy of
+the forward transition:
+
+$\Delta \textrm{H}_{forward} = −\Delta \textrm{H}_{reverse}$ (Eq. 79)
+
+<ol type="a">
+  <li>
+    condensation is the reverse of vaporization, and freezing is the reverse of fusion.
+  </li>
+</ol>
+
+**XVI** standard enthalpy of sublimation ($\Delta \textrm{H}_{sub}^{\Theta}$): the energy that must be supplied as heat in order
+for one mole of substance to sublime (solid $\rightarrow$ vapor)
+
+<ol type="a">
+  <li>
+    as enthalpy is a state function, the sum of $\Delta \textrm{H}_{fus}^{\Theta}$ and $\Delta \textrm{H}_{vap}^{\Theta}$ equals $\Delta \textrm{H}_{sub}^{\Theta}$.
+    <ol type="i">
+      <li>
+        other enthalpy changes for different processes (other than phase changes) can
+        also be calculated indirectly; only the initial and final states must be equivalent.
+        $\Delta \textrm{H}_{sub}^{\Theta} = \Delta \textrm{H}_{fus}^{\Theta} + \Delta \textrm{H}_{vap}^{\Theta}$ (Eq. 80)
+      </li>
+    </ol>
+  </li>
+</ol>
+
+
+**XVII** standard enthalpy of ionization ($\Delta \textrm{H}_{ion}^{\Theta}$): the change in standard enthalpy per mole of atoms for
+a loss of an electron for each atom
+
+<ol type="a">
+  <li>
+    this is different by definition to ionization energy
+    <ol type="i">
+      <li>
+        ionization energy is the change in internal energy at absolute zero
+      </li>
+      <li>
+        according to the Boltzmann distribution, all of the energies are in ground state
+        at absolute zero.
+      </li>
+      <li>
+        For the standard enthalpy of ionization, this is not the case; $\textrm{T} \gt 0 \textrm{K}$.
+      </li>
+      <li>
+        this difference can often be ignored, as most of the population is in the ground
+        state at normal temperatures
+        $\textrm{X}(\textrm{g}) \rightarrow \textrm{X}^{+} (\textrm{g}) + \textrm{e}^{-} (\textrm{g}), \Delta \textrm{H}_{ion}^{\Theta}$ (Eq. 81)
+      </li>
+    </ol>
+  </li>
+</ol>
+
+
+**XVIII** standard enthalpy of electron gain ($\Delta \textrm{H}_{eg}^{\Theta}$): the change in standard enthalpy per mole of atoms
+for a gain of an electron for each atom
+
+<ol type="a">
+  <li>
+    unlike phase transitions, electron gain and ionization can be endothermic or exothermic,
+    and sign representation is necessary
+  </li>
+  <li>
+    electron gain is the reverse process of ionization
+  </li>
+</ol>
+
+
+
+## 5.2.6 Chemical Change
+
+**XIX** Hess’s Law: The standard enthalpy of a certain reaction is equivalent to the sum of the standard
+enthalpies of each step of its component reactions
+
+
+<ol type="a">
+  <li>
+    in other words, as long as the initial reactant and final product are the same, any path
+    can work
+  </li>
+  <li>
+    many thermochemistry questions utilize Hess’s Law and cycles like the one shown in Figure 68
+  </li>
+</ol>
+
+**XX** bond enthalpy: the energy released as heat from the dissociation of one mole of bonds
+
+<ol type="a">
+  <li>
+    breaking bonds requires energy to overcome attractive forces
+  </li>
+  <li>
+    bond enthalpies are correlated to bond strengths
+  </li>
+  <li>
+    bond enthalpies are measured from gas phase molecules
+  </li>
+  <li>
+    as bond enthalpies also depend on the surroundings of the two atoms that are bonded
+    together, the average value, or the mean bond enthalpy is often used. (Also only for    
+    gaseous state)
+  </li>
+</ol>
+
+
+
+**XXI** standard enthalpy of formation ($\textrm{H}_{f}^{\Theta}$): the change in standard enthalpy (per mole) from its
+elements in their most stable forms (known as reference state) to its final product
+
+$\textrm{H}_{2} (\textrm{g}) + \frac{1}{2} \textrm{O}_{2} (\textrm{g}) \rightarrow \textrm{H}_{2} \textrm{O} (\textrm{l})$
+$\textrm{H}_{f}^{\Theta} = − 286 \frac{\textrm{kJ}}{\textrm{mol}}$
+
+<ol type="a">
+  <li>
+    Most of these reactions are purely hypothetical and do not occur
+  </li>
+  <li>
+    for pure elements in their most stable form (like $\textrm{H}_{2}$ or $\textrm{O}_{2}$), $\textrm{H}_{f}^{\Theta} = 0$.
+  </li>
+  <li>
+    allows breakdown of elements into their reference states and then building new molecules
+    from the reference states (Ref. Figure 69)
+    <ol type="i">
+      <li>
+        the breakdown of reactants can be represented as:
+        $\Delta \textrm{H}^{\Theta} = − \sum \textrm{n} \Delta \textrm{H}_{f}^{\Theta}$
+      </li>
+      <li>
+        the formation of new products can be represented as:
+        $\Delta \textrm{H}^{\Theta} = \sum \textrm{n} \Delta \textrm{H}_{f}^{\Theta}$
+      </li>
+      <li>
+        overall, the enthalpy of reaction can be calculated by:
+        $\Delta \textrm{H}_{r}^{\Theta} = \sum_{\textrm{products}} \textrm{H}_{f}^{\Theta} - \sum_{\textrm{reactants}} \textrm{H}_{f}^{\Theta}$ (Eq. 82)
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<img src="https://i.imgur.com/cXxYeGP.png" />
+
+**XXIII** standard lattice enthalpy ($\Delta \textrm{H}_{L}^{\Theta}$): the change in molar enthalpy between the
+solid and a gas of separated ions
+
+<ol type="a">
+  <li>
+    lattice energy and lattice enthalpy are slightly different but their
+    difference can be ignored
+  </li>
+  <li>
+    the lattice enthalpies give an estimate of how accurate the ionic
+    model is for a particular compound
+    <ol type="i">
+      <li>
+        if the measured and calculated enthalpies are similar, the
+        ionic model is accurate.
+      </li>
+      <li>
+        if they are not similar, the ionic model must be improved or
+        discarded for that particular substance.
+      </li>
+    </ol>
+  </li>
+  <li>
+    The lattice enthalpy can be calculated through the Born-Haber cycle
+    (Ref. Figure 69, Figure 19)
+    <ol type="i">
+      <li>
+        Born-Haber cycle: a closed path of steps in which the
+        initial and final states are the same; the overall enthalpy
+        change is zero.
+      </li>
+      <li>
+        The lattice enthalpy can be calculated as all of the other
+        thermodynamic constants are known.
+      </li>
+      <li>
+        the Born-Haber cycle for the lattice enthalpy of potassium
+        chloride is shown in Figure 68
+      </li>
+    </ol>
+  </li>
+</ol>
+
+<img src="https://i.imgur.com/5hYDfdj.png" />
+
+**XXIV** standard enthalpy of combustion ($\Delta \textrm{H}_{c}^{\Theta}$): the change in enthalpy resulting
+from a mole of substance that undergoes a combustion reaction (under standard conditions)
+
+<ol type="a">
+  <li>
+    unlike $\Delta \textrm{H}_{f}^{\Theta}$, most of these combustion reactions can occur in real life
+  </li>
+  <li>
+    organic compounds tend to have similar combustion products (e.g. $\textrm{C}\textrm{O}_{2}, \textrm{H}_{2}\textrm{O}, \textrm{N}_{2}$ or nitric
+    oxides if the compound includes N)
+  </li>
+</ol>
+
+
+
+**XXV** the relationship between $\Delta \textrm{H}$ and $\Delta \textrm{U}$ can be summarized by:
+
+<ol type="a">
+  <li>
+    in the solid and liquid phase, $\Delta \textrm{H} \approx \Delta \textrm{U}$
+  </li>
+  <li>
+    in the gas phase, where ∆ngas is the change of gas molecules resulting from the reaction,
+    $\Delta \textrm{H} = \Delta \textrm{U} + \Delta \textrm{n}_{\textrm{gas}} \textrm{R} \textrm{T}$ (Eq. 83)
+  </li>
+</ol>
+
+<img src="https://i.imgur.com/0paDtT6.png" />
+
+**XXIII** Kirchhoff’s Law: the change in $\Delta \textrm{H}^{\Theta}$ resulting from the change in temperature can be predicted
+using the difference between the constant-pressure heat capacities of the products and reactants
+($\Delta \textrm{C}_{P} = \sum \textrm{n} \textrm{C}_{\textrm{P},\textrm{m}}(\textrm{products}) − \sum \textrm{n} \textrm{C}_{\textrm{P},\textrm{m}}(\textrm{reactants})$)
+
+$\Delta \textrm{H}^{\Theta} (\textrm{T}_{2}) = \Delta \textrm{H}^{\Theta} (\textrm{T}_{1}) + (\textrm{T}_{2} - \textrm{T}_{1}) \times \Delta \textrm{C}_{P}$ (Eq. 84)
+
+<ol type="a">
+  <li>
+    Kirchhoff’s law states that enthalpies of both reactants and products increase with temperature
+    <ol type="i">
+      <li>
+        this increase in temperature can sometimes be negligible; if the difference in
+        temperature is big, you should use Kirchhoff’s law.
+      </li>
+    </ol>
+  </li>
+</ol>
+
+
