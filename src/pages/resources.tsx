@@ -1,6 +1,7 @@
 'use client'
 
 import Layout from '@/components/layout'
+import { jsonFetcher } from '@/lib/fetcher'
 import {
   Resource,
   ResourceList,
@@ -30,10 +31,20 @@ import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/router'
 import { useEffect, useState } from 'react'
+import useSWR from 'swr'
 
 export default function Resources() {
   const searchParams = useSearchParams()
   const router = useRouter()
+
+  const {
+    data: resources,
+    error,
+    isLoading,
+  }: { data: Resource[]; error: any; isLoading: boolean } = useSWR(
+    '/api/resources',
+    jsonFetcher
+  )
 
   const [selectedTags, setSelectedTags] = useState<MultiValue<TagOption>>([])
   const [selectedTiers, setSelectedTiers] = useState<ResourceTags[]>([
@@ -178,8 +189,9 @@ export default function Resources() {
         mt="10"
       >
         <AnimatePresence>
-          {ResourceList.filter((resource) => filter(resource)).map(
-            (resource) => (
+          {resources
+            ?.filter((resource) => filter(resource))
+            .map((resource) => (
               <GridItem
                 key={resource.link}
                 as={motion.div}
@@ -202,8 +214,7 @@ export default function Resources() {
                   <CardBody pt="0">{resource.description}</CardBody>
                 </Card>
               </GridItem>
-            )
-          )}
+            ))}
         </AnimatePresence>
       </Grid>
     </Layout>
