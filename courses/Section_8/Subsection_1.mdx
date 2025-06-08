@@ -1,0 +1,215 @@
+---
+title: Module 8.1
+description: Reaction Rates
+version: 1.7.1
+author: Kwanwoo Park
+transcribedBy: Elizabeth Davis
+---
+
+# 8.1 Reaction Rates
+
+---
+
+## 8.1.1 Introduction
+
+**I** Reaction rate: a quantity that illustrates how fast a reaction occurs through the change in
+concentration of the reactants or products over time
+
+<ol type="a">
+  <li>
+    reaction rate is analogous to velocity in physics.
+    <ol type="i">
+      <li>
+        average reaction rate: the change in molar concentration over a time interval
+        $\textrm{Rate} = \frac{\Delta[\textrm{A}]}{\Delta \textrm{t}}$ (Eq. 125)
+      </li>
+      <li>
+        instantaneous rate: the reaction rate at a given instant
+        $\textrm{Rate} = \frac{\textrm{d}[\textrm{A}]}{\textrm{dt}}$ (Eq. 126)
+      </li>
+      <li>
+        if the time interval approaches zero, the average reaction rate becomes the
+        instantaneous rate.
+      </li>
+    </ol>
+  </li>
+  <li>
+    in chemical kinetics, it is convention to keep all rates as positive values
+  </li>
+  <li>
+    units in chemical kinetics are very important.
+    <ol type="i">
+      <li>
+        It is best practice to use $\textrm{mol} \textrm{L}^{-1}$
+        instead of $\textrm{M}$ to check for any errors
+      </li>
+    </ol>
+  </li>
+</ol>
+
+**II** reactants and products from the same reaction may have different rates
+
+<ol type="a">
+  <li>
+    For example, in a hypothetical reaction $2\textrm{A} \rightarrow \textrm{B}$, when  $2 \textrm{M} \textrm{s}^{-1}$
+    of $\textrm{A}$ is consumed, then $1 \textrm{M} \textrm{s}^{-1}$ of $\textrm{B}$ would be produced.
+  </li>
+  <li>
+    You nust report the species for reaction rates
+  </li>
+  <li>
+    unique rate ($\nu$): Reaction rate that can be reported without specifying the species
+    $\nu = \frac{1}{\nu_{J}} \frac{\Delta [\textrm{J}]}{\Delta \textrm{t}}$ (Eq. 127)
+  </li>
+  <li>
+    $\nu_J$ represents the stoichiometric numbers in an equation; they possess positive values
+    for product coefficients and negative values for reactant coefficients.
+  </li>
+  <li>
+    it is still necessary to report the chemical equation
+  </li>
+</ol>
+
+**III** There are many ways to measure reaction rates:
+
+<ol type="a">
+  <li>
+    spectrophotometry: measuring the absorption of light to monitor concentration
+    <ol type="i">
+      <li>
+        spectrophotometry heavily relies on Beer-Lambert law:
+        $\textrm{log} \frac{\textrm{I}_{0}}{\textrm{I}}= \epsilon [\textrm{J}]\textrm{L}$ (Eq. 128)
+        
+        ($\textrm{I}_{0}$ and $\textrm{I}$ are the incident and transmitted intensities, $\epsilon$ is molar absorption constant, and $\textrm{L}$ is path length)
+      </li>
+      <li>
+        We always use this form of Beer-Lambert's law:
+        $\textrm{A} = \epsilon[\textrm{J}]\textrm{L}$ (Eq. 129)
+      </li>
+    </ol>
+  </li>
+  <li>
+    rapid reactions often use the stopped-flow technique which rapidly injects reactants into
+    a mixing chamber and monitors the sudden change in concentration
+  </li>
+</ol>
+
+## 8.1.2 Rate Laws and Reaction Order
+
+**IV** The rate of a reaction is often related to the concentrations of its reactants
+
+<ol type="a">
+  <li>
+    rate law: expresses the rate of reaction in terms of concentrations of the species in the
+    overall reaction. An example of rate law for the reaction $\textrm{A} + \textrm{B} \rightarrow \textrm{P}$ is given below:
+    $\nu = \textrm{k}_{r}[\textrm{A}]^{n}[\textrm{B}]^{m}$ (Eq. 130)
+  </li>
+  <li>
+    rate constant ($\textrm{k}_{r}$): A constant value that is independent of concentration
+    (or pressure, if gas-phase), but dependent of temperature
+    <ol type="i">
+      <li>
+        The rate constant will always ensure that the final units in a rate law is $\textrm{M} \textrm{s}^{-1}$
+      </li>
+      <li>
+        If the reaction is gas-phase, then the rate constant will always ensure that the
+        final units in a rate law is molecules $\textrm{cm}^{-3}$.
+      </li>
+      <li>
+        If the forward reaction's rate constant is denoted $\textrm{k}_{r}$, the reverse is denoted $\textrm{k}_{r}$.
+      </li>
+    </ol>
+  </li>
+  <li>
+    with these two, you can predict the rate of the reaction at any composition and any time
+  </li>
+</ol>
+
+**V** Reaction are classified based on their rate law order, the power to which the concentration of a
+species is raised in the rate law.
+
+<ol type="a">
+  <li>
+    In Eq. 117, n and m are both orders.
+    <ol type="i">
+      <li>
+        If n = 1, then the reaction would be first-order in A.
+      </li>
+      <li>
+        If n = 2 and m = 1, the reaction would be second-order in A, first-order in B.
+      </li>
+      <li>
+        If n = 2 and m = 1, the reaction would be second-order in A, first-order in B.
+      </li>
+    </ol>
+  </li>
+  <li>
+    orders do not have to be integers.
+  </li>
+  <li>
+    The overall order of a reaction is the sum of all of the orders (for Eq. 117, n + m)
+  </li>
+  <li>
+    approximations are very important in kinetics; always check for limiting/special cases
+    <ol type="i">
+      <li>
+        if one concentration is nuch larger than the other; ex. $[\textrm{A}] \gt\gt [\textrm{B}]$
+      </li>
+    </ol>
+  </li>
+</ol>
+
+**VI** All rate laws are determined experimentally and can guide what the mechanism of the reaction is
+
+<ol type="a">
+  <li>
+    reaction stoichiometry is independent of the rate law (Ref. Table 5)
+  </li>
+</ol>
+
+<img src="https://i.imgur.com/KlqI6MP.png" />
+
+## 8.1.3 The Determination of the Rate Law
+
+**VII** The rate law is determined through:
+
+<ol type="a">
+  <li>
+    isolation method: all components in a reaction are in a large excess with the exception of
+    one (this is known as the monitored species and is the species that will be present in the
+    concentration vs. time plot)
+    <ol type="i">
+      <li>
+        the concentration of the monitored species makes the largest contribution to the
+        rate of reaction
+      </li>
+      <li>
+        the change of concentration of the large excess species is negligible compared to
+        the monitored species; the large excess species are approximated to be constant
+      </li>
+      <li>
+        for the reaction $\textrm{A} + \textrm{B} \rightarrow \textrm{P}$, if the rate law is 
+        $\textrm{Rate} = \textrm{kr}[\textrm{A}][\textrm{B}]^{2}$ and $[\textrm{B}] \gt \gt [\textrm{A}]$,
+        
+        $\textrm{Rate} = \textrm{k}_{r,eff}[\textrm{A}]$, where $\textrm{k}_{r,eff} = \textrm{k}_{r} [\textrm{B}]^{2}_{0}$ (Eq. 131)
+      </li>
+      <li>
+        this is known as a pseudo first-order, and $\textrm{k}_{r,eff}$ is known as the effective rate constant.
+      </li>
+      <li>
+        A pseudo second-order is formed when $[\textrm{A}] \gt \gt [\textrm{B}]$ as $[\textrm{A}]$
+        is now incorporated into the $\textrm{k}_{r,eff}$ term leaving just $[\textrm{B}]_{2}$
+        in the rate law.
+      </li>
+    </ol>
+  </li>
+  <li>
+    initial rates: the instantaneous rate measured at the beginning of the reaction
+    <ol type="i">
+      <li>
+        initial rates ignore the presence of products, which can hinder the overall rate of
+        reaction (reverse reactions can occur)
+      </li>
+    </ol>
+  </li>
+</ol>
