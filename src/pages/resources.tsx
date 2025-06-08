@@ -41,10 +41,7 @@ export default function Resources() {
     data: resources,
     error,
     isLoading,
-  }: { data: Resource[]; error: any; isLoading: boolean } = useSWR(
-    '/api/resources',
-    jsonFetcher
-  )
+  } = useSWR<Resource[]>('/api/resources', jsonFetcher)
 
   const [selectedTags, setSelectedTags] = useState<MultiValue<TagOption>>([])
   const [selectedTiers, setSelectedTiers] = useState<ResourceTags[]>([
