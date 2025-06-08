@@ -202,6 +202,10 @@ const routes = [
         href: 'guides',
         title: `Guides`,
       },
+      {
+        href: 'countryPapers',
+        title: `Past Country Papers`,
+      },
     ],
   },
   {
