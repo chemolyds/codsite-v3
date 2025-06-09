@@ -46,11 +46,6 @@ const comps: { id: string; title: string; description: string }[] = [
     description: 'All about our competitions!',
   },
   {
-    id: 'syllabus',
-    title: `Syllabus`,
-    description: 'Competition syllabus!',
-  },
-  {
     id: 'acot',
     title: 'ACOT',
     description: 'Autumn Chemistry Olympiad Tournament',
