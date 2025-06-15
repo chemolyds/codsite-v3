@@ -27,7 +27,7 @@ import ranenImg from '@/images/staff/ranen.png'
 
 export default function About() {
   return (
-    <Layout title="About" description="About CODS staff and writers">
+    <Layout title="About" description="About CODStaff">
       <Heading as="h1" textAlign="center">
         Staff and Contacts
       </Heading>
@@ -59,20 +59,6 @@ export default function About() {
           </Grid>
         </Container>
       ))}
-
-      <Heading as="h2" textAlign="center" mt="10" mb="4">
-        Competition Writers
-      </Heading>
-      <Grid
-        templateColumns={{ base: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' }}
-        gap="4"
-      >
-        {writers.sort().map((writer) => (
-          <GridItem key={writer} textAlign="center" fontSize="lg">
-            {writer}
-          </GridItem>
-        ))}
-      </Grid>
 
       <Heading as="h2" textAlign="center" mt="10" mb="4">
         Retired Staff Members
@@ -147,30 +133,6 @@ export default function About() {
     </Layout>
   )
 }
-
-const writers = [
-  'Anathan Sadagopan',
-  'bluepianist#9293',
-  'Ihor Kholomieiev',
-  'Lasse Johnson',
-  'Lim Dillion',
-  'Lin Bigom-Eriksen',
-  'Nick Ouyang',
-  'Nick Tsao',
-  'Qiyang Zhao',
-  'Ron Shprints',
-  'Thomas Falkenberg',
-  'Tomasz Ślusarczyk',
-  'Tristan Chau',
-  'Yiwei Liang',
-  'lof#4839',
-  'Jeremy Tinana',
-  'Nipun Dour',
-  'Nishaant Jacobus',
-  'Erick Wu',
-  'Ray Zhou',
-  'Matthionine#9769',
-]
 
 const serverLinks = [
   {
