@@ -16,8 +16,6 @@ import {
 } from '@chakra-ui/react'
 import { ReactElement } from 'react'
 
-
-
 export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode()
 
@@ -70,13 +68,12 @@ export default function Home() {
           What is CODSite for?
         </Heading>
         <Text align="center">
-          CODSite is an all-purpose website made for your community (competitive
-          chemistry enthusiasts). Everything on CODSite is free to use for
-          anybody, no sign-ups or membership required. We provide custom{' '}
-          <b>open educational resources</b> such as lectures, detailed notes,
-          useful websites, problem sets, guides, tools, and all of our past
-          competition papers. Anything a chemistry freak could dream of lies
-          within this website.
+          CODSite is an all-purpose website made for competitive chemistry
+          enthusiasts. Everything on CODSite is free to use for anybody, no
+          sign-ups or membership required. We provide custom open educational
+          resources, lectures, notes, resource banks, problem sets, guides,
+          tools, and all of our past competition papers - anything a chemistry
+          freak could dream of!
         </Text>
 
         {/* Resources QuickLinks */}
