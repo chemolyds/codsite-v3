@@ -1,7 +1,8 @@
 import { theme as proTheme } from '@chakra-ui/pro-theme'
-import { extendTheme, theme as baseTheme } from '@chakra-ui/react'
+import { defaultConfig as baseTheme, createSystem } from '@chakra-ui/react'
 import { withProse } from '@nikolovlazar/chakra-ui-prose'
 
+/*
 const config = {
   initialColorMode: 'dark',
   useSystemColorMode: true,
@@ -26,6 +27,21 @@ const config = {
       color: 'blue.400',
     },
   },
+}*/
+
+const config = {
+  theme: {
+    tokens: {
+      initialColorMode: 'dark',
+      useSystemColorMode: true,
+      fonts: {
+        heading: {
+          value: `'RalewayVariable', -apple-system, system-ui, sans-serif`,
+        },
+        body: { value: `'Nunito', -apple-system, system-ui, sans-serif` },
+      },
+    },
+  },
 }
 
 const proseConfig = {
@@ -36,5 +52,5 @@ const proseConfig = {
   },
 }
 
-const theme = extendTheme(proTheme, config, withProse(proseConfig))
+const theme = createSystem(proTheme, config, withProse(proseConfig))
 export default theme
