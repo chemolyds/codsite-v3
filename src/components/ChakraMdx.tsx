@@ -1,4 +1,3 @@
-//import { Link, LinkProps } from '@chakra-ui/next-js'
 import {
   AspectRatio,
   Heading,
@@ -6,11 +5,6 @@ import {
   Table,
   TableContainer,
   TableProps,
-  Tbody,
-  Td,
-  Th,
-  Thead,
-  Tr,
 } from '@chakra-ui/react'
 import { ReactNode } from 'react'
 import rehypeKatex from 'rehype-katex'
@@ -48,14 +42,14 @@ export const ChakraMdxComponents = {
   Link: Link,
   table: (props: TableProps) => (
     <TableContainer>
-      <Table {...props} />
+      <Table.Root {...props} />
     </TableContainer>
   ),
-  thead: Thead,
-  tr: Tr,
-  th: Th,
-  tbody: Tbody,
-  td: Td,
+  thead: Table.Header,
+  tr: Table.Row,
+  th: Table.ColumnHeader,
+  tbody: Table.Body,
+  td: Table.Cell,
   Red: (props: { children: JSX.Element }) => (
     <span style={{ color: '#9b1111' }} {...props} />
   ),
