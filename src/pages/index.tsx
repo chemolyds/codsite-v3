@@ -1,23 +1,20 @@
 import CodsLogo from '@/components/CodsLogo'
 import Layout from '@/components/layout'
-import { Link } from '@chakra-ui/next-js'
+import { useColorMode } from '@/components/ui/color-mode'
+import { NextLink } from '@/components/ui/NextLink'
 import {
   Card,
-  CardBody,
   Center,
   Container,
   Grid,
   Heading,
   LinkOverlay,
-  ListItem,
   Text,
-  UnorderedList,
-  useColorMode,
 } from '@chakra-ui/react'
 import { ReactElement } from 'react'
 
 export default function Home() {
-  const { colorMode, toggleColorMode } = useColorMode()
+  const { colorMode } = useColorMode()
 
   return (
     <Layout title="Home" description="CODSite Homepage">
@@ -37,37 +34,41 @@ export default function Home() {
         </Heading>
         <Heading fontSize="2xl" textAlign="center" as="h3" fontWeight={400}>
           Haven&apos;t joined the community yet? You can join{' '}
-          <Link href="https://discord.gg/chemistryolympiad" color="blue.400">
+          <NextLink
+            href="https://discord.gg/chemistryolympiad"
+            color="blue.400"
+          >
             here
-          </Link>
+          </NextLink>
           .
         </Heading>
 
         {/* Mission Statement */}
-        <Heading fontSize="3xl" mt="10" as="h3" fontWeight={400}>
+        <Heading fontSize="3xl" mt="12" as="h3" fontWeight={400}>
           Our mission is to make competitive chemistry more...
         </Heading>
         <Grid
           templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)' }}
           gap="8"
+          mt="4"
         >
           {mission.map((card) => (
-            <Card key={card.header}>
-              <CardBody>
+            <Card.Root key={card.header}>
+              <Card.Body>
                 <Heading fontSize="4xl" as="h2">
                   {card.header}
                 </Heading>
-                <Text>{card.description}</Text>
-              </CardBody>
-            </Card>
+                <Text mt="2">{card.description}</Text>
+              </Card.Body>
+            </Card.Root>
           ))}
         </Grid>
 
         {/* Website Purpose */}
-        <Heading fontSize="3xl" textAlign="center" mt="10" as="h2">
+        <Heading fontSize="3xl" textAlign="center" mt="12" as="h2">
           What is CODSite for?
         </Heading>
-        <Text align="center">
+        <Text mt="4" textAlign="center">
           CODSite is an all-purpose website made for competitive chemistry
           enthusiasts. Everything on CODSite is free to use for anybody, no
           sign-ups or membership required. We provide custom open educational
@@ -77,16 +78,17 @@ export default function Home() {
         </Text>
 
         {/* Resources QuickLinks */}
-        <Heading fontSize="3xl" textAlign="center" mt="10" as="h2">
+        <Heading fontSize="3xl" textAlign="center" mt="12" as="h2">
           Open educational resources at CODSite
         </Heading>
         <Grid
           templateColumns={{ base: 'repeat(1, 1fr)', md: 'repeat(3, 1fr)' }}
           gap="8"
+          mt="4"
         >
           {resources.map((resource) => (
-            <Card key={resource.title}>
-              <CardBody>
+            <Card.Root key={resource.title}>
+              <Card.Body>
                 <Heading
                   fontSize="3xl"
                   textAlign="center"
@@ -96,15 +98,14 @@ export default function Home() {
                   {resource.title}
                 </Heading>
                 <Container textAlign="center">{resource.description}</Container>
-              </CardBody>
+              </Card.Body>
               {resource.link && (
                 <LinkOverlay
                   href={resource.link}
                   className="after:absolute after:inset-0"
-                  isExternal={resource.isExternal}
                 />
               )}
-            </Card>
+            </Card.Root>
           ))}
         </Grid>
       </Container>
