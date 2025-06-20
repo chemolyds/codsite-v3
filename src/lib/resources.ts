@@ -20,9 +20,9 @@ export interface TagOption extends OptionBase {
 }
 
 export const TagOptions: { value: ResourceTags; label: ResourceTags }[] = [
-  //{ value: 'Bronze', label: 'Bronze' },
-  //{ value: 'Silver', label: 'Silver' },
-  //{ value: 'Gold', label: 'Gold' },
+  { value: 'Bronze', label: 'Bronze' },
+  { value: 'Silver', label: 'Silver' },
+  { value: 'Gold', label: 'Gold' },
   { value: 'General', label: 'General' },
   { value: 'Physical', label: 'Physical' },
   { value: 'Analytical', label: 'Analytical' },
@@ -97,7 +97,8 @@ export const ResourceList: Resource[] = [
   },
   {
     name: 'Evans Selected Organic Chemistry Questions',
-    description: 'Extremely large file containing advanced organic chemistry problems',
+    description:
+      'Extremely large file containing advanced organic chemistry problems',
     link: 'https://drive.google.com/file/d/1Z_GFx___qjgGIjIdDtUP82pzjf3_gajQ/view?usp=sharing',
     tags: ['Gold', 'Organic', 'Problem Set'],
   },
@@ -111,7 +112,15 @@ export const ResourceList: Resource[] = [
     name: 'Problem of the Day Archive',
     description: 'Compilation of every CODS Original POTD',
     link: 'https://docs.google.com/document/d/1LxA8xap-O20o3zdQSDub9lRHUPocsjO18QxIhbe6vcE/edit?usp=sharing',
-    tags: ['Silver', 'Gold', 'General', 'Physical', 'Organic', 'Inorganic', 'Problem Set'],
+    tags: [
+      'Silver',
+      'Gold',
+      'General',
+      'Physical',
+      'Organic',
+      'Inorganic',
+      'Problem Set',
+    ],
   },
   {
     name: 'USNCO Exams',
@@ -165,23 +174,34 @@ export const ResourceList: Resource[] = [
     name: 'CODS Youtube',
     description: 'Official CODS Youtube with Staff Lectures',
     link: 'https://www.youtube.com/CODSYoutube',
-    tags: ['Bronze', 'Silver', 'General', 'Organic', 'USNCO', 'Problem Set', 'YouTube'],
+    tags: [
+      'Bronze',
+      'Silver',
+      'General',
+      'Organic',
+      'USNCO',
+      'Problem Set',
+      'YouTube',
+    ],
   },
   {
     name: 'Chemistry By Design',
-    description: 'Excellent resource for learning new reactions by doing total synthesis problems.',
+    description:
+      'Excellent resource for learning new reactions by doing total synthesis problems.',
     link: 'https://chemistrybydesign.oia.arizona.edu/',
     tags: ['Gold', 'Organic', 'Problem Set'],
   },
   {
     name: 'Organic Chemistry Data',
-    description: 'Extensive network of organic resources and some laboratory resources.',
+    description:
+      'Extensive network of organic resources and some laboratory resources.',
     link: 'https://organicchemistrydata.org/',
     tags: ['Bronze', 'Silver', 'Gold', 'Organic', 'Analytical'],
   },
   {
     name: 'Spectral Database for Organic Chemistry',
-    description: 'Comprehensive organic database including NS, CNMR, HNMR, IR, Raman, and ESR spectroscopy.',
+    description:
+      'Comprehensive organic database including NS, CNMR, HNMR, IR, Raman, and ESR spectroscopy.',
     link: 'https://sdbs.db.aist.go.jp/sdbs/cgi-bin/cre_index.cgi',
     tags: ['Silver', 'Gold', 'Analytical'],
   },
@@ -201,30 +221,30 @@ export const ResourceList: Resource[] = [
     name: 'Allery Chemistry',
     description: 'Introductory chemistry explained simply',
     link: 'https://www.youtube.com/@AlleryChemistry/videos',
-    tags: ['Bronze', 'General']
+    tags: ['Bronze', 'General'],
   },
   {
     name: 'Zumdahl Chemistry',
     description: 'Recommended beginner  general chemistry textbook',
     link: 'https://www.amazon.com/s?k=zumdahl+chemistry&i=stripbooks&crid=3W0FQB4GGS4EN&sprefix=zumdahl+chemistry%2Cstripbooks%2C116&ref=nb_sb_noss_2',
-    tags: ['Bronze', 'General', 'Physical', 'Textbook']
+    tags: ['Bronze', 'General', 'Physical', 'Textbook'],
   },
   {
     name: 'Atkins Chemical Principles: A Quest for Insight',
     description: 'Recommended non-beginner general chemistry textbook',
     link: 'https://www.amazon.com/s?k=atkins+chemical+principles&i=stripbooks&crid=UO9AAW27T69Y&sprefix=atkins+chemical+principles%2Cstripbooks%2C126&ref=nb_sb_noss_1',
-    tags: ['Bronze', 'Silver', 'General', 'Physical', 'Inorganic', 'Textbook']
+    tags: ['Bronze', 'Silver', 'General', 'Physical', 'Inorganic', 'Textbook'],
   },
   {
     name: 'Klein Organic Chemistry',
     description: 'Recommended beginner organic chemistry textbook',
     link: 'https://www.amazon.com/s?k=%27Organic+Chemistry%27+Textbook+by+David+Klein+4th+Edition&i=stripbooks&crid=E0ICJWCOK5CZ&sprefix=organic+chemistry%27+textbook+by+david+klein+4th+edition%2Cstripbooks%2C106&ref=nb_sb_noss',
-    tags: ['Silver', 'Organic', 'Textbook']
+    tags: ['Silver', 'Organic', 'Textbook'],
   },
   {
     name: 'Clayden Organic Chemistry',
     description: 'Recommended non-beginner organic chemistry textbook',
     link: 'https://www.amazon.com/s?k=Organic+Chemistry+Clayden&i=stripbooks&crid=53PE1VMQGDYI&sprefix=organic+chemistry+clayden%2Cstripbooks%2C99&ref=nb_sb_noss_1',
-    tags: ['Silver', 'Gold', 'Organic', 'Textbook']
-  }
+    tags: ['Silver', 'Gold', 'Organic', 'Textbook'],
+  },
 ]

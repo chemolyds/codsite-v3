@@ -1,31 +1,20 @@
 'use client'
 
 import Layout from '@/components/layout'
-import {
-  Resource,
-  ResourceList,
-  ResourceTags,
-  TagOption,
-  TagOptions,
-} from '@/lib/resources'
+import { Resource, ResourceList, TagOption, TagOptions } from '@/lib/resources'
 import {
   Card,
   CardBody,
-  CardHeader,
-  Center,
-  Checkbox,
-  CheckboxGroup,
   Grid,
   GridItem,
   Heading,
   Input,
   LinkOverlay,
-  Stack,
+  Presence,
   Tag,
   Wrap,
 } from '@chakra-ui/react'
 import { GroupBase, MultiValue, Select } from 'chakra-react-select'
-import { AnimatePresence, motion } from 'framer-motion'
 import Link from 'next/link'
 import { useSearchParams } from 'next/navigation'
 import { useRouter } from 'next/router'
@@ -36,24 +25,9 @@ export default function Resources() {
   const router = useRouter()
 
   const [selectedTags, setSelectedTags] = useState<MultiValue<TagOption>>([])
-  const [selectedTiers, setSelectedTiers] = useState<ResourceTags[]>([
-    'Bronze',
-    'Silver',
-    'Gold',
-  ])
   const [query, setQuery] = useState<string>('')
 
   useEffect(() => {
-    // Edit Tiers filter
-    if (searchParams.has('tiers')) {
-      let tiers = searchParams
-        .getAll('tiers')
-        .filter((str) =>
-          ['Bronze', 'Silver', 'Gold'].includes(str)
-        ) as ResourceTags[]
-      setSelectedTiers(tiers)
-    }
-
     // Edit Tags filter
     if (searchParams.has('tags')) {
       let tags = searchParams.getAll('tags')
@@ -64,42 +38,12 @@ export default function Resources() {
     // Query is not serializable (dirty way to prevent injection)
   }, [searchParams])
 
-  /*useEffect(() => {
-    router.push(
-      {
-        pathname: '/resources',
-        query: {
-          tiers: selectedTiers,
-          tags: selectedTags.map((tag) => tag.label),
-        },
-      },
-      undefined,
-      { shallow: true }
-    )
-  }, [selectedTiers, selectedTags])*/
-
-  function updateTiers(tiers: ResourceTags[]) {
-    setSelectedTiers(tiers)
-    router.push(
-      {
-        pathname: '/resources',
-        query: {
-          tiers: tiers,
-          tags: selectedTags.map((tag) => tag.label),
-        },
-      },
-      undefined,
-      { shallow: true }
-    )
-  }
-
   function updateTags(tags: MultiValue<TagOption>) {
     setSelectedTags(tags)
     router.push(
       {
         pathname: '/resources',
         query: {
-          tiers: selectedTiers,
           tags: tags.map((tag) => tag.label),
         },
       },
@@ -109,10 +53,6 @@ export default function Resources() {
   }
 
   function filter(resource: Resource) {
-    // Filter out tiers first
-    if (!selectedTiers.some((tier) => resource.tags?.includes(tier)))
-      return false
-
     // Then filter by tag
     if (
       !(
@@ -136,25 +76,9 @@ export default function Resources() {
       title="Resources"
       description="Compilation of Resources from both staff and the community"
     >
-      <Heading as="h1" textAlign="center" mb="10">
+      <Heading as="h1" textAlign="center" mb="10" fontSize="5xl">
         Resources
       </Heading>
-
-      {/* Tier Filtering */}
-      <Center my="3">
-        <CheckboxGroup
-          colorScheme="brand"
-          size="lg"
-          value={selectedTiers}
-          onChange={(tiers: ResourceTags[]) => updateTiers(tiers)}
-        >
-          <Stack spacing={[1, 5]} direction={['column', 'row']}>
-            <Checkbox value="Bronze">Bronze</Checkbox>
-            <Checkbox value="Silver">Silver</Checkbox>
-            <Checkbox value="Gold">Gold</Checkbox>
-          </Stack>
-        </CheckboxGroup>
-      </Center>
 
       <Select<TagOption, true, GroupBase<TagOption>>
         isMulti
@@ -177,34 +101,37 @@ export default function Resources() {
         gap={8}
         mt="10"
       >
-        <AnimatePresence>
-          {ResourceList.filter((resource) => filter(resource)).map(
-            (resource) => (
-              <GridItem
-                key={resource.link}
-                as={motion.div}
-                layout
-                layoutId={resource.link}
-              >
-                <Card>
-                  <CardHeader>
-                    <Heading size="xs" pb="2">
-                      <LinkOverlay href={resource.link} as={Link} isExternal>
-                        {resource.name}
-                      </LinkOverlay>
-                    </Heading>
-                    <Wrap>
-                      {resource.tags.map((tag) => (
-                        <Tag key={tag}>{tag}</Tag>
-                      ))}
-                    </Wrap>
-                  </CardHeader>
-                  <CardBody pt="0">{resource.description}</CardBody>
-                </Card>
-              </GridItem>
-            )
-          )}
-        </AnimatePresence>
+        {ResourceList.map((resource) => (
+          <Presence
+            key={resource.link}
+            present={filter(resource)}
+            animationName={{
+              _open: 'fade-in',
+              _closed: 'fade-out',
+            }}
+            animationDuration="slowest"
+          >
+            <GridItem>
+              <Card.Root>
+                <Card.Header>
+                  <Heading size="lg" pb="0">
+                    <LinkOverlay href={resource.link} as={Link}>
+                      {resource.name}
+                    </LinkOverlay>
+                  </Heading>
+                  <Wrap mb="2">
+                    {resource.tags.map((tag) => (
+                      <Tag.Root key={tag}>
+                        <Tag.Label>{tag}</Tag.Label>
+                      </Tag.Root>
+                    ))}
+                  </Wrap>
+                </Card.Header>
+                <CardBody pt="0">{resource.description}</CardBody>
+              </Card.Root>
+            </GridItem>
+          </Presence>
+        ))}
       </Grid>
     </Layout>
   )
