@@ -18,7 +18,11 @@ import { default as NextLink } from 'next/link'
 import { useState } from 'react'
 import { FiChevronDown, FiMenu } from 'react-icons/fi'
 import CodsLogo from './CodsLogo'
-import { ColorModeButton, useColorMode } from './ui/color-mode'
+import {
+  ColorModeButton,
+  useColorMode,
+  useColorModeValue,
+} from './ui/color-mode'
 
 export default function NavBar(props: BoxProps) {
   const { colorMode } = useColorMode()
@@ -27,7 +31,12 @@ export default function NavBar(props: BoxProps) {
 
   return (
     <>
-      <Box as="nav" bg="black" boxShadow="sm" {...props}>
+      <Box
+        as="nav"
+        bg={useColorModeValue('gray.100', 'gray.900')}
+        boxShadow="sm"
+        {...props}
+      >
         <Container py={{ base: '4', lg: '5' }}>
           <HStack gap="10" justify="space-between">
             {true ? (
