@@ -5,152 +5,165 @@ import {
   ButtonGroup,
   Container,
   Drawer,
-  DrawerBody,
-  DrawerContent,
-  DrawerHeader,
-  DrawerOverlay,
   Flex,
   HStack,
   Heading,
   IconButton,
   Menu,
-  MenuButton,
-  MenuItem,
-  MenuList,
+  Portal,
   VStack,
   useBreakpointValue,
-  useColorMode,
-  useDisclosure,
 } from '@chakra-ui/react'
 import { default as NextLink } from 'next/link'
+import { useState } from 'react'
 import { FiChevronDown, FiMenu } from 'react-icons/fi'
 import CodsLogo from './CodsLogo'
-import { Fragment } from 'react'
+import { ColorModeButton, useColorMode } from './ui/color-mode'
 
 export default function NavBar(props: BoxProps) {
-  const { colorMode, toggleColorMode } = useColorMode()
+  const { colorMode } = useColorMode()
   const isDesktop = useBreakpointValue({ base: false, lg: true })
-  const { isOpen, onOpen, onClose } = useDisclosure()
+  const [open, setOpen] = useState(false)
 
   return (
     <>
-      <Box as="section" {...props}>
-        <Box as="nav" bg="bg-surface" boxShadow="sm">
-          <Container py={{ base: '4', lg: '5' }}>
-            <HStack spacing="10" justify="space-between">
-              {true ? (
-                <Heading size="md">CODSite</Heading>
-              ) : (
-                <Box
-                  maxH="calc(4vh)"
-                  overflow="visible"
-                  position="relative"
-                  top="calc(-1.9vh)"
-                >
-                  <CodsLogo
-                    fill={colorMode === 'light' ? 'black' : 'white'}
-                    width="calc(8vh)"
-                    height="calc(8vh)"
-                    /*style={{ backgroundColor: 'purple' }}*/
-                  />
-                </Box>
-              )}
-
-              {isDesktop ? (
-                <Flex justify="space-between" flex="1">
-                  <ButtonGroup variant="link" spacing="8">
-                    {routes.map((route) =>
-                      route.children ? (
-                        <Menu key={route.href}>
-                          <MenuButton as={Button} rightIcon={<FiChevronDown />}>
-                            {route.title}
-                          </MenuButton>
-                          <MenuList>
-                            {route.children.map((child) => (
-                              <MenuItem
-                                key={child.href}
-                                as={NextLink}
-                                href={`${route.href}/${child.href}`}
-                              >
-                                {child.title}
-                              </MenuItem>
-                            ))}
-                          </MenuList>
-                        </Menu>
-                      ) : (
-                        <Button
-                          key={route.href}
-                          as={NextLink}
-                          href={route.href}
-                        >
-                          {route.title}
-                        </Button>
-                      )
-                    )}
-                  </ButtonGroup>
-                  <HStack spacing="3">
-                    <Button onClick={toggleColorMode} variant="ghost">
-                      Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-                    </Button>
-                  </HStack>
-                </Flex>
-              ) : (
-                <IconButton
-                  variant="ghost"
-                  icon={<FiMenu fontSize="1.25rem" />}
-                  aria-label="Open Menu"
-                  onClick={onOpen}
+      <Box as="nav" bg="black" boxShadow="sm" {...props}>
+        <Container py={{ base: '4', lg: '5' }}>
+          <HStack gap="10" justify="space-between">
+            {true ? (
+              <Heading size="md">CODSite</Heading>
+            ) : (
+              <Box
+                maxH="calc(4vh)"
+                overflow="visible"
+                position="relative"
+                top="calc(-1.9vh)"
+              >
+                <CodsLogo
+                  fill={colorMode === 'light' ? 'black' : 'white'}
+                  width="calc(8vh)"
+                  height="calc(8vh)"
+                  /*style={{ backgroundColor: 'purple' }}*/
                 />
-              )}
-            </HStack>
-          </Container>
-        </Box>
+              </Box>
+            )}
+
+            {isDesktop ? (
+              <Flex justify="space-between" flex="1">
+                <ButtonGroup variant="plain" gap="8">
+                  {routes.map((route) =>
+                    route.children ? (
+                      <Menu.Root key={route.href}>
+                        <Menu.Trigger asChild>
+                          <Button>
+                            {route.title} <FiChevronDown />
+                          </Button>
+                        </Menu.Trigger>
+                        <Portal>
+                          <Menu.Positioner>
+                            <Menu.Content>
+                              {route.children.map((child) => (
+                                <Menu.Item
+                                  key={child.href}
+                                  asChild
+                                  value={child.title}
+                                >
+                                  <NextLink
+                                    href={`${route.href}/${child.href}`}
+                                  >
+                                    {child.title}
+                                  </NextLink>
+                                </Menu.Item>
+                              ))}
+                            </Menu.Content>
+                          </Menu.Positioner>
+                        </Portal>
+                      </Menu.Root>
+                    ) : (
+                      <Button key={route.href} asChild>
+                        <NextLink href={route.href}>{route.title}</NextLink>
+                      </Button>
+                    )
+                  )}
+                </ButtonGroup>
+                <HStack gap="3">
+                  <ColorModeButton />
+                </HStack>
+              </Flex>
+            ) : (
+              <IconButton
+                variant="ghost"
+                aria-label="Open Menu"
+                onClick={() => setOpen(true)}
+              >
+                <FiMenu fontSize="1.25rem" />
+              </IconButton>
+            )}
+          </HStack>
+        </Container>
       </Box>
 
-      <Drawer placement="top" onClose={onClose} isOpen={isOpen}>
-        <DrawerOverlay />
-        <DrawerContent>
-          <DrawerHeader>
-            <Flex justify="space-between" flex="1">
-              CODSite
-              <Button onClick={toggleColorMode}>
-                Toggle {colorMode === 'light' ? 'Dark' : 'Light'}
-              </Button>
-            </Flex>
-          </DrawerHeader>
-          <DrawerBody>
-            <VStack spacing="6" align="stretch" minW="full" mb="4">
-              {routes.map((route) => {
-                if (route.children) {
-                  return route.children.map((child) => (
-                    <Button
-                      key={child.href}
-                      as={NextLink}
-                      href={`${route.href}/${child.href}`}
-                      size="lg"
-                      variant="link"
-                    >
-                      {child.title}
-                    </Button>
-                  ))
-                } else {
-                  return (
-                    <Button
-                      as={NextLink}
-                      href={route.href}
-                      size="lg"
-                      variant="link"
-                      key={route.href}
-                    >
-                      {route.title}
-                    </Button>
-                  )
-                }
-              })}
-            </VStack>
-          </DrawerBody>
-        </DrawerContent>
-      </Drawer>
+      <Drawer.Root
+        placement="top"
+        open={open}
+        onOpenChange={(e: any) => setOpen(e.open)}
+      >
+        <Portal>
+          <Drawer.Backdrop />
+          <Drawer.Positioner>
+            <Drawer.Content>
+              <Drawer.Header>
+                <Flex justify="space-between" flex="1">
+                  <Heading size="md" pt="1.5">
+                    CODSite
+                  </Heading>
+
+                  <ColorModeButton />
+
+                  <IconButton
+                    variant="ghost"
+                    aria-label="Open Menu"
+                    onClick={() => setOpen(false)}
+                  >
+                    <FiMenu fontSize="1.25rem" />
+                  </IconButton>
+                </Flex>
+              </Drawer.Header>
+              <Drawer.Body>
+                <VStack gap="6" align="stretch" minW="full" mb="4">
+                  {routes.map((route) => {
+                    if (route.children) {
+                      return route.children.map((child) => (
+                        <Button
+                          key={child.href}
+                          size="lg"
+                          variant="plain"
+                          asChild
+                        >
+                          <NextLink href={`${route.href}/${child.href}`}>
+                            {child.title}
+                          </NextLink>
+                        </Button>
+                      ))
+                    } else {
+                      return (
+                        <Button
+                          size="lg"
+                          key={route.href}
+                          variant="plain"
+                          asChild
+                        >
+                          <NextLink href={route.href}>{route.title}</NextLink>
+                        </Button>
+                      )
+                    }
+                  })}
+                </VStack>
+              </Drawer.Body>
+            </Drawer.Content>
+          </Drawer.Positioner>
+        </Portal>
+      </Drawer.Root>
     </>
   )
 }

@@ -1,35 +1,25 @@
-import { Link } from '@chakra-ui/next-js'
 import {
   Box,
   BoxProps,
   Button,
-  ButtonGroup,
   Center,
   Container,
   Grid,
   GridItem,
-  HStack,
   Show,
   Stack,
-  VStack,
-  useColorMode,
 } from '@chakra-ui/react'
 import { default as NextLink } from 'next/link'
 import CodsLogo from './CodsLogo'
+import { useColorMode } from './ui/color-mode'
+import { LinkButton } from './ui/NextLink'
 
 export default function Footer(props: BoxProps) {
-  const { colorMode, toggleColorMode } = useColorMode()
+  const { colorMode } = useColorMode()
 
   return (
     <Box bg="bg-surface" boxShadow="sm" py={4} as="section" {...props}>
-      <Container
-        as={Stack}
-        maxW="6xl"
-        py={4}
-        spacing={4}
-        justify="center"
-        align="center"
-      >
+      <Container as={Stack} maxW="6xl" py={4} gap={4} centerContent>
         <CodsLogo
           fill={colorMode === 'light' ? 'black' : 'white'}
           width="calc(5vh)"
@@ -37,37 +27,26 @@ export default function Footer(props: BoxProps) {
         />
 
         {/* Page Links Desktop */}
-        <Show above="md">
-          <Grid templateColumns="repeat(5, 1fr)" gap={6}>
-            {routes.map((route) => (
-              <Button
-                key={route.href}
-                as={NextLink}
-                href={route.href}
-                variant="link"
-              >
-                {route.title}
-              </Button>
-            ))}
-          </Grid>
-        </Show>
+        <Grid templateColumns="repeat(5, 1fr)" gap={6} hideBelow="md">
+          {routes.map((route) => (
+            <Button key={route.href} variant="plain">
+              <NextLink href={route.href}>{route.title}</NextLink>
+            </Button>
+          ))}
+        </Grid>
 
         {/* Page Links Mobile */}
-        <Show below="md">
-          <Grid templateColumns="repeat(2, 1fr)" gap={6}>
-            {routesMobile.map((routeGroup) =>
-              routeGroup.map((route) => (
-                <GridItem colSpan={2 / routeGroup.length} key={route.href}>
-                  <Center>
-                    <Button as={NextLink} href={route.href} variant="link">
-                      {route.title}
-                    </Button>
-                  </Center>
-                </GridItem>
-              ))
-            )}
-          </Grid>
-        </Show>
+        <Grid templateColumns="repeat(2, 1fr)" gap={6} hideFrom={['lg', 'xl']}>
+          {routesMobile.map((routeGroup) =>
+            routeGroup.map((route) => (
+              <GridItem colSpan={2 / routeGroup.length} key={route.href}>
+                <Center>
+                  <LinkButton href={route.href}>{route.title}</LinkButton>
+                </Center>
+              </GridItem>
+            ))
+          )}
+        </Grid>
       </Container>
 
       {/* Social Links */}
@@ -81,20 +60,22 @@ export default function Footer(props: BoxProps) {
           maxW={'6xl'}
           py={4}
           direction={{ base: 'column', md: 'row' }}
-          spacing={4}
-          justify="center"
-          align="center"
+          gap={4}
+          centerContent
         >
-          <Stack direction={'row'} spacing={6}>
-            <Link color="blue.400" href="https://discord.gg/chemistryolympiad">
+          <Stack direction={'row'} gap={6}>
+            <NextLink
+              color="blue.400"
+              href="https://discord.gg/chemistryolympiad"
+            >
               Discord
-            </Link>
-            <Link color="blue.400" href="mailto:chemolyds@gmail.com">
+            </NextLink>
+            <NextLink color="blue.400" href="mailto:chemolyds@gmail.com">
               Gmail
-            </Link>
-            <Link color="blue.400" href="mailto:cods@isodn.org">
+            </NextLink>
+            <NextLink color="blue.400" href="mailto:cods@isodn.org">
               ISODN
-            </Link>
+            </NextLink>
           </Stack>
         </Container>
       </Box>

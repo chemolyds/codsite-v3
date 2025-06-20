@@ -1,8 +1,7 @@
-import { Box, Container, Heading } from '@chakra-ui/react'
+import { Box, Container } from '@chakra-ui/react'
 import Head from 'next/head'
-import NavBar from './navbar'
-import { motion, useReducedMotion } from 'framer-motion'
 import Footer from './footer'
+import NavBar from './navbar'
 
 export default function Layout({
   children,
@@ -15,8 +14,6 @@ export default function Layout({
   description: string
   maxW?: string
 }) {
-  const shouldReduceMotion = useReducedMotion()
-
   return (
     <Box>
       <Head>
@@ -26,27 +23,17 @@ export default function Layout({
         <link rel="icon" href="/favicon.ico" />
       </Head>
       {/* https://dev.to/shriram27/fixed-navbar-using-chakra-ui-4i7b */}
-      <NavBar pos="fixed" w="full" zIndex="200" />
+      <NavBar pos="fixed" w="full" zIndex="200" mt="0" />
       {/* https://javascript.plainenglish.io/how-to-animate-the-page-transition-in-next-js-68c7b888dce3 */}
       {/* https://letsbuildui.dev/articles/animated-page-transitions-in-nextjs */}
       <Box
-        mt={24}
-        as={motion.div}
+        pt={24}
         key={title}
-        initial="initial"
-        animate="animate"
-        variants={
-          !shouldReduceMotion
-            ? {
-                initial: {
-                  opacity: 0,
-                },
-                animate: {
-                  opacity: 1,
-                },
-              }
-            : undefined
-        }
+        data-state="open"
+        _open={{
+          animationName: 'fade-in, scale-in',
+          animationDuration: '300ms',
+        }}
       >
         {title === 'Home' ? (
           <main>{children}</main>
