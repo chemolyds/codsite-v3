@@ -3,8 +3,7 @@ import {
   Heading,
   Link,
   Table,
-  TableContainer,
-  TableProps,
+  TableRootProps,
 } from '@chakra-ui/react'
 import { ReactNode } from 'react'
 import rehypeKatex from 'rehype-katex'
@@ -40,11 +39,7 @@ const HeadingWithId: React.FC<HeadingWithIdProps> = ({ children }) => {
 
 export const ChakraMdxComponents = {
   Link: Link,
-  table: (props: TableProps) => (
-    <TableContainer>
-      <Table.Root {...props} />
-    </TableContainer>
-  ),
+  table: (props: TableRootProps) => <Table.Root {...props} />,
   thead: Table.Header,
   tr: Table.Row,
   th: Table.ColumnHeader,
