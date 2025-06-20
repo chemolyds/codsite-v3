@@ -1,34 +1,28 @@
 import Layout from '@/components/layout'
-import { Link } from '@chakra-ui/next-js'
 import {
   Container,
   Grid,
   GridItem,
   Heading,
   Table,
-  TableContainer,
-  Tbody,
-  Td,
   Text,
-  Th,
-  Thead,
-  Tr,
 } from '@chakra-ui/react'
 import Image from 'next/image'
 
 import anuragImg from '@/images/staff/AnuragSodhiCropped.png'
-import dillionImg from '@/images/staff/dillion.jpeg'
 import ayameImg from '@/images/staff/ayame.jpg'
+import dillionImg from '@/images/staff/dillion.jpeg'
 import ihorImg from '@/images/staff/ihor.jpg'
 import jeremyImg from '@/images/staff/jeremy-2x.png'
 import kwanwooImg from '@/images/staff/kwanwoo-2x.png'
-import nicolaiImg from '@/images/staff/nicolai.jpg'
+//import nicolaiImg from '@/images/staff/nicolai.jpg'
 import ranenImg from '@/images/staff/ranen.png'
+import { NextLink } from '@/components/ui/NextLink'
 
 export default function About() {
   return (
     <Layout title="About" description="About CODStaff">
-      <Heading as="h1" textAlign="center">
+      <Heading as="h1" textAlign="center" size="5xl">
         Staff and Contacts
       </Heading>
 
@@ -38,12 +32,12 @@ export default function About() {
         chemolyds@gmail.com.
       </Text>
 
-      <Heading textAlign="center" as="h2" mt="10">
+      <Heading textAlign="center" as="h2" mt="10" size="4xl">
         Active Staff Members
       </Heading>
       {activeStaff.map((staff) => (
         <Container key={staff.name}>
-          <Heading as="h3" fontSize="4xl">
+          <Heading as="h3" size="3xl">
             {staff.name}
           </Heading>
           <Grid templateColumns="repeat(3, 1fr)" gap="4">
@@ -60,37 +54,35 @@ export default function About() {
         </Container>
       ))}
 
-      <Heading as="h2" textAlign="center" mt="10" mb="4">
+      <Heading as="h2" textAlign="center" mt="10" mb="4" size="4xl">
         Retired Staff Members
       </Heading>
-      <TableContainer>
-        <Table variant="simple">
-          <Thead>
-            <Tr>
-              <Th>Staff Member</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            <Tr>
-              <Td>Nicolai Bogø Stabell</Td>
-            </Tr>
-            <Tr>
-              <Td>Anugrah Chemparathy</Td>
-            </Tr>
-            <Tr>
-              <Td>Alec Zhu</Td>
-            </Tr>
-            <Tr>
-              <Td>Philip Jeong</Td>
-            </Tr>
-            <Tr>
-              <Td>Dan Ni</Td>
-            </Tr>
-          </Tbody>
-        </Table>
-      </TableContainer>
+      <Table.Root variant="line">
+        <Table.Header>
+          <Table.Row>
+            <Table.ColumnHeader>Staff Member</Table.ColumnHeader>
+          </Table.Row>
+        </Table.Header>
+        <Table.Body>
+          <Table.Row>
+            <Table.Cell>Nicolai Bogø Stabell</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>Anugrah Chemparathy</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>Alec Zhu</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>Philip Jeong</Table.Cell>
+          </Table.Row>
+          <Table.Row>
+            <Table.Cell>Dan Ni</Table.Cell>
+          </Table.Row>
+        </Table.Body>
+      </Table.Root>
 
-      <Heading as="h1" textAlign="center" mt="10" mb="4">
+      <Heading as="h1" textAlign="center" mt="10" mb="4" size="4xl">
         ISO Discord Network
       </Heading>
       <Text fontSize="lg" mb="5">
@@ -98,38 +90,32 @@ export default function About() {
         (ISODN). You can join our services and websites with their respective
         links below:
       </Text>
-      <TableContainer>
-        <Table variant="simple">
-          <Thead>
-            <Tr>
-              <Th>Science Olympiads</Th>
-              <Th>Discord Link</Th>
-              <Th>Website Link</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            {serverLinks.map((server) => (
-              <Tr key={server.name}>
-                <Td>{server.name}</Td>
-                <Td>
-                  <Link href={server.discord} color="blue.400">
-                    Link
-                  </Link>
-                </Td>
-                <Td>
-                  {server.website ? (
-                    <Link href={server.website} color="blue.400">
-                      Link
-                    </Link>
-                  ) : (
-                    'None'
-                  )}
-                </Td>
-              </Tr>
-            ))}
-          </Tbody>
-        </Table>
-      </TableContainer>
+      <Table.Root variant="line">
+        <Table.Header>
+          <Table.Row>
+            <Table.ColumnHeader>Science Olympiads</Table.ColumnHeader>
+            <Table.ColumnHeader>Discord Link</Table.ColumnHeader>
+            <Table.ColumnHeader>Website Link</Table.ColumnHeader>
+          </Table.Row>
+        </Table.Header>
+        <Table.Body>
+          {serverLinks.map((server) => (
+            <Table.Row key={server.name}>
+              <Table.Cell>{server.name}</Table.Cell>
+              <Table.Cell>
+                <NextLink href={server.discord}>Link</NextLink>
+              </Table.Cell>
+              <Table.Cell>
+                {server.website ? (
+                  <NextLink href={server.website}>Link</NextLink>
+                ) : (
+                  'None'
+                )}
+              </Table.Cell>
+            </Table.Row>
+          ))}
+        </Table.Body>
+      </Table.Root>
     </Layout>
   )
 }
