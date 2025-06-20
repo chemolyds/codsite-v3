@@ -3,7 +3,7 @@ import Link from 'next/link'
 
 export function NextLink(props) {
   return (
-    <ChakraLink {...props} asChild>
+    <ChakraLink {...props} asChild color="fg.info">
       <Link {...props} />
     </ChakraLink>
   )

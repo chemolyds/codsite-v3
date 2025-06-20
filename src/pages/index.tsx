@@ -34,13 +34,7 @@ export default function Home() {
         </Heading>
         <Heading fontSize="2xl" textAlign="center" as="h3" fontWeight={400}>
           Haven&apos;t joined the community yet? You can join{' '}
-          <NextLink
-            href="https://discord.gg/chemistryolympiad"
-            color="blue.400"
-          >
-            here
-          </NextLink>
-          .
+          <NextLink href="https://discord.gg/chemistryolympiad">here</NextLink>.
         </Heading>
 
         {/* Mission Statement */}
@@ -93,7 +87,7 @@ export default function Home() {
                   fontSize="3xl"
                   textAlign="center"
                   as="h2"
-                  color="blue.400"
+                  color="fg.info"
                 >
                   {resource.title}
                 </Heading>
