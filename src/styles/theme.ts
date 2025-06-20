@@ -1,6 +1,4 @@
-import { theme as proTheme } from '@chakra-ui/pro-theme'
 import { defaultConfig as baseTheme, createSystem } from '@chakra-ui/react'
-import { withProse } from '@nikolovlazar/chakra-ui-prose'
 
 /*
 const config = {
@@ -52,5 +50,5 @@ const proseConfig = {
   },
 }
 
-const theme = createSystem(proTheme, config, withProse(proseConfig))
+const theme = createSystem(baseTheme, config)
 export default theme
