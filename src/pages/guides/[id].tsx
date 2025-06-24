@@ -1,12 +1,11 @@
 import { ChakraMdxComponents, MdxOptions } from '@/components/ChakraMdx'
 import Layout from '@/components/layout'
+import { Prose } from '@/components/ui/prose'
 import {
   getAllCountryGuidesIds,
   getCountryGuideData,
 } from '@/lib/countryGuides'
-import { Link } from '@chakra-ui/next-js'
 import { Heading } from '@chakra-ui/react'
-import { Prose } from '@nikolovlazar/chakra-ui-prose'
 import { GetStaticPaths, GetStaticProps } from 'next'
 import { MDXRemote } from 'next-mdx-remote'
 import { serialize } from 'next-mdx-remote/serialize'

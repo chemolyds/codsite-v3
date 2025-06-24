@@ -1,28 +1,13 @@
 import Layout from '@/components/layout'
+import { NextLink } from '@/components/ui/NextLink'
 import { getCountryGuidesData } from '@/lib/countryGuides'
-import { Link } from '@chakra-ui/next-js'
 import {
-  Accordion,
-  AccordionButton,
-  AccordionIcon,
-  AccordionItem,
-  AccordionPanel,
-  Box,
   Card,
-  CardBody,
-  CardHeader,
   Grid,
   GridItem,
   Heading,
   LinkOverlay,
   Table,
-  TableContainer,
-  Tbody,
-  Td,
-  Th,
-  Thead,
-  Image,
-  Tr,
 } from '@chakra-ui/react'
 import { GetStaticProps } from 'next'
 export default function Home({
@@ -37,7 +22,7 @@ export default function Home({
 }) {
   return (
     <Layout title="Guides" description="List of Guides and common resources">
-      <Heading as="h1" textAlign="center" mb="10">
+      <Heading as="h1" textAlign="center" mb="100" size="4xl">
         Guides
       </Heading>
       {/* Generic Guides */}
@@ -48,74 +33,68 @@ export default function Home({
       >
         {guides.map((guide) => (
           <GridItem key={guide.href}>
-            <Card>
-              <CardHeader>
-                <Heading size="xs" pb="2">
-                  <LinkOverlay href={`/guides/${guide.href}`} as={Link}>
+            <Card.Root>
+              <Card.Header>
+                <Heading size="lg" pb="2">
+                  <LinkOverlay href={`/guides/${guide.href}`}>
                     {guide.title}
                   </LinkOverlay>
                 </Heading>
-              </CardHeader>
-              <CardBody pt="0">{guide.description}</CardBody>
-            </Card>
+              </Card.Header>
+              <Card.Body pt="0">{guide.description}</Card.Body>
+            </Card.Root>
           </GridItem>
         ))}
       </Grid>
       {/* Country Information */}
-      <Heading as="h1" textAlign="center" my="10">
+      <Heading as="h1" textAlign="center" my="10" size="4xl">
         Country Guides
       </Heading>
-      <TableContainer>
-              <Table>
-                <Thead>
-                  <Tr>
-                    <Th>Link</Th>
-                    <Th>Description</Th>
-                  </Tr>
-                </Thead>
-                <Tbody>
-                  {allCountryGuidesData.map(({ id, title, description }) => (
-                    <Tr key={id}>
-                      <Td>
-                        <Link href={`/guides/${id}`} color="blue.400">
-                          {title}
-                        </Link>
-                      </Td>
-                      <Td>{description}</Td>
-                    </Tr>
-                  ))}
-                </Tbody>
-              </Table>
-            </TableContainer>
-{/* Resources Presets */}
-      <Heading as="h1" textAlign="center" my="10">
+      <Table.Root>
+        <Table.Header>
+          <Table.Row>
+            <Table.ColumnHeader>Link</Table.ColumnHeader>
+            <Table.ColumnHeader>Description</Table.ColumnHeader>
+          </Table.Row>
+        </Table.Header>
+        <Table.Body>
+          {allCountryGuidesData.map(({ id, title, description }) => (
+            <Table.Row key={id}>
+              <Table.Cell>
+                <NextLink href={`/guides/${id}`}>{title}</NextLink>
+              </Table.Cell>
+              <Table.Cell>{description}</Table.Cell>
+            </Table.Row>
+          ))}
+        </Table.Body>
+      </Table.Root>
+      {/* Resources Presets */}
+      <Heading as="h1" textAlign="center" my="10" size="4xl">
         Common Resources
       </Heading>
-      <TableContainer>
-        <Table>
-          <Thead>
-            <Tr>
-              <Th>Link</Th>
-              <Th>Description</Th>
-            </Tr>
-          </Thead>
-          <Tbody>
-            {recResources.map((resource) => (
-              <Tr key={resource.title}>
-                <Td>
-                  <Link
-                    href={`/resources?${resource.searchParams}`}
-                    color="blue.400"
-                  >
-                    {resource.title}
-                  </Link>
-                </Td>
-                <Td>{resource.description}</Td>
-              </Tr>
-            ))}
-          </Tbody>
-        </Table>
-      </TableContainer>
+      <Table.Root>
+        <Table.Header>
+          <Table.Row>
+            <Table.ColumnHeader>Link</Table.ColumnHeader>
+            <Table.ColumnHeader>Description</Table.ColumnHeader>
+          </Table.Row>
+        </Table.Header>
+        <Table.Body>
+          {recResources.map((resource) => (
+            <Table.Row key={resource.title}>
+              <Table.Cell>
+                <NextLink
+                  href={`/resources?${resource.searchParams}`}
+                  color="blue.400"
+                >
+                  {resource.title}
+                </NextLink>
+              </Table.Cell>
+              <Table.Cell>{resource.description}</Table.Cell>
+            </Table.Row>
+          ))}
+        </Table.Body>
+      </Table.Root>
     </Layout>
   )
 }
