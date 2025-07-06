@@ -2,6 +2,7 @@ import CodsLogo from '@/components/CodsLogo'
 import Layout from '@/components/layout'
 import { Link } from '@chakra-ui/next-js'
 import {
+  Button,
   Card,
   CardBody,
   Center,
@@ -10,6 +11,15 @@ import {
   Heading,
   LinkOverlay,
   ListItem,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
   Text,
   UnorderedList,
   useColorMode,
@@ -30,13 +40,24 @@ export default function Home() {
         />
       </Center>
 
+      <Center>
+        <Button>
+          <Link
+            href="https://docs.google.com/presentation/d/1TYwW5nJFVdQebzxR2381jE1jlRZXAiopdenMm3WqCeQ/edit?usp=sharing"
+            color="blue.400"
+          >
+            See what's new with CODS!
+          </Link>
+        </Button>
+      </Center>
+
       <Container px={{ base: 4, md: 20 }} maxW="full">
         {/* CODS Community */}
         <Heading textAlign="center" as="h2" fontSize="3xl">
           CODS is a global community made for Chemistry Olympiad participants
         </Heading>
         <Heading fontSize="2xl" textAlign="center" as="h3" fontWeight={400}>
-          Haven&apos;t joined the community yet? You can join{' '}
+          Haven't joined the community yet? You can join{' '}
           <Link href="https://discord.gg/chemistryolympiad" color="blue.400">
             here
           </Link>
