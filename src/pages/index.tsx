@@ -2,6 +2,7 @@ import CodsLogo from '@/components/CodsLogo'
 import Layout from '@/components/layout'
 import { Link } from '@chakra-ui/next-js'
 import {
+  Button,
   Card,
   CardBody,
   Center,
@@ -10,6 +11,15 @@ import {
   Heading,
   LinkOverlay,
   ListItem,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
   Text,
   UnorderedList,
   useColorMode,
@@ -28,6 +38,17 @@ export default function Home() {
           height="calc(50vh)"
           /*style={{ backgroundColor: 'purple' }}*/
         />
+      </Center>
+
+      <Center>
+        <Button>
+          <Link
+            href="https://docs.google.com/presentation/d/1TYwW5nJFVdQebzxR2381jE1jlRZXAiopdenMm3WqCeQ/edit?usp=sharing"
+            color="blue.400"
+          >
+            See what&apos;s new with CODS!
+          </Link>
+        </Button>
       </Center>
 
       <Container px={{ base: 4, md: 20 }} maxW="full">
