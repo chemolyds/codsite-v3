@@ -46,7 +46,7 @@ export default function Home() {
             href="https://docs.google.com/presentation/d/1TYwW5nJFVdQebzxR2381jE1jlRZXAiopdenMm3WqCeQ/edit?usp=sharing"
             color="blue.400"
           >
-            See what's new with CODS!
+            See what&apos;s new with CODS!
           </Link>
         </Button>
       </Center>
@@ -57,7 +57,7 @@ export default function Home() {
           CODS is a global community made for Chemistry Olympiad participants
         </Heading>
         <Heading fontSize="2xl" textAlign="center" as="h3" fontWeight={400}>
-          Haven't joined the community yet? You can join{' '}
+          Haven&apos;t joined the community yet? You can join{' '}
           <Link href="https://discord.gg/chemistryolympiad" color="blue.400">
             here
           </Link>

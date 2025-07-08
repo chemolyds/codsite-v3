@@ -39,7 +39,7 @@ export default function Home({
 
       <Accordion>
         {allFaqsData.map(({ id, title, mdxSource }) => (
-          <AccordionItem>
+          <AccordionItem key={id}>
             <AccordionButton>
               <Box as="span" flex="1" textAlign="left">
                 <Heading fontSize="lg">{title}</Heading>
