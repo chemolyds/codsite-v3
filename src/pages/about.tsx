@@ -16,14 +16,14 @@ import {
 } from '@chakra-ui/react'
 import Image from 'next/image'
 
-import anuragImg from '@/images/staff/AnuragSodhiCropped.png'
-import dillionImg from '@/images/staff/dillion.jpeg'
-import ayameImg from '@/images/staff/ayame.jpg'
-import ihorImg from '@/images/staff/ihor.jpg'
-import jeremyImg from '@/images/staff/jeremy-2x.png'
-import kwanwooImg from '@/images/staff/kwanwoo-2x.png'
-import nicolaiImg from '@/images/staff/nicolai.jpg'
-import ranenImg from '@/images/staff/ranen.png'
+import anuragImg from '@/images/staff/Anurag.png'
+import dillionImg from '@/images/staff/Dillion.jpeg'
+import ayameImg from '@/images/staff/Ayame.jpg'
+import ihorImg from '@/images/staff/Ihor.jpg'
+import jeremyImg from '@/images/staff/Jeremy.png'
+import kwanwooImg from '@/images/staff/Kwanwoo.png'
+import ranenImg from '@/images/staff/Ranen.png'
+import srikarImg from '@/images/staff/Srikar.jpg'
 
 export default function About() {
   return (
@@ -174,86 +174,92 @@ const serverLinks = [
 
 const activeStaff = [
   {
-    name: 'Elizabeth Davis (ayameelizasuzuki), USA',
+    name: 'Elizabeth (Ayame) Davis, USA',
     img: ayameImg,
     bio: [
-      `Elizabeth leads CODS's Outreach initiative and has run its online community since 2019.`,
+      `Eliza leads various CODS initiatives and has run its online community since 2019.`,
       `She is currently pursuing a doctorate in Pharmaceutical Studies at The Ohio State University and is an avid Buckeye fan.`,
-      `In her free time, she enjoys singing, gaming, working out, and volunteering.`,
+      `In her free time, she enjoys gaming, working out, writing, and hanging out with friends.`,
       `You can often find her hanging out in the CODS Discord so please stop by! `,
+      `Discord: AyameElizaSuzuki`,
     ],
     contact_for: 'MAIN CONTACT. Any sector.',
   },
   {
-    name: 'Ihor Kholomieiev (Igeru#8910), Ukraine',
+    name: 'Srikar Kampalli, USA',
+    img: srikarImg,
+    bio: [
+      `Srikar Kampalli is currently a sophomore at his high school and is passionate about biochemistry.`,
+      `Aside from his chemistry interests, he loves getting into his garden, tending/watering to the plants, and getting bit by wasps in the process.`,
+      `Discord: palladium`,
+    ],
+    contact_for: 'Lectures (PRIMARY)',
+  },
+  {
+    name: 'Ihor Kholomieiev, Ukraine',
     img: ihorImg,
     bio: [
       `An avid competition writer since Fall 2021, Ihor first joined the staff team in 2022.`,
       `He is an IChO 2021 silver medalist and received multiple awards in his national olympiad.`,
       `He was a student in the National University of Kyiv where he did research in organic chemistry before transferring to the University of Groningen.`,
       `Aside from chemistry, he enjoys cooking and watching random YouTube videos.`,
+      `Discord: Igeru#8910`,
     ],
-    contact_for: 'Lectures',
+    contact_for: 'Competitions',
   },
   {
-    name: 'Dillion Lim (theorangejuice), Singapore',
+    name: 'Dillion Lim, Singapore',
     img: dillionImg,
     bio: [
       `Dillion started off his journey with research in environmental chemistry, going so far as to participate in the International Science and Engineering Fair (ISEF).`,
       `He has ventured into Chemistry Olympiads and helps to mentor students. He also enjoys writing questions - you will see him writing a fair few questions in CODSCompetitions.`,
       `He firmly believes in the need for equitable access to quality resources, and thereby joined CODS in 2022 to help realise this dream for others.`,
       `Aside from chemistry, he enjoys programming and playing the piano.`,
+      `Discord: theorangejuice`,
     ],
     contact_for: 'Competitions',
   },
   {
-    name: 'Kwanwoo Park (fizzest), USA',
+    name: 'Kwanwoo Park, USA',
     img: kwanwooImg,
     bio: [
       `Kwanwoo is a luxury chemist who wishes to be unidentified. He touches grass and works with benzene, perhaps reducing his life expectancy by 20 years.`,
+      `Discord: fizzest`,
     ],
-    contact_for: 'No preferred sector',
+    contact_for: 'General Administration',
   },
   {
-    name: 'Anurag Sodhi (a.new.rag), USA',
+    name: 'Anurag Sodhi, USA',
     img: anuragImg,
     bio: [
-      `Anurag is a senior in high school who has been part of the CODS community since 2018; he now helps edits (and occasionally writes) for CODSCompetitions since SOCC '23.`,
+      `Anurag is a senior in high school who has been part of the CODS community since 2018; he now helps edits for CODSCompetitions since SOCC '23.`,
       `An avid competitor in chemistry olympiad himself, Anurag has qualified for the United States IChO Team ('23, Gold Medalist) and the US Chemistry Olympiad Camp ('22, '23).`,
       `Asides from chemistry, Anurag enjoys following the NFL as well as grinding Tetris and chess.`,
-      `He also occasionally touches grass in the forms of playing frisbee or badminton.`,
+      `He also occasionally plays frisbee or badminton.`,
+      `Discord: a.new.rag`,
     ],
-    contact_for: 'Competitions, Lectures',
+    contact_for: 'Competitions and Lectures',
   },
-  /*{
-    name: 'Nicolai Bogø Stabell (Stabell#6680), Denmark',
-    img: nicolaiImg,
-    bio: [
-      `Nicolai joined the staff team in 2020 as a competitions writer and later became head of competitions in 2021.`,
-      `He has a background in physical chemistry from Technical University of Denmark where he also did research.`,
-      `Besides CODS, he also mentors students in The Danish Chemistry Olympiad and has produced the highest number of national team members.`,
-      `In his free time, he enjoys skiing, gaming and puzzles.`,
-    ],
-    sectors: 'Competitions, Writers, and Organization Administration.',
-  },*/
   {
-    name: 'Jeremy Tinana (jerdan1980), USA',
+    name: 'Jeremy Tinana, USA',
     img: jeremyImg,
     bio: [
-      `Jeremy was part of CODS's initial admin team of 2018, and now works mainly on updating and maintaining the website and discord features.`,
-      `He has bachelor degrees in (generalized) Chemistry and Computer Science from the University of Florida.`,
+      `Jeremy was part of CODS's initial admin team of 2018, and now works mainly on updating and maintaining the website and various discord community features.`,
+      `He has bachelor degrees in Chemistry and Computer Science from the University of Florida.`,
       `Aside from chemistry, Jeremy is a passionate reader, gamer, and cook.`,
+      `Discord: jerdan1980`,
     ],
-    contact_for: 'Website, anything programming related',
+    contact_for: 'Website (PRIMARY)',
   },
   {
-    name: 'Ranen Yong (rymh), Singapore',
+    name: 'Ranen Yong, Singapore',
     img: ranenImg,
     bio: [
-      `Ranen joined the CODS community in 2023, and has been setting problems for our competitions since then.`,
+      `Ranen joined the CODS community in 2023, and has been leading the competition sector ever since.`,
       `Besides being a camper, he has dabbled in research, presenting his work on the synthesis and applications polypeptide complexes at the Singapore Science and Engineering Fair (SSEF).`,
       `Beyond chemistry, Ranen also enjoys music (particularly music theory and piano), cooking/eating, and anime.`,
+      `Discord: rymh`,
     ],
-    contact_for: 'Competitions',
+    contact_for: 'Competitions (PRIMARY)',
   },
 ]
