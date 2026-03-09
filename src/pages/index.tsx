@@ -2,6 +2,7 @@ import CodsLogo from '@/components/CodsLogo'
 import Layout from '@/components/layout'
 import { Link } from '@chakra-ui/next-js'
 import {
+  Button,
   Card,
   CardBody,
   Center,
@@ -10,13 +11,20 @@ import {
   Heading,
   LinkOverlay,
   ListItem,
+  Popover,
+  PopoverTrigger,
+  PopoverContent,
+  PopoverHeader,
+  PopoverBody,
+  PopoverFooter,
+  PopoverArrow,
+  PopoverCloseButton,
+  PopoverAnchor,
   Text,
   UnorderedList,
   useColorMode,
 } from '@chakra-ui/react'
 import { ReactElement } from 'react'
-
-
 
 export default function Home() {
   const { colorMode, toggleColorMode } = useColorMode()
@@ -30,6 +38,17 @@ export default function Home() {
           height="calc(50vh)"
           /*style={{ backgroundColor: 'purple' }}*/
         />
+      </Center>
+
+      <Center>
+        <Button>
+          <Link
+            href="https://docs.google.com/presentation/d/1TYwW5nJFVdQebzxR2381jE1jlRZXAiopdenMm3WqCeQ/edit?usp=sharing"
+            color="blue.400"
+          >
+            See what&apos;s new with CODS!
+          </Link>
+        </Button>
       </Center>
 
       <Container px={{ base: 4, md: 20 }} maxW="full">
@@ -70,13 +89,12 @@ export default function Home() {
           What is CODSite for?
         </Heading>
         <Text align="center">
-          CODSite is an all-purpose website made for your community (competitive
-          chemistry enthusiasts). Everything on CODSite is free to use for
-          anybody, no sign-ups or membership required. We provide custom{' '}
-          <b>open educational resources</b> such as lectures, detailed notes,
-          useful websites, problem sets, guides, tools, and all of our past
-          competition papers. Anything a chemistry freak could dream of lies
-          within this website.
+          CODSite is an all-purpose website made for competitive chemistry
+          enthusiasts. Everything on CODSite is free to use for anybody, no
+          sign-ups or membership required. We provide custom open educational
+          resources, lectures, notes, resource banks, problem sets, guides,
+          tools, and all of our past competition papers - anything a chemistry
+          freak could dream of!
         </Text>
 
         {/* Resources QuickLinks */}

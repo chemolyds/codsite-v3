@@ -166,7 +166,7 @@ export default function Resources() {
 
       <Input
         my="3"
-        placeholder="Query Resources"
+        placeholder="Search Resources"
         value={query}
         onChange={(e) => setQuery(e.target.value)}
         _placeholder={{ opacity: 0.75, color: 'gray.500' }}

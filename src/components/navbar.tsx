@@ -169,10 +169,6 @@ const routes = [
         title: `Competitor's Guide`,
       },
       {
-        href: 'syllabus',
-        title: `Syllabus`,
-      },
-      {
         href: 'acot',
         title: 'ACOT',
       },
@@ -194,6 +190,10 @@ const routes = [
     href: '',
     title: 'Resources',
     children: [
+      {
+        href: 'syllabus',
+        title: `Competition Syllabus`,
+      },
       {
         href: 'resources',
         title: 'Resources',

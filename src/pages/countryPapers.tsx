@@ -202,7 +202,7 @@ const countryPapers: {
   },
   {
     href: 'https://www.acs.org/education/olympiad/prepare-for-exams.html',
-    title: 'United States of America',
+    title: 'United States',
   },
 ]
 
