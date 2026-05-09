@@ -24,6 +24,7 @@ import jeremyImg from '@/images/staff/jeremy-2x.png'
 import kwanwooImg from '@/images/staff/kwanwoo-2x.png'
 import nicolaiImg from '@/images/staff/nicolai.jpg'
 import ranenImg from '@/images/staff/ranen.png'
+import srikarImg from '@/images/staff/srikar.png'
 
 export default function About() {
   return (
@@ -39,7 +40,7 @@ export default function About() {
       </Text>
 
       <Heading textAlign="center" as="h2" mt="10">
-        Active Staff Members
+        Staff Team
       </Heading>
       {activeStaff.map((staff) => (
         <Container key={staff.name}>
@@ -60,19 +61,24 @@ export default function About() {
         </Container>
       ))}
 
-      <Heading as="h2" textAlign="center" mt="10" mb="4">
-        Competition Writers
+      <Heading textAlign="center" as="h2" mt="10">
+        Competition Coordinators
       </Heading>
-      <Grid
-        templateColumns={{ base: 'repeat(2, 1fr)', md: 'repeat(4, 1fr)' }}
-        gap="4"
-      >
-        {writers.sort().map((writer) => (
-          <GridItem key={writer} textAlign="center" fontSize="lg">
-            {writer}
-          </GridItem>
-        ))}
-      </Grid>
+      {activeCoord.map((coord) => (
+        <Container key={coord.name}>
+          <Heading as="h3" fontSize="4xl">
+            {coord.name}
+          </Heading>
+          <Grid templateColumns="repeat(3, 1fr)" gap="4">
+            <GridItem colSpan={{ base: 3, md: 1 }}>
+              <Image src={coord.img} alt={`Picture of ${coord.name}`} />
+            </GridItem>
+            <GridItem colSpan={{ base: 3, md: 2 }}>
+              <Text fontSize="lg">{coord.bio.join(' ')}</Text>
+            </GridItem>
+          </Grid>
+        </Container>
+      ))}
 
       <Heading as="h2" textAlign="center" mt="10" mb="4">
         Retired Staff Members
@@ -85,6 +91,12 @@ export default function About() {
             </Tr>
           </Thead>
           <Tbody>
+            <Tr>
+              <Td>Dillion Lim</Td>
+            </Tr>
+            <Tr>
+              <Td>Anurag Sodhi</Td>
+            </Tr>
             <Tr>
               <Td>Nicolai Bogø Stabell</Td>
             </Tr>
@@ -148,30 +160,6 @@ export default function About() {
   )
 }
 
-const writers = [
-  'Anathan Sadagopan',
-  'bluepianist#9293',
-  'Ihor Kholomieiev',
-  'Lasse Johnson',
-  'Lim Dillion',
-  'Lin Bigom-Eriksen',
-  'Nick Ouyang',
-  'Nick Tsao',
-  'Qiyang Zhao',
-  'Ron Shprints',
-  'Thomas Falkenberg',
-  'Tomasz Ślusarczyk',
-  'Tristan Chau',
-  'Yiwei Liang',
-  'lof#4839',
-  'Jeremy Tinana',
-  'Nipun Dour',
-  'Nishaant Jacobus',
-  'Erick Wu',
-  'Ray Zhou',
-  'Matthionine#9769',
-]
-
 const serverLinks = [
   {
     name: 'Chemistry Olympiads',
@@ -212,16 +200,51 @@ const serverLinks = [
 
 const activeStaff = [
   {
-    name: 'Elizabeth Davis (ayameelizasuzuki), USA',
+    name: 'Elizabeth Davis, USA',
     img: ayameImg,
     bio: [
       `Elizabeth leads CODS's Outreach initiative and has run its online community since 2019.`,
       `She is currently pursuing a doctorate in Pharmaceutical Studies at The Ohio State University and is an avid Buckeye fan.`,
       `In her free time, she enjoys singing, gaming, working out, and volunteering.`,
       `You can often find her hanging out in the CODS Discord so please stop by! `,
+      `Discord: ayameelizasuzuki`,
     ],
     contact_for: 'MAIN CONTACT. Any sector.',
   },
+  {
+    name: 'Kwanwoo Park, USA',
+    img: kwanwooImg,
+    bio: [
+      `Kwanwoo is a luxury chemist who wishes to be unidentified. He touches grass and works with benzene, perhaps reducing his life expectancy by 20 years.`,
+      `Discord: fizzest`,
+    ],
+    contact_for: 'Discord Platform',
+  },
+  {
+    name: 'Jeremy Tinana (jerdan1980), USA',
+    img: jeremyImg,
+    bio: [
+      `Jeremy was part of CODS's initial admin team of 2018, and now works mainly on updating and maintaining the website and discord features.`,
+      `He has bachelor degrees in (generalized) Chemistry and Computer Science from the University of Florida.`,
+      `Aside from chemistry, Jeremy is a passionate reader, gamer, and cook.`,
+      `Discord: jerdan1980`,
+    ],
+    contact_for: 'Website',
+  },
+  {
+    name: 'Ranen Yong, Singapore',
+    img: ranenImg,
+    bio: [
+      `Ranen joined the CODS community in 2023, and has been setting problems for our competitions since then.`,
+      `Besides being a camper, he has dabbled in research, presenting his work on the synthesis and applications polypeptide complexes at the Singapore Science and Engineering Fair (SSEF).`,
+      `Beyond chemistry, Ranen also enjoys music (particularly music theory and piano), cooking/eating, and anime.`,
+      `Discord: rymh`,
+    ],
+    contact_for: 'Competitions',
+  },
+]
+
+const activeCoord = [
   {
     name: 'Ihor Kholomieiev (Igeru#8910), Ukraine',
     img: ihorImg,
@@ -230,68 +253,16 @@ const activeStaff = [
       `He is an IChO 2021 silver medalist and received multiple awards in his national olympiad.`,
       `He was a student in the National University of Kyiv where he did research in organic chemistry before transferring to the University of Groningen.`,
       `Aside from chemistry, he enjoys cooking and watching random YouTube videos.`,
+      `Discord: igeru`,
     ],
-    contact_for: 'Lectures',
   },
   {
-    name: 'Dillion Lim (theorangejuice), Singapore',
-    img: dillionImg,
+    name: 'Srikar Kampalli, USA',
+    img: srikarImg,
     bio: [
-      `Dillion started off his journey with research in environmental chemistry, going so far as to participate in the International Science and Engineering Fair (ISEF).`,
-      `He has ventured into Chemistry Olympiads and helps to mentor students. He also enjoys writing questions - you will see him writing a fair few questions in CODSCompetitions.`,
-      `He firmly believes in the need for equitable access to quality resources, and thereby joined CODS in 2022 to help realise this dream for others.`,
-      `Aside from chemistry, he enjoys programming and playing the piano.`,
+      `Srikar Kampalli is currently a sophomore at his high school and is passionate about biochemistry.`,
+      `Aside from his chemistry interests, he loves getting into his garden, tending/watering to the plants, and getting bit by wasps in the process.`,
+      `Discord: palladium`,
     ],
-    contact_for: 'Competitions',
-  },
-  {
-    name: 'Kwanwoo Park (fizzest), USA',
-    img: kwanwooImg,
-    bio: [
-      `Kwanwoo is a luxury chemist who wishes to be unidentified. He touches grass and works with benzene, perhaps reducing his life expectancy by 20 years.`,
-    ],
-    contact_for: 'No preferred sector',
-  },
-  {
-    name: 'Anurag Sodhi (a.new.rag), USA',
-    img: anuragImg,
-    bio: [
-      `Anurag is a senior in high school who has been part of the CODS community since 2018; he now helps edits (and occasionally writes) for CODSCompetitions since SOCC '23.`,
-      `An avid competitor in chemistry olympiad himself, Anurag has qualified for the United States IChO Team ('23, Gold Medalist) and the US Chemistry Olympiad Camp ('22, '23).`,
-      `Asides from chemistry, Anurag enjoys following the NFL as well as grinding Tetris and chess.`,
-      `He also occasionally touches grass in the forms of playing frisbee or badminton.`,
-    ],
-    contact_for: 'Competitions, Lectures',
-  },
-  /*{
-    name: 'Nicolai Bogø Stabell (Stabell#6680), Denmark',
-    img: nicolaiImg,
-    bio: [
-      `Nicolai joined the staff team in 2020 as a competitions writer and later became head of competitions in 2021.`,
-      `He has a background in physical chemistry from Technical University of Denmark where he also did research.`,
-      `Besides CODS, he also mentors students in The Danish Chemistry Olympiad and has produced the highest number of national team members.`,
-      `In his free time, he enjoys skiing, gaming and puzzles.`,
-    ],
-    sectors: 'Competitions, Writers, and Organization Administration.',
-  },*/
-  {
-    name: 'Jeremy Tinana (jerdan1980), USA',
-    img: jeremyImg,
-    bio: [
-      `Jeremy was part of CODS's initial admin team of 2018, and now works mainly on updating and maintaining the website and discord features.`,
-      `He has bachelor degrees in (generalized) Chemistry and Computer Science from the University of Florida.`,
-      `Aside from chemistry, Jeremy is a passionate reader, gamer, and cook.`,
-    ],
-    contact_for: 'Website, anything programming related',
-  },
-  {
-    name: 'Ranen Yong (rymh), Singapore',
-    img: ranenImg,
-    bio: [
-      `Ranen joined the CODS community in 2023, and has been setting problems for our competitions since then.`,
-      `Besides being a camper, he has dabbled in research, presenting his work on the synthesis and applications polypeptide complexes at the Singapore Science and Engineering Fair (SSEF).`,
-      `Beyond chemistry, Ranen also enjoys music (particularly music theory and piano), cooking/eating, and anime.`,
-    ],
-    contact_for: 'Competitions',
   },
 ]
