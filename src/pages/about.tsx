@@ -16,19 +16,18 @@ import {
 } from '@chakra-ui/react'
 import Image from 'next/image'
 
-import anuragImg from '@/images/staff/AnuragSodhiCropped.png'
-import dillionImg from '@/images/staff/dillion.jpeg'
-import ayameImg from '@/images/staff/ayame.jpg'
-import ihorImg from '@/images/staff/ihor.jpg'
-import jeremyImg from '@/images/staff/jeremy-2x.png'
-import kwanwooImg from '@/images/staff/kwanwoo-2x.png'
-import nicolaiImg from '@/images/staff/nicolai.jpg'
-import ranenImg from '@/images/staff/ranen.png'
-import srikarImg from '@/images/staff/srikar.png'
+import anuragImg from '@/images/staff/Anurag.png'
+import dillionImg from '@/images/staff/Dillion.jpeg'
+import ayameImg from '@/images/staff/Ayame.jpg'
+import ihorImg from '@/images/staff/Ihor.jpg'
+import jeremyImg from '@/images/staff/Jeremy.png'
+import kwanwooImg from '@/images/staff/Kwanwoo.png'
+import ranenImg from '@/images/staff/Ranen.png'
+import srikarImg from '@/images/staff/Srikar.jpg'
 
 export default function About() {
   return (
-    <Layout title="About" description="About CODS staff and writers">
+    <Layout title="About" description="About CODStaff">
       <Heading as="h1" textAlign="center">
         Staff and Contacts
       </Heading>
@@ -200,14 +199,14 @@ const serverLinks = [
 
 const activeStaff = [
   {
-    name: 'Elizabeth Davis, USA',
+    name: 'Elizabeth (Ayame) Davis, USA',
     img: ayameImg,
     bio: [
-      `Elizabeth leads CODS's Outreach initiative and has run its online community since 2019.`,
+      `Eliza leads various CODS initiatives and has run its online community since 2019.`,
       `She is currently pursuing a doctorate in Pharmaceutical Studies at The Ohio State University and is an avid Buckeye fan.`,
-      `In her free time, she enjoys singing, gaming, working out, and volunteering.`,
+      `In her free time, she enjoys gaming, working out, writing, and hanging out with friends.`,
       `You can often find her hanging out in the CODS Discord so please stop by! `,
-      `Discord: ayameelizasuzuki`,
+      `Discord: AyameElizaSuzuki`,
     ],
     contact_for: 'MAIN CONTACT. Any sector.',
   },
@@ -218,14 +217,13 @@ const activeStaff = [
       `Kwanwoo is a luxury chemist who wishes to be unidentified. He touches grass and works with benzene, perhaps reducing his life expectancy by 20 years.`,
       `Discord: fizzest`,
     ],
-    contact_for: 'Discord Platform',
-  },
+    contact_for: 'Discord',
   {
-    name: 'Jeremy Tinana (jerdan1980), USA',
+    name: 'Jeremy Tinana, USA',
     img: jeremyImg,
     bio: [
-      `Jeremy was part of CODS's initial admin team of 2018, and now works mainly on updating and maintaining the website and discord features.`,
-      `He has bachelor degrees in (generalized) Chemistry and Computer Science from the University of Florida.`,
+      `Jeremy was part of CODS's initial admin team of 2018, and now works mainly on updating and maintaining the website and various discord community features.`,
+      `He has bachelor degrees in Chemistry and Computer Science from the University of Florida.`,
       `Aside from chemistry, Jeremy is a passionate reader, gamer, and cook.`,
       `Discord: jerdan1980`,
     ],
@@ -235,7 +233,7 @@ const activeStaff = [
     name: 'Ranen Yong, Singapore',
     img: ranenImg,
     bio: [
-      `Ranen joined the CODS community in 2023, and has been setting problems for our competitions since then.`,
+      `Ranen joined the CODS community in 2023, and has been leading the competition sector ever since.`,
       `Besides being a camper, he has dabbled in research, presenting his work on the synthesis and applications polypeptide complexes at the Singapore Science and Engineering Fair (SSEF).`,
       `Beyond chemistry, Ranen also enjoys music (particularly music theory and piano), cooking/eating, and anime.`,
       `Discord: rymh`,
