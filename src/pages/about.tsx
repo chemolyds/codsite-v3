@@ -16,12 +16,12 @@ import {
 } from '@chakra-ui/react'
 import Image from 'next/image'
 
-import ayameImg from '@/images/staff/ayame.jpg'
-import ihorImg from '@/images/staff/ihor.jpg'
-import jeremyImg from '@/images/staff/jeremy.png'
-import kwanwooImg from '@/images/staff/kwanwoo.png'
-import ranenImg from '@/images/staff/ranen.png'
-import srikarImg from '@/images/staff/srikar.jpg'
+import ayameImg from '@/images/staff/Ayame.jpg'
+import ihorImg from '@/images/staff/Ihor.jpg'
+import jeremyImg from '@/images/staff/Jeremy.png'
+import kwanwooImg from '@/images/staff/Kwanwoo.png'
+import ranenImg from '@/images/staff/Ranen.png'
+import srikarImg from '@/images/staff/Srikar.jpg'
 
 export default function About() {
   return (
